@@ -374,13 +374,19 @@
   "loans": [
     {
       "label": "Mitsubishi Outlander 차량 할부",
-      "balance": 43398,
+      "balance": 42881,
       "payment": 349.17,
       "freq": "biweekly",
-      "start": "2025-04",
-      "term_months": 84,
+      "start": "2025-06-20",
+      "term_months": 96,
       "next": "2026-10-09",
-      "note": "2024 Outlander Noir (가솔린)"
+      "note": "2024 Outlander Noir (가솔린)",
+      "principal": 48193.85,
+      "rate_pct": 10.98,
+      "payments_total": 208,
+      "payments_made": 34,
+      "end": "2033-05-27",
+      "balance_note": "2026-10-02 계산값 (34회 납부 후). James 확인 2026-10-01 기준 $43,398"
     }
   ],
   "vehicle": {
