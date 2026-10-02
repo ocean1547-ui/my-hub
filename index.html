@@ -386,6 +386,23 @@ async function load() {
       const usedHtml = c.used != null
         ? `<span class="text-sm font-bold text-red-300">${fmt(c.used)}</span>`
         : `<span class="text-[11px] text-amber-300">확인 필요</span>`;
+      // 이 카드에 연결된 고정 지출 (이자·카드 결제 등)
+      const cKey = c.holder + '|' + c.name;
+      const linked = (d.fixed || []).filter(x => x.card === cKey);
+      let linkedSum = 0;
+      linked.forEach(x => { linkedSum += fAmt(x).amt * (x.freq === 'biweekly' ? 2 : 1); });
+      const linkedHtml = linked.length ? `
+        <div class="mt-2 pt-2 border-t border-slate-700/60">
+          <div class="flex items-center justify-between text-[11px] mb-1">
+            <span class="text-slate-400">📌 이 카드 월 지출 <span class="text-slate-500">(${linked.length}건)</span></span>
+            <span class="text-sm font-bold text-amber-300">${fmt(linkedSum)}</span>
+          </div>
+          ${linked.map(x => { const r = fAmt(x); return `
+          <div class="flex items-center justify-between text-[11px] py-0.5">
+            <span class="text-slate-500 truncate">${x.day ? x.day + '일 ' : ''}${x.label}</span>
+            <span class="${r.actual ? 'text-amber-300' : 'text-slate-500'} whitespace-nowrap ml-2">${fmt(r.amt)}</span>
+          </div>`; }).join('')}
+        </div>` : '';
       return `
       <div class="bg-slate-800 rounded-2xl p-3.5 border border-slate-700">
         <div class="flex items-baseline justify-between mb-1">
@@ -400,6 +417,7 @@ async function load() {
           <span class="text-slate-400"><span class="text-red-400">●</span> 사용액(지출) ${usedHtml}</span>
           <span class="text-slate-400"><span class="text-emerald-400">●</span> 결제액 <span class="text-sm font-bold text-emerald-300">${fmt(c.payment || 0)}</span></span>
         </div>
+        ${linkedHtml}
         ${c.note ? `<p class="text-[10px] text-amber-300/80 mt-1">${c.note}</p>` : ''}
       </div>`;
     }).join('');
