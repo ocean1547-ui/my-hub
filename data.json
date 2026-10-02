@@ -363,5 +363,11 @@
       "payment": 300,
       "note": "사용액 확인 필요"
     }
-  ]
+  ],
+  "debt_goal": {
+    "start": 44325.87,
+    "target": 31028.11,
+    "reduction_pct": 30,
+    "note": "총 부채 30% 감축 목표"
+  }
 }
