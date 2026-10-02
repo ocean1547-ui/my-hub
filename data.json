@@ -388,7 +388,13 @@
       "model": "2024 Mitsubishi Outlander PHEV",
       "color": "흰색",
       "purchased": "2025-04",
-      "dealer": "Steele Mitsubishi Halifax"
+      "dealer": "Steele Mitsubishi Halifax",
+      "plate": "GLR323",
+      "plate_expiry": "2027-07-31",
+      "vin": "JA4J4WA8XRZ632510",
+      "registered": "2025-05-29",
+      "odo_at_purchase": 17705,
+      "purchase_price": 48193.85
     },
     "schedule": [
       {
@@ -431,7 +437,15 @@
       }
     ],
     "trips": [],
-    "maintenance": [],
+    "maintenance": [
+      {
+        "date": "",
+        "item": "엔진오일·오일필터 교환",
+        "cost": null,
+        "odo": 51345,
+        "note": "날짜 미상"
+      }
+    ],
     "fuel": []
   }
 }
