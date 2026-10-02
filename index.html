@@ -251,6 +251,8 @@ async function load() {
     return;
   }
   document.getElementById('updated').textContent = '업데이트: ' + (d.meta?.updated || '');
+  const nowDt = new Date();
+  const curYM = nowDt.getFullYear() + '-' + String(nowDt.getMonth() + 1).padStart(2, '0');
 
   // --- 고정 지출 (금액 직접 입력 가능, localStorage) ---
   const LS_FIXED_ACTUALS = 'household_fixed_actuals';
