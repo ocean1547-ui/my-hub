@@ -391,5 +391,17 @@
     "target": 31028.11,
     "reduction_pct": 30,
     "note": "총 부채 30% 감축 목표"
-  }
+  },
+  "loans": [
+    {
+      "label": "Mitsubishi Outlander 차량 할부",
+      "balance": 43398,
+      "payment": 349.17,
+      "freq": "biweekly",
+      "start": "2025-04",
+      "term_months": 84,
+      "next": "2026-10-09",
+      "note": "2024 Outlander PHEV"
+    }
+  ]
 }
