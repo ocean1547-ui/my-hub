@@ -47,22 +47,22 @@
       "amount": 44.0,
       "day": 3,
       "from": "",
-      "label": "승재 캐네디언타이어 마스터 카드이자",
-      "card": "승재|캐네디언타이어 마스터"
+      "label": "승재 Canadian Tire Mastercard 카드이자",
+      "card": "승재|Canadian Tire Mastercard"
     },
     {
       "amount": 35.0,
       "day": 3,
       "from": "",
-      "label": "효미 캐네디언타이어 마스터 카드이자",
-      "card": "효미|캐네디언타이어 마스터"
+      "label": "효미 Canadian Tire Mastercard 카드이자",
+      "card": "효미|Canadian Tire Mastercard"
     },
     {
       "amount": 21.46,
       "day": 3,
-      "from": "승재 아멕스 캐쉬",
+      "from": "승재 Amex Cashback",
       "label": "넷플릭스",
-      "card": "승재|아멕스 캐쉬백"
+      "card": "승재|Amex Cashback"
     },
     {
       "amount": 80.78,
@@ -80,8 +80,8 @@
       "amount": 17.0,
       "day": 6,
       "from": "",
-      "label": "승재 비자 카드이자",
-      "card": "승재|TD 비자"
+      "label": "승재 TD Visa 카드이자",
+      "card": "승재|TD Visa"
     },
     {
       "amount": 219.33,
@@ -99,8 +99,8 @@
       "amount": 85.0,
       "day": 8,
       "from": "",
-      "label": "승재 마스터 카드이자",
-      "card": "승재|캐피탈원 마스터"
+      "label": "승재 Capital One Mastercard 카드이자",
+      "card": "승재|Capital One Mastercard"
     },
     {
       "amount": 111.24,
@@ -112,22 +112,22 @@
       "amount": 175.0,
       "day": 10,
       "from": "",
-      "label": "승재 아멕스 포인트 카드이자",
-      "card": "승재|아멕스 포인트"
+      "label": "승재 Amex Points 카드이자",
+      "card": "승재|Amex Points"
     },
     {
       "amount": 67.26,
       "day": 11,
-      "from": "효미 비자",
+      "from": "효미 TD Visa",
       "label": "인터넷",
-      "card": "효미|TD 비자"
+      "card": "효미|TD Visa"
     },
     {
       "amount": 160.0,
       "day": 12,
       "from": "",
-      "label": "효미 비자 카드이자",
-      "card": "효미|TD 비자"
+      "label": "효미 TD Visa 카드이자",
+      "card": "효미|TD Visa"
     },
     {
       "amount": 32.06,
@@ -139,22 +139,22 @@
       "amount": 75.0,
       "day": 16,
       "from": "",
-      "label": "승재 아멕스 캐쉬 카드이자",
-      "card": "승재|아멕스 캐쉬백"
+      "label": "승재 Amex Cashback 카드이자",
+      "card": "승재|Amex Cashback"
     },
     {
       "amount": 27.0,
       "day": 19,
       "from": "",
-      "label": "효미 월마트 마스터 카드이자",
-      "card": "효미|월마트 마스터"
+      "label": "효미 Walmart Mastercard 카드이자",
+      "card": "효미|Walmart Mastercard"
     },
     {
       "amount": 27.0,
       "day": 19,
       "from": "",
-      "label": "승재 코스트코 마스터 카드이자",
-      "card": "승재|코스트코 마스터"
+      "label": "승재 Costco Mastercard 카드이자",
+      "card": "승재|Costco Mastercard"
     },
     {
       "amount": 57.0,
@@ -178,8 +178,8 @@
       "amount": 95.0,
       "day": 23,
       "from": "",
-      "label": "효미 마스터 카드이자",
-      "card": "효미|캐피탈원 마스터"
+      "label": "효미 Capital One Mastercard 카드이자",
+      "card": "효미|Capital One Mastercard"
     },
     {
       "amount": 15.11,
@@ -191,30 +191,30 @@
       "amount": 120.0,
       "day": 24,
       "from": "",
-      "label": "효미 PC 마스터 카드이자",
-      "card": "효미|PC 마스터"
+      "label": "효미 PC Mastercard 카드이자",
+      "card": "효미|PC Mastercard"
     },
     {
       "amount": 58.14,
       "day": 26,
       "from": "",
-      "label": "효미 비자 Saxophone 지윤",
-      "card": "효미|TD 비자",
+      "label": "효미 TD Visa Saxophone 지윤",
+      "card": "효미|TD Visa",
       "until": "2027-06"
     },
     {
       "amount": 26.21,
       "day": 27,
-      "from": "승재 아멕스 캐쉬",
+      "from": "승재 Amex Cashback",
       "label": "유튜브",
-      "card": "승재|아멕스 캐쉬백"
+      "card": "승재|Amex Cashback"
     },
     {
       "amount": 27.09,
       "day": 29,
       "from": "",
-      "label": "효미 비자 Flute 지윤",
-      "card": "효미|TD 비자",
+      "label": "효미 TD Visa Flute 지윤",
+      "card": "효미|TD Visa",
       "until": "2027-06"
     },
     {
@@ -249,14 +249,14 @@
       "date": "2026-10-01",
       "items": "계란 특대 3팩·바나나·로프케이크",
       "merchant": "Costco Halifax",
-      "pay": "효미 캐네디언타이어 마스터"
+      "pay": "효미 Canadian Tire Mastercard"
     },
     {
       "amount": 3.5,
       "date": "2026-10-01",
       "items": "아이스 모카 라떼 라지",
       "merchant": "팀홀튼",
-      "pay": "승재 캐네디언타이어 마스터"
+      "pay": "승재 Canadian Tire Mastercard"
     }
   ],
   "income": [
@@ -278,7 +278,7 @@
   "cards": [
     {
       "holder": "효미",
-      "name": "캐네디언타이어 마스터",
+      "name": "Canadian Tire Mastercard",
       "limit": 3000,
       "used": 2600,
       "payment": 60,
@@ -286,7 +286,7 @@
     },
     {
       "holder": "승재",
-      "name": "캐네디언타이어 마스터",
+      "name": "Canadian Tire Mastercard",
       "limit": 1000,
       "used": 995,
       "payment": 40,
@@ -294,7 +294,7 @@
     },
     {
       "holder": "효미",
-      "name": "월마트 마스터",
+      "name": "Walmart Mastercard",
       "limit": 1500,
       "used": 1500,
       "payment": 100,
@@ -302,7 +302,7 @@
     },
     {
       "holder": "승재",
-      "name": "코스트코 마스터",
+      "name": "Costco Mastercard",
       "limit": 1500,
       "used": 1450,
       "payment": 100,
@@ -310,7 +310,7 @@
     },
     {
       "holder": "승재",
-      "name": "TD 비자",
+      "name": "TD Visa",
       "limit": 1500,
       "used": 1450,
       "payment": 100,
@@ -318,7 +318,7 @@
     },
     {
       "holder": "승재",
-      "name": "아멕스 포인트",
+      "name": "Amex Points",
       "limit": 8800,
       "used": 8750,
       "payment": 200,
@@ -326,7 +326,7 @@
     },
     {
       "holder": "승재",
-      "name": "아멕스 캐쉬백",
+      "name": "Amex Cashback",
       "limit": 3400,
       "used": 3350,
       "payment": 160,
@@ -334,7 +334,7 @@
     },
     {
       "holder": "승재",
-      "name": "캐피탈원 마스터",
+      "name": "Capital One Mastercard",
       "limit": 4250,
       "used": 4250,
       "payment": 160,
@@ -342,7 +342,7 @@
     },
     {
       "holder": "효미",
-      "name": "캐피탈원 마스터",
+      "name": "Capital One Mastercard",
       "limit": 5000,
       "used": 5000,
       "payment": 160,
@@ -350,7 +350,7 @@
     },
     {
       "holder": "효미",
-      "name": "PC 마스터",
+      "name": "PC Mastercard",
       "limit": 5000,
       "used": 5000,
       "payment": 160,
@@ -358,7 +358,7 @@
     },
     {
       "holder": "효미",
-      "name": "TD 비자",
+      "name": "TD Visa",
       "limit": 9000,
       "used": 8950,
       "payment": 300,
