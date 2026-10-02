@@ -219,8 +219,9 @@
       "amount": 58.14,
       "day": 26,
       "from": "",
-      "label": "효미 비자 섹스폰 지윤",
-      "card": "효미|TD 비자"
+      "label": "효미 비자 Saxophone 지윤",
+      "card": "효미|TD 비자",
+      "until": "2027-06"
     },
     {
       "amount": 26.21,
@@ -240,8 +241,9 @@
       "amount": 27.09,
       "day": 29,
       "from": "",
-      "label": "효미 비자 플릇(지윤)",
-      "card": "효미|TD 비자"
+      "label": "효미 비자 Flute 지윤",
+      "card": "효미|TD 비자",
+      "until": "2027-06"
     },
     {
       "amount": 3.95,

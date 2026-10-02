@@ -261,11 +261,12 @@ async function load() {
 
   const fRow = (x, dayBadge, sub) => {
     const r = fAmt(x);
+    const untilBadge = x.until ? `<span class="text-[10px] text-violet-300 bg-violet-900/50 rounded px-1.5 py-0.5 ml-1">~${x.until.slice(2).replace('-','.')} 할부</span>` : '';
     return `
     <li class="px-4 py-2.5 flex items-center gap-3">
       <span class="w-9 shrink-0 text-center text-xs font-bold bg-slate-700 rounded-lg py-1">${dayBadge}</span>
       <div class="flex-1 min-w-0">
-        <p class="text-sm truncate">${x.label}</p>
+        <p class="text-sm truncate">${x.label}${untilBadge}</p>
         <p class="text-[11px] text-slate-400">${sub} ${r.actual
           ? '<span class="text-[10px] font-bold text-emerald-400 bg-emerald-900/50 rounded px-1.5 py-0.5 ml-1">확정</span>'
           : '<span class="text-[10px] text-slate-500 ml-1">~예정</span>'}</p>
