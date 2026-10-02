@@ -244,34 +244,52 @@ async function load() {
   }
   document.getElementById('updated').textContent = '업데이트: ' + (d.meta?.updated || '');
 
-  // --- 고정 지출 ---
+  // --- 고정 지출 (금액 직접 입력 가능, localStorage) ---
+  const LS_FIXED_ACTUALS = 'household_fixed_actuals';
+  const getFixedActuals = () => { try { return JSON.parse(localStorage.getItem(LS_FIXED_ACTUALS) || '{}'); } catch (e) { return {}; } };
+  const fixedActuals = getFixedActuals();
+  const fKey = x => x.freq === 'biweekly' ? 'b|' + x.label : 'm|' + x.day + '|' + x.label;
+  const fAmt = x => { const k = fKey(x); const a = fixedActuals[k]; return (a != null && !isNaN(a)) ? { amt: a, actual: true } : { amt: x.amount, actual: false }; };
   const monthly = d.fixed.filter(x => !x.freq).sort((a, b) => a.day - b.day);
   const biweekly = d.fixed.filter(x => x.freq === 'biweekly');
-  const monthlySum = monthly.reduce((s, x) => s + x.amount, 0);
-  const biweeklyMonthly = biweekly.reduce((s, x) => s + x.amount * 2, 0); // 월 2회 가정
-  const fixedTotal = monthlySum + biweeklyMonthly;
+  let fixedTotal = 0, fixedHasEst = false;
+  monthly.forEach(x => { const r = fAmt(x); if (!r.actual) fixedHasEst = true; fixedTotal += r.amt; });
+  biweekly.forEach(x => { const r = fAmt(x); if (!r.actual) fixedHasEst = true; fixedTotal += r.amt * 2; }); // 월 2회 가정
 
-  document.getElementById('fixed-total').textContent = fmt(fixedTotal);
+  document.getElementById('fixed-total').textContent = (fixedHasEst ? '~' : '') + fmt(fixedTotal);
   document.getElementById('fixed-count').textContent = monthly.length + biweekly.length + '건';
 
-  const list = document.getElementById('fixed-list');
-  list.innerHTML = monthly.map(x => `
+  const fRow = (x, dayBadge, sub) => {
+    const r = fAmt(x);
+    return `
     <li class="px-4 py-2.5 flex items-center gap-3">
-      <span class="w-9 shrink-0 text-center text-xs font-bold bg-slate-700 rounded-lg py-1">${x.day}일</span>
+      <span class="w-9 shrink-0 text-center text-xs font-bold bg-slate-700 rounded-lg py-1">${dayBadge}</span>
       <div class="flex-1 min-w-0">
         <p class="text-sm truncate">${x.label}</p>
-        ${x.from ? `<p class="text-[11px] text-slate-400">${x.from}</p>` : ''}
+        <p class="text-[11px] text-slate-400">${sub} ${r.actual
+          ? '<span class="text-[10px] font-bold text-emerald-400 bg-emerald-900/50 rounded px-1.5 py-0.5 ml-1">확정</span>'
+          : '<span class="text-[10px] text-slate-500 ml-1">~예정</span>'}</p>
       </div>
-      <span class="text-sm font-bold text-red-300 whitespace-nowrap">${fmt(x.amount)}</span>
-    </li>`).join('') + biweekly.map(x => `
-    <li class="px-4 py-2.5 flex items-center gap-3 bg-violet-950/30">
-      <span class="w-9 shrink-0 text-center text-[10px] font-bold bg-violet-700 rounded-lg py-1">격주</span>
-      <div class="flex-1 min-w-0">
-        <p class="text-sm truncate">${x.label}</p>
-        <p class="text-[11px] text-slate-400">${x.from}${x.next ? ' · 다음 ' + x.next : ''}</p>
-      </div>
-      <span class="text-sm font-bold text-red-300 whitespace-nowrap">${fmt(x.amount)}</span>
-    </li>`).join('');
+      <span class="text-sm font-bold ${r.actual ? 'text-red-300' : 'text-slate-400'} whitespace-nowrap">${fmt(r.amt)}</span>
+      <button data-fkey="${fKey(x)}" data-flabel="${x.label}" data-famt="${r.actual ? r.amt : ''}" class="fixed-edit shrink-0 text-[11px] font-bold text-sky-300 bg-sky-900/50 rounded-lg px-2.5 py-1.5">${r.actual ? '수정' : '입력'}</button>
+    </li>`;
+  };
+  const list = document.getElementById('fixed-list');
+  list.innerHTML = monthly.map(x => fRow(x, x.day + '일', x.from || '')).join('')
+    + biweekly.map(x => fRow(x, '격주', (x.from || '') + (x.next ? ' · 다음 ' + x.next : ''))).join('');
+  document.querySelectorAll('.fixed-edit').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = prompt(btn.dataset.flabel + ' 실제 금액을 입력하세요 (CAD)', btn.dataset.famt);
+      if (v == null) return;
+      if (v.trim() === '') { const a3 = getFixedActuals(); delete a3[btn.dataset.fkey]; localStorage.setItem(LS_FIXED_ACTUALS, JSON.stringify(a3)); load(); return; }
+      const n = parseFloat(v.replace(/,/g, ''));
+      if (isNaN(n) || n < 0) { alert('올바른 금액을 입력하세요'); return; }
+      const a3 = getFixedActuals();
+      a3[btn.dataset.fkey] = Math.round(n * 100) / 100;
+      localStorage.setItem(LS_FIXED_ACTUALS, JSON.stringify(a3));
+      load();
+    });
+  });
 
   // --- 변동 지출 (영수증): 월별 → 일별 그룹 ---
   const receipts = d.receipts || [];
