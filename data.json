@@ -385,7 +385,7 @@
   ],
   "vehicle": {
     "info": {
-      "model": "2024 Mitsubishi Outlander PHEV",
+      "model": "2024 Mitsubishi Outlander PHEV Noir",
       "color": "흰색",
       "purchased": "2025-04",
       "dealer": "Steele Mitsubishi Halifax",
@@ -394,7 +394,8 @@
       "vin": "JA4J4WA8XRZ632510",
       "registered": "2025-05-29",
       "odo_at_purchase": 17705,
-      "purchase_price": 48193.85
+      "purchase_price": 48193.85,
+      "insurance_expiry": "2027-01-07"
     },
     "schedule": [
       {

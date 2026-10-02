@@ -563,7 +563,7 @@ function renderVehicle(d) {
     }).join('') : '<p class="text-[11px] text-slate-500">정비 스케줄 없음</p>');
 
   // --- 차량 정보 (주행거리·보험·등록) ---
-  const ins = vGet('vehicle_ins', ''), reg = vGet('vehicle_reg', '') || ((v.info && v.info.plate_expiry) || '');
+  const ins = vGet('vehicle_ins', '') || ((v.info && v.info.insurance_expiry) || ''), reg = vGet('vehicle_reg', '') || ((v.info && v.info.plate_expiry) || '');
   document.getElementById('vehicle-info').innerHTML =
     '<p class="text-xs font-bold text-slate-300 mb-1.5">📋 차량 정보</p>' +
     '<div class="bg-slate-800 rounded-2xl p-3.5 border border-slate-700 grid grid-cols-3 gap-2 text-center">' +
