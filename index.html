@@ -85,6 +85,20 @@
     <div id="loan-list" class="space-y-2"></div>
   </section>
 
+  <!-- 섹션: 차량 운행 일지 -->
+  <section class="mb-7" id="vehicle-section" style="display:none">
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="text-base font-bold">🛞 차량 운행 일지</h2>
+      <span id="vehicle-model" class="text-[11px] text-slate-400"></span>
+    </div>
+    <div id="vehicle-next" class="space-y-2 mb-3"></div>
+    <div id="vehicle-info" class="mb-3"></div>
+    <div id="vehicle-trips" class="mb-3"></div>
+    <div id="vehicle-maint" class="mb-3"></div>
+    <div id="vehicle-fuel" class="mb-3"></div>
+    <div id="vehicle-schedule"></div>
+  </section>
+
   <!-- 섹션: 수입 -->
   <section class="mb-7">
     <div class="flex items-baseline justify-between mb-2">
@@ -494,7 +508,166 @@ async function load() {
       </div>
     </div>`;
   }).join('');
+
+  renderVehicle(d);
 }
+
+// --- 차량 운행 일지 ---
+function renderVehicle(d) {
+  const v = (d && d.vehicle) || null;
+  const sec = document.getElementById('vehicle-section');
+  if (!v) { sec.style.display = 'none'; return; }
+  sec.style.display = '';
+
+  const vParse = s => { const p = (s || '').split('-').map(Number); return new Date(p[0], p[1] - 1, p[2] || 1, 12); };
+  const vFmtD = dt => dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+  const vToday = vFmtD(new Date());
+  const vAddM = (s, m) => { const dt = vParse(s); dt.setMonth(dt.getMonth() + m); return vFmtD(dt); };
+  const vGet = (k, fb) => { try { const x = JSON.parse(localStorage.getItem(k)); return x != null ? x : fb; } catch (e) { return fb; } };
+  const vSet = (k, x) => localStorage.setItem(k, JSON.stringify(x));
+  const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+  document.getElementById('vehicle-model').textContent = (v.info.model || '') + ' · ' + (v.info.color || '');
+
+  const localTrips = vGet('vehicle_trips', []);
+  const localMaint = vGet('vehicle_maint', []);
+  const localFuel = vGet('vehicle_fuel', []);
+  const allMaint = [...(v.maintenance || []), ...localMaint].sort((a, b) => a.date < b.date ? 1 : -1);
+  const allTrips = [...(v.trips || []), ...localTrips].sort((a, b) => a.date < b.date ? 1 : -1);
+  const allFuel = [...(v.fuel || []), ...localFuel].sort((a, b) => a.date < b.date ? 1 : -1);
+  const odo = vGet('vehicle_odo', null);
+  const purchase = ((v.info && v.info.purchased) || '2025-04') + '-01';
+
+  // --- 다음 정비 예정 ---
+  const upcoming = (v.schedule || []).map(s => {
+    const key = s.item.split('·')[0];
+    const recs = allMaint.filter(r => (r.item || '').includes(key));
+    const last = recs[0];
+    const base = last ? last.date : purchase;
+    const dueDate = s.months ? vAddM(base, s.months) : null;
+    const dueKm = (s.km && last && last.odo) ? last.odo + s.km : null;
+    return { item: s.item, dueDate, dueKm, last: last ? last.date : null, note: s.note || '' };
+  }).filter(x => x.dueDate).sort((a, b) => a.dueDate < b.dueDate ? -1 : 1).slice(0, 3);
+  document.getElementById('vehicle-next').innerHTML =
+    '<p class="text-xs font-bold text-slate-300 mb-1.5">🔧 다음 정비 예정</p>' +
+    (upcoming.length ? upcoming.map(u => {
+      const dd = Math.round((vParse(u.dueDate) - vParse(vToday)) / 86400000);
+      const badge = dd < 0 ? '<span class="text-red-300 font-bold">기한 지남</span>'
+        : dd <= 30 ? '<span class="text-amber-300 font-bold">D-' + dd + '</span>'
+        : '<span class="text-slate-400">D-' + dd + '</span>';
+      return '<div class="flex items-center justify-between text-[12px] bg-slate-800 rounded-xl px-3 py-2 border border-slate-700">' +
+        '<span class="text-slate-300">' + esc(u.item) + (u.note ? ' <span class="text-slate-500 text-[10px]">(' + esc(u.note) + ')</span>' : '') + '</span>' +
+        '<span class="whitespace-nowrap ml-2">' + badge + ' <span class="text-slate-500 text-[10px]">' + u.dueDate.slice(0, 7) + (u.dueKm ? ' · ' + u.dueKm.toLocaleString() + 'km' : '') + '</span></span></div>';
+    }).join('') : '<p class="text-[11px] text-slate-500">정비 스케줄 없음</p>');
+
+  // --- 차량 정보 (주행거리·보험·등록) ---
+  const ins = vGet('vehicle_ins', ''), reg = vGet('vehicle_reg', '');
+  document.getElementById('vehicle-info').innerHTML =
+    '<p class="text-xs font-bold text-slate-300 mb-1.5">📋 차량 정보</p>' +
+    '<div class="bg-slate-800 rounded-2xl p-3.5 border border-slate-700 grid grid-cols-3 gap-2 text-center">' +
+    '<div><p class="text-[10px] text-slate-500 mb-1">현재 주행거리</p>' +
+    '<input id="v-odo" type="number" value="' + (odo == null ? '' : odo) + '" placeholder="km" class="w-full bg-slate-900 rounded-lg px-2 py-1.5 text-sm text-center text-slate-100"></div>' +
+    '<div><p class="text-[10px] text-slate-500 mb-1">보험 만기일</p>' +
+    '<input id="v-ins" type="date" value="' + esc(ins) + '" class="w-full bg-slate-900 rounded-lg px-1 py-1.5 text-[11px] text-center text-slate-100"></div>' +
+    '<div><p class="text-[10px] text-slate-500 mb-1">차량 등록 갱신</p>' +
+    '<input id="v-reg" type="date" value="' + esc(reg) + '" class="w-full bg-slate-900 rounded-lg px-1 py-1.5 text-[11px] text-center text-slate-100"></div>' +
+    '</div>';
+  document.getElementById('v-odo').addEventListener('change', e => { vSet('vehicle_odo', e.target.value === '' ? null : Number(e.target.value)); renderVehicle(d); });
+  document.getElementById('v-ins').addEventListener('change', e => { vSet('vehicle_ins', e.target.value); });
+  document.getElementById('v-reg').addEventListener('change', e => { vSet('vehicle_reg', e.target.value); });
+
+  // --- 운행 기록 ---
+  const tripRows = allTrips.slice(0, 10).map(t =>
+    '<div class="flex items-center justify-between text-[11px] py-1 border-b border-slate-700/40">' +
+    '<span class="text-slate-400">' + t.date.slice(5) + ' ' + esc(t.from || '') + ' → ' + esc(t.to || '') + (t.purpose ? ' <span class="text-slate-600">(' + esc(t.purpose) + ')</span>' : '') + '</span>' +
+    '<span class="text-slate-200 font-bold whitespace-nowrap ml-2">' + Number(t.km).toLocaleString() + ' km</span></div>').join('');
+  document.getElementById('vehicle-trips').innerHTML =
+    '<p class="text-xs font-bold text-slate-300 mb-1.5">🛣️ 운행 기록</p>' +
+    '<div class="bg-slate-800 rounded-2xl px-3.5 py-2 border border-slate-700 mb-2">' + (tripRows || '<p class="text-[11px] text-slate-500 py-1">기록 없음 — 아래에 추가하거나 채팅으로 보내줘</p>') + '</div>' +
+    '<div class="flex gap-1.5">' +
+    '<input id="vt-date" type="date" value="' + vToday + '" class="w-[7.5rem] bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vt-from" placeholder="출발" class="flex-1 min-w-0 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vt-to" placeholder="도착" class="flex-1 min-w-0 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vt-km" type="number" placeholder="km" class="w-16 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<button id="vt-add" class="shrink-0 text-[11px] font-bold text-sky-300 bg-sky-900/50 rounded-lg px-3 py-1.5">추가</button></div>';
+  document.getElementById('vt-add').addEventListener('click', () => {
+    const km = Number(document.getElementById('vt-km').value);
+    if (!km) return;
+    const arr = vGet('vehicle_trips', []);
+    arr.push({ date: document.getElementById('vt-date').value || vToday, from: document.getElementById('vt-from').value, to: document.getElementById('vt-to').value, km });
+    vSet('vehicle_trips', arr); renderVehicle(d);
+  });
+
+  // --- 정비 기록 ---
+  const maintRows = allMaint.slice(0, 10).map(m =>
+    '<div class="flex items-center justify-between text-[11px] py-1 border-b border-slate-700/40">' +
+    '<span class="text-slate-400">' + m.date.slice(5) + ' ' + esc(m.item) + (m.shop ? ' <span class="text-slate-600">@' + esc(m.shop) + '</span>' : '') + (m.odo ? ' <span class="text-slate-600">' + Number(m.odo).toLocaleString() + 'km</span>' : '') + '</span>' +
+    '<span class="text-amber-300 font-bold whitespace-nowrap ml-2">' + (m.cost != null ? '$' + Number(m.cost).toLocaleString('en-CA', { minimumFractionDigits: 2 }) : '-') + '</span></div>').join('');
+  document.getElementById('vehicle-maint').innerHTML =
+    '<p class="text-xs font-bold text-slate-300 mb-1.5">🔧 정비 기록</p>' +
+    '<div class="bg-slate-800 rounded-2xl px-3.5 py-2 border border-slate-700 mb-2">' + (maintRows || '<p class="text-[11px] text-slate-500 py-1">기록 없음</p>') + '</div>' +
+    '<div class="flex gap-1.5">' +
+    '<input id="vm-date" type="date" value="' + vToday + '" class="w-[7.5rem] bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vm-item" placeholder="정비 항목" class="flex-1 min-w-0 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vm-cost" type="number" step="0.01" placeholder="$" class="w-16 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vm-odo" type="number" placeholder="km" class="w-20 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<button id="vm-add" class="shrink-0 text-[11px] font-bold text-sky-300 bg-sky-900/50 rounded-lg px-3 py-1.5">추가</button></div>';
+  document.getElementById('vm-add').addEventListener('click', () => {
+    const item = document.getElementById('vm-item').value.trim();
+    if (!item) return;
+    const arr = vGet('vehicle_maint', []);
+    arr.push({ date: document.getElementById('vm-date').value || vToday, item, cost: Number(document.getElementById('vm-cost').value) || 0, odo: Number(document.getElementById('vm-odo').value) || null });
+    vSet('vehicle_maint', arr); renderVehicle(d);
+  });
+
+  // --- 주유·충전 기록 + 연비/전비 ---
+  let effHtml = '';
+  const fuels = allFuel.filter(f => f.odo && f.amount).sort((a, b) => a.odo - b.odo);
+  const gasRuns = fuels.filter(f => f.type !== 'charge');
+  if (gasRuns.length >= 2) {
+    const a = gasRuns[gasRuns.length - 2], b = gasRuns[gasRuns.length - 1];
+    if (b.odo > a.odo && b.amount > 0) effHtml += '<span class="text-emerald-300">최근 연비 ' + ((b.odo - a.odo) / b.amount).toFixed(1) + ' km/L</span>';
+  }
+  const chgRuns = fuels.filter(f => f.type === 'charge');
+  if (chgRuns.length >= 2) {
+    const a = chgRuns[chgRuns.length - 2], b = chgRuns[chgRuns.length - 1];
+    if (b.odo > a.odo && b.amount > 0) effHtml += (effHtml ? ' · ' : '') + '<span class="text-sky-300">최근 전비 ' + (b.amount / (b.odo - a.odo) * 100).toFixed(1) + ' kWh/100km</span>';
+  }
+  const fuelRows = allFuel.slice(0, 10).map(f =>
+    '<div class="flex items-center justify-between text-[11px] py-1 border-b border-slate-700/40">' +
+    '<span class="text-slate-400">' + f.date.slice(5) + ' ' + (f.type === 'charge' ? '⚡ 충전' : '⛽ 주유') + ' ' + f.amount + (f.type === 'charge' ? ' kWh' : ' L') + (f.odo ? ' <span class="text-slate-600">' + Number(f.odo).toLocaleString() + 'km</span>' : '') + '</span>' +
+    '<span class="text-amber-300 font-bold whitespace-nowrap ml-2">$' + Number(f.cost || 0).toLocaleString('en-CA', { minimumFractionDigits: 2 }) + '</span></div>').join('');
+  document.getElementById('vehicle-fuel').innerHTML =
+    '<div class="flex items-baseline justify-between mb-1.5"><p class="text-xs font-bold text-slate-300">⛽ 주유·충전 기록</p>' +
+    (effHtml ? '<p class="text-[10px]">' + effHtml + '</p>' : '') + '</div>' +
+    '<div class="bg-slate-800 rounded-2xl px-3.5 py-2 border border-slate-700 mb-2">' + (fuelRows || '<p class="text-[11px] text-slate-500 py-1">기록 없음</p>') + '</div>' +
+    '<div class="flex gap-1.5">' +
+    '<input id="vf-date" type="date" value="' + vToday + '" class="w-[7.5rem] bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<select id="vf-type" class="bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100"><option value="fuel">주유</option><option value="charge">충전</option></select>' +
+    '<input id="vf-amt" type="number" step="0.01" placeholder="L/kWh" class="w-20 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vf-cost" type="number" step="0.01" placeholder="$" class="w-16 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<input id="vf-odo" type="number" placeholder="km" class="w-20 bg-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-100">' +
+    '<button id="vf-add" class="shrink-0 text-[11px] font-bold text-sky-300 bg-sky-900/50 rounded-lg px-3 py-1.5">추가</button></div>';
+  document.getElementById('vf-add').addEventListener('click', () => {
+    const amt = Number(document.getElementById('vf-amt').value);
+    if (!amt) return;
+    const arr = vGet('vehicle_fuel', []);
+    arr.push({ date: document.getElementById('vf-date').value || vToday, type: document.getElementById('vf-type').value, amount: amt, cost: Number(document.getElementById('vf-cost').value) || 0, odo: Number(document.getElementById('vf-odo').value) || null });
+    vSet('vehicle_fuel', arr); renderVehicle(d);
+  });
+
+  // --- 추천 정비 스케줄 표 ---
+  document.getElementById('vehicle-schedule').innerHTML =
+    '<p class="text-xs font-bold text-slate-300 mb-1.5">📅 추천 정비 스케줄 <span class="text-[10px] font-normal text-slate-500">(Mitsubishi 공식 기준)</span></p>' +
+    '<div class="bg-slate-800 rounded-2xl px-3.5 py-2 border border-slate-700">' +
+    (v.schedule || []).map(s =>
+      '<div class="flex items-center justify-between text-[11px] py-1 border-b border-slate-700/40">' +
+      '<span class="text-slate-300">' + esc(s.item) + (s.note ? ' <span class="text-slate-600 text-[10px]">(' + esc(s.note) + ')</span>' : '') + '</span>' +
+      '<span class="text-slate-500 whitespace-nowrap ml-2 text-[10px]">' + [s.km ? '매 ' + s.km.toLocaleString() + 'km' : '', s.months ? '매 ' + (s.months >= 12 ? (s.months / 12) + '년' : s.months + '개월') : ''].filter(Boolean).join(' / ') + '</span></div>'
+    ).join('') + '</div>' +
+    '<p class="text-[10px] text-slate-600 mt-1.5">❄️ 윈터타이어 교체 적기: 10~11월 (NS는 12월 전 장착 권장)</p>';
+}
+
 
 // --- 비밀번호 게이트 (SHA-256 해시 비교, 세션 유지) ---
 const PW_HASH = '1eea1bc249e5cc50f45a1f73c66056448fc6a0e1a850de297bb9f4cd23b5f15e';
