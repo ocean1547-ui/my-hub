@@ -127,7 +127,7 @@
       </div>
       <ul id="accounts-list" class="divide-y divide-slate-700/60"></ul>
     </div>
-    <p class="text-[11px] text-slate-500 px-1">잔액을 입력하면 이 기기에만 저장됩니다.</p>
+    <p class="text-[11px] text-slate-500 px-1">잔액을 입력하면 이 기기에만 저장됩니다. 잔액은 오늘 기준이라고 가정하고 이달 예정 지출을 차감한 예상 금액을 보여줍니다.</p>
   </section>
 
   <!-- 섹션: 고정 지출 -->
@@ -272,16 +272,27 @@ function renderAccounts(d) {
   const getBals = () => { try { return JSON.parse(localStorage.getItem(LS_ACC) || '{}'); } catch (e) { return {}; } };
   const accs = (d && d.accounts) || [];
   const bals = getBals();
+  // 계좌별 이달 예정 고정 지출 (격주는 월 2회 가정)
+  const sched = {};
+  ((d && d.fixed) || []).forEach(x => {
+    if (!x.from) return;
+    const mult = x.freq === 'biweekly' ? 2 : 1;
+    sched[x.from] = sched[x.from] || { sum: 0, n: 0 };
+    sched[x.from].sum += x.amount * mult;
+    sched[x.from].n += 1;
+  });
   let sum = 0, hasAny = false;
   const rows = accs.map(a => {
     const b = bals[a.label];
     const has = b != null && !isNaN(b);
     if (has) { sum += b; hasAny = true; }
+    const s = sched[a.label];
+    const schedLine = s ? `<p class="text-[11px] text-amber-300/80">이달 나갈 예정 −${fmt(s.sum)} (${s.n}건)${has ? ' → 남을 금액 ' + fmt(b - s.sum) : ''}</p>` : '';
     return `
     <li class="px-4 py-2.5 flex items-center gap-3">
       <div class="flex-1 min-w-0">
         <p class="text-sm truncate">${a.label}</p>
-        ${a.note ? `<p class="text-[11px] text-slate-500 truncate">${a.note}</p>` : ''}
+        ${schedLine}
       </div>
       <span class="text-sm font-bold ${has ? 'text-sky-300' : 'text-slate-500'} whitespace-nowrap">${has ? fmt(b) : '-'}</span>
       <button data-acc="${a.label}" data-amt="${has ? b : ''}" class="acc-edit shrink-0 text-[11px] font-bold text-sky-300 bg-sky-900/50 rounded-lg px-2.5 py-1.5">${has ? '수정' : '입력'}</button>
