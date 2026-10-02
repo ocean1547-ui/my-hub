@@ -115,6 +115,21 @@
     <p class="text-[11px] text-slate-500 px-1">입금될 때마다 실제 금액을 입력하세요. 입력한 금액은 이 기기에만 저장됩니다.</p>
   </section>
 
+  <!-- 섹션: 계좌 잔액 -->
+  <section class="mb-7">
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="text-base font-bold">🏦 계좌 잔액</h2>
+    </div>
+    <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden">
+      <div class="px-4 py-3 bg-slate-900/60 flex items-baseline justify-between">
+        <span class="text-sm text-slate-300">합계</span>
+        <span id="accounts-total" class="text-2xl font-extrabold text-sky-300">-</span>
+      </div>
+      <ul id="accounts-list" class="divide-y divide-slate-700/60"></ul>
+    </div>
+    <p class="text-[11px] text-slate-500 px-1">잔액을 입력하면 이 기기에만 저장됩니다.</p>
+  </section>
+
   <!-- 섹션: 고정 지출 -->
   <section class="mb-7">
     <div class="flex items-baseline justify-between mb-2">
@@ -252,6 +267,47 @@ function renderIncome(d) {
   return { incomeMonthlyEst: hasRows ? sum : 0, incomeHasEst: hasEst };
 }
 
+function renderAccounts(d) {
+  const LS_ACC = 'household_account_balances';
+  const getBals = () => { try { return JSON.parse(localStorage.getItem(LS_ACC) || '{}'); } catch (e) { return {}; } };
+  const accs = (d && d.accounts) || [];
+  const bals = getBals();
+  let sum = 0, hasAny = false;
+  const rows = accs.map(a => {
+    const b = bals[a.label];
+    const has = b != null && !isNaN(b);
+    if (has) { sum += b; hasAny = true; }
+    return `
+    <li class="px-4 py-2.5 flex items-center gap-3">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm truncate">${a.label}</p>
+        ${a.note ? `<p class="text-[11px] text-slate-500 truncate">${a.note}</p>` : ''}
+      </div>
+      <span class="text-sm font-bold ${has ? 'text-sky-300' : 'text-slate-500'} whitespace-nowrap">${has ? fmt(b) : '-'}</span>
+      <button data-acc="${a.label}" data-amt="${has ? b : ''}" class="acc-edit shrink-0 text-[11px] font-bold text-sky-300 bg-sky-900/50 rounded-lg px-2.5 py-1.5">${has ? '수정' : '입력'}</button>
+    </li>`;
+  }).join('');
+  document.getElementById('accounts-list').innerHTML = rows || '<li class="px-4 py-4 text-sm text-slate-500 text-center">등록된 계좌가 없어요</li>';
+  document.getElementById('accounts-total').textContent = hasAny ? fmt(sum) : '-';
+
+  document.querySelectorAll('.acc-edit').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const label = btn.dataset.acc;
+      const v = prompt(label + ' 잔액을 입력하세요 (CAD)', btn.dataset.amt);
+      if (v == null) return;
+      const n = parseFloat(v.replace(/,/g, ''));
+      const b2 = getBals();
+      if (v.trim() === '') { delete b2[label]; }
+      else {
+        if (isNaN(n)) { alert('올바른 금액을 입력하세요'); return; }
+        b2[label] = Math.round(n * 100) / 100;
+      }
+      localStorage.setItem(LS_ACC, JSON.stringify(b2));
+      renderAccounts(d);
+    });
+  });
+}
+
 async function load() {
   let d = null;
   try {
@@ -259,6 +315,7 @@ async function load() {
   } catch (e) { console.error('data.json load failed', e); }
   // 수입은 localStorage 기반이라 fetch 실패해도 렌더링
   const { incomeMonthlyEst, incomeHasEst } = renderIncome(d);
+  renderAccounts(d);
   if (!d) {
     document.body.insertAdjacentHTML('afterbegin',
       '<div class="max-w-md mx-auto p-6 text-center text-sm text-red-300">data.json을 불러오지 못했어요 (수입은 로컬 데이터로 표시됩니다)</div>');
