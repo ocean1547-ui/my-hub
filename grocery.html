@@ -353,10 +353,14 @@ function render() {
     }) : null;
     const detail = (isOpen && sorted) ? `
       <div class="mt-2 pt-2 border-t border-slate-700/60 space-y-2">
-        ${sorted.map(it => `
-        <div class="flex items-center gap-2 ${it.remaining <= 0 ? 'opacity-40' : ''}">
+        ${sorted.map(it => {
+          const gone = (it.remaining || 0) <= 0;
+          return `
+        <div class="flex items-center gap-2 ${gone ? 'opacity-40' : ''}">
           <div class="flex-1 min-w-0">
-            <p class="text-[13px] font-bold truncate">${it.name}${expBadge(it.exp)}</p>
+            <p class="text-[13px] font-bold truncate ${gone ? 'line-through text-slate-500' : ''}">${it.name}${gone
+              ? '<span class="text-[10px] font-bold text-slate-400 bg-slate-700 rounded px-1.5 py-0.5 ml-1 no-underline">소진</span>'
+              : expBadge(it.exp)}</p>
             <p class="text-[10px] text-slate-500">${[it.cal ? it.cal + 'kcal' : '', it.exp ? '유통기한 ' + it.exp.slice(5).replace('-', '/') : '', it.price ? fmt(it.price) : ''].filter(Boolean).join(' · ')}</p>
           </div>
           <div class="flex items-center gap-1 shrink-0">
@@ -364,7 +368,8 @@ function render() {
             <span class="w-10 text-center text-sm font-bold">${it.remaining}<span class="text-[10px] text-slate-500 font-normal">/${it.qty}</span></span>
             <button data-hinc="${hid}:${it.i2}" class="w-7 h-7 rounded-lg bg-slate-700 text-base font-bold leading-none">+</button>
           </div>
-        </div>`).join('')}
+        </div>`;
+        }).join('')}
       </div>` : '';
     const itemsLine = itemsArr ? itemsArr.map(it => it.name + (it.qty > 1 ? '×' + it.qty : '')).join(', ') : h.items;
     return `
