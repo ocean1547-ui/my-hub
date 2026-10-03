@@ -241,7 +241,7 @@
   "meta": {
     "currency": "CAD",
     "title": "우리집 가계부",
-    "updated": "2026-10-01"
+    "updated": "2026-10-03"
   },
   "receipts": [
     {
@@ -257,6 +257,13 @@
       "items": "아이스 모카 라떼 라지",
       "merchant": "팀홀튼",
       "pay": "승재 Canadian Tire Mastercard"
+    },
+    {
+      "amount": 32.0,
+      "date": "2026-10-03",
+      "items": "고기값",
+      "merchant": "김창현",
+      "pay": "승재 체크카드"
     }
   ],
   "income": [
