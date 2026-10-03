@@ -167,12 +167,8 @@
   <section>
     <div class="flex items-baseline justify-between mb-2">
       <h2 class="text-base font-bold">🧾 변동 지출 (영수증)</h2>
-      <div class="flex items-center gap-2">
-        <span id="var-total" class="text-xs text-slate-400"></span>
-        <button id="voice-receipt-btn" class="text-lg leading-none" title="음성으로 입력">🎤</button>
-      </div>
+      <span id="var-total" class="text-xs text-slate-400"></span>
     </div>
-    <p id="voice-receipt-status" class="text-[11px] text-emerald-300/90 mb-2 px-1"></p>
     <ul id="receipt-list" class="space-y-2"></ul>
   </section>
 
@@ -186,36 +182,8 @@ const fmt = n => '$' + n.toLocaleString('en-CA', {minimumFractionDigits: 2, maxi
 
 // --- 음성 영수증 (localStorage, data.json 영수증과 합산 표시) ---
 const LS_VOICE_RECEIPTS = 'household_receipts_voice';
-const vuid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 function getVoiceReceipts() { try { return JSON.parse(localStorage.getItem(LS_VOICE_RECEIPTS) || '[]'); } catch (e) { return []; } }
 function setVoiceReceipts(a) { localStorage.setItem(LS_VOICE_RECEIPTS, JSON.stringify(a)); }
-const todayStr = () => { const t = new Date(); return t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0'); };
-
-// --- 음성 입력 파서 ("코스트코 31.65" → 가게·금액) ---
-const KO_NUM = {한:1, 하나:1, 두:2, 둘:2, 세:3, 셋:3, 네:4, 넷:4, 다섯:5, 여섯:6, 일곱:7, 여덟:8, 아홉:9, 열:10, 열한:11, 열하나:11, 열두:12, 열둘:12, 스무:20};
-function parseVoiceChunk(s) {
-  s = (s || '').trim();
-  if (!s) return null;
-  let qty = 1, price = null, m;
-  m = s.match(/(스무|열두|열둘|열한|열하나|열|다섯|여섯|일곱|여덟|아홉|한|하나|두|둘|세|셋|네|넷|\d+)\s*개/);
-  if (m) {
-    qty = KO_NUM[m[1]] != null ? KO_NUM[m[1]] : parseInt(m[1], 10);
-    s = (s.slice(0, m.index) + ' ' + s.slice(m.index + m[0].length)).trim();
-  }
-  m = s.match(/(\d+(?:\.\d+)?)\s*(달러|불|원)?/);
-  if (m) {
-    price = parseFloat(m[1]);
-    s = (s.slice(0, m.index) + ' ' + s.slice(m.index + m[0].length)).trim();
-  }
-  s = s.replace(/(에서|에게|으로|로|을|를|이|가|은|는)$/, '').trim();
-  if (!s) return null;
-  return {name: s, qty, price};
-}
-function parseVoice(text) {
-  const parts = [];
-  (text || '').split(/[,，]/).forEach(c => c.split(/\s*그리고\s*/).forEach(p => { if (p.trim()) parts.push(p.trim()); }));
-  return parts.map(parseVoiceChunk).filter(Boolean);
-}
 
 // --- 수입 렌더링: 격주 급여일 생성 + localStorage 실측 (data.json 없어도 동작) ---
 const LS_INCOME_ACTUALS = 'household_income_actuals';
@@ -799,39 +767,6 @@ function renderVehicle(d) {
     ).join('') + '</div>' +
     '<p class="text-[10px] text-slate-600 mt-1.5">❄️ 윈터타이어 교체 적기: 10~11월 (NS는 12월 전 장착 권장)</p>';
 }
-
-
-// --- 음성 영수증 입력 ---
-let ledgerVoiceRec = null;
-function startLedgerVoice() {
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const st = document.getElementById('voice-receipt-status');
-  const btn = document.getElementById('voice-receipt-btn');
-  if (!SR) { st.textContent = '이 브라우저는 음성 인식을 지원하지 않아요. 크롬에서 열어주세요.'; return; }
-  if (ledgerVoiceRec) { try { ledgerVoiceRec.stop(); } catch (e) {} return; }
-  ledgerVoiceRec = new SR();
-  ledgerVoiceRec.lang = 'ko-KR';
-  ledgerVoiceRec.interimResults = false;
-  ledgerVoiceRec.maxAlternatives = 1;
-  btn.classList.add('animate-pulse');
-  st.textContent = '🎤 듣고 있어요... 예: "코스트코 31.65"';
-  ledgerVoiceRec.onresult = e => {
-    const text = e.results[0][0].transcript;
-    const items = parseVoice(text).filter(p => p.price != null);
-    if (!items.length) { st.textContent = `🎤 "${text}" — 금액을 알아듣지 못했어요. 예: "코스트코 31.65"`; return; }
-    const v = getVoiceReceipts();
-    const today = todayStr();
-    items.forEach(p => v.push({voice: true, id: vuid(), date: today, merchant: p.name, amount: p.price, items: p.qty > 1 ? '×' + p.qty : ''}));
-    setVoiceReceipts(v);
-    load();
-    document.getElementById('voice-receipt-status').textContent =
-      `🎤 "${text}" → ${items.map(p => p.name + ' ' + fmt(p.price)).join(', ')} 기록됨`;
-  };
-  ledgerVoiceRec.onerror = e => { st.textContent = '🎤 음성 인식 오류 (' + e.error + '). 다시 눌러주세요.'; };
-  ledgerVoiceRec.onend = () => { ledgerVoiceRec = null; btn.classList.remove('animate-pulse'); };
-  try { ledgerVoiceRec.start(); } catch (e) { st.textContent = '🎤 마이크를 시작할 수 없어요.'; ledgerVoiceRec = null; }
-}
-document.getElementById('voice-receipt-btn').addEventListener('click', startLedgerVoice);
 
 
 // --- 비밀번호 게이트 (SHA-256 해시 비교, 세션 유지) ---
