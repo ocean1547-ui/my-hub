@@ -376,7 +376,10 @@ function render() {
     <li class="bg-slate-800 rounded-2xl border border-slate-700 px-4 py-3 ${itemsArr ? 'cursor-pointer' : ''}" data-hist="${hid}">
       <div class="flex items-baseline justify-between mb-1">
         <p class="text-sm font-bold">${h.date}${warn}${itemsArr ? `<span class="text-slate-500 text-xs ml-1">${isOpen ? '▲' : '▼'}</span>` : ''}</p>
-        <p class="text-sm font-extrabold text-emerald-300">${fmt(h.total)}</p>
+        <div class="flex items-center gap-1">
+          <p class="text-sm font-extrabold text-emerald-300">${fmt(h.total)}</p>
+          <button data-hdel="${hid}" class="text-slate-600 hover:text-red-400 text-lg leading-none px-1" title="기록 삭제">×</button>
+        </div>
       </div>
       <p class="text-[11px] text-slate-400">${h.count}개 품목${h.cal ? ' · ' + h.cal.toLocaleString() + ' kcal' : ''}</p>
       <p class="text-[11px] text-slate-500 truncate mt-0.5">${itemsLine}</p>
@@ -387,7 +390,7 @@ function render() {
 
   document.querySelectorAll('[data-hist]').forEach(el => {
     el.addEventListener('click', e => {
-      if (e.target.dataset.hdec != null || e.target.dataset.hinc != null) return;
+      if (e.target.dataset.hdec != null || e.target.dataset.hinc != null || e.target.dataset.hdel != null) return;
       const hid = el.dataset.hist;
       if (openHist.has(hid)) openHist.delete(hid); else openHist.add(hid);
       render();
@@ -406,6 +409,13 @@ function render() {
   };
   document.querySelectorAll('[data-hdec]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); bump(b.dataset.hdec, -1); }));
   document.querySelectorAll('[data-hinc]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); bump(b.dataset.hinc, 1); }));
+  document.querySelectorAll('[data-hdel]').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();
+    if (!confirm('이 장보기 기록을 삭제할까요?')) return;
+    const hid = b.dataset.hdel;
+    setHist(getHist().filter((x, ix) => (x.id || ('old-' + ix)) !== hid));
+    render();
+  }));
 }
 
 document.getElementById('f-add').addEventListener('click', () => {
