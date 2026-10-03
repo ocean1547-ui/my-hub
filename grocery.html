@@ -71,8 +71,10 @@
       </div>
       <div class="flex gap-1.5">
         <input id="f-exp" type="date" class="flex-1 min-w-0 bg-slate-900 rounded-lg px-3 py-2 text-sm text-slate-100" title="유통기한">
+        <button id="voice-btn" class="shrink-0 text-lg bg-slate-700 hover:bg-slate-600 rounded-lg px-3 py-2" title="음성으로 입력">🎤</button>
         <button id="f-add" class="shrink-0 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg px-5 py-2">추가</button>
       </div>
+      <p id="voice-status" class="text-[11px] text-emerald-300/90 mt-2 px-1"></p>
     </div>
   </section>
 
@@ -475,6 +477,66 @@ document.getElementById('btn-clear').addEventListener('click', () => {
   if (!getItems().length) return;
   if (confirm('리스트를 전부 지울까요? (기록에는 남지 않습니다)')) { setItems([]); render(); }
 });
+
+// --- 음성 입력: 한국어 파서 ("계란 6.09 두 개" → 품목·가격·수량) ---
+const KO_NUM = {한:1, 하나:1, 두:2, 둘:2, 세:3, 셋:3, 네:4, 넷:4, 다섯:5, 여섯:6, 일곱:7, 여덟:8, 아홉:9, 열:10, 열한:11, 열하나:11, 열두:12, 열둘:12, 스무:20};
+function parseVoiceChunk(s) {
+  s = (s || '').trim();
+  if (!s) return null;
+  let qty = 1, price = null, m;
+  m = s.match(/(스무|열두|열둘|열한|열하나|열|다섯|여섯|일곱|여덟|아홉|한|하나|두|둘|세|셋|네|넷|\d+)\s*개/);
+  if (m) {
+    qty = KO_NUM[m[1]] != null ? KO_NUM[m[1]] : parseInt(m[1], 10);
+    s = (s.slice(0, m.index) + ' ' + s.slice(m.index + m[0].length)).trim();
+  }
+  m = s.match(/(\d+(?:\.\d+)?)\s*(달러|불|원)?/);
+  if (m) {
+    price = parseFloat(m[1]);
+    s = (s.slice(0, m.index) + ' ' + s.slice(m.index + m[0].length)).trim();
+  }
+  s = s.replace(/(에서|에게|으로|로|을|를|이|가|은|는)$/, '').trim();
+  if (!s) return null;
+  return {name: s, qty, price};
+}
+function parseVoice(text) {
+  const parts = [];
+  (text || '').split(/[,，]/).forEach(c => c.split(/\s*그리고\s*/).forEach(p => { if (p.trim()) parts.push(p.trim()); }));
+  return parts.map(parseVoiceChunk).filter(Boolean);
+}
+
+let voiceRec = null;
+function startVoice() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const st = document.getElementById('voice-status');
+  const btn = document.getElementById('voice-btn');
+  if (!SR) { st.textContent = '이 브라우저는 음성 인식을 지원하지 않아요. 크롬에서 열어주세요.'; return; }
+  if (voiceRec) { try { voiceRec.stop(); } catch (e) {} return; }
+  voiceRec = new SR();
+  voiceRec.lang = 'ko-KR';
+  voiceRec.interimResults = false;
+  voiceRec.maxAlternatives = 1;
+  btn.classList.add('animate-pulse', 'bg-red-600');
+  st.textContent = '🎤 듣고 있어요... 예: "계란 6.09 두 개, 우유 5.99"';
+  voiceRec.onresult = e => {
+    const text = e.results[0][0].transcript;
+    const items = parseVoice(text);
+    if (!items.length) { st.textContent = `🎤 "${text}" — 알아듣지 못했어요. 다시 말씀해주세요.`; return; }
+    const a = getItems();
+    items.forEach(p => {
+      const food = findFood(p.name);
+      a.unshift({id: uid(), name: p.name, qty: p.qty, price: p.price,
+        cal: food && food.cal != null ? food.cal : null,
+        exp: food && food.shelf ? addDaysStr(food.shelf) : null,
+        checked: false});
+    });
+    setItems(a); render();
+    st.textContent = `🎤 "${text}" → ${items.map(p => p.name + ' ×' + p.qty).join(', ')} 추가됨`;
+  };
+  voiceRec.onerror = e => { st.textContent = '🎤 음성 인식 오류 (' + e.error + '). 다시 눌러주세요.'; };
+  voiceRec.onend = () => { voiceRec = null; btn.classList.remove('animate-pulse', 'bg-red-600'); };
+  try { voiceRec.start(); } catch (e) { st.textContent = '🎤 마이크를 시작할 수 없어요.'; voiceRec = null; }
+}
+document.getElementById('voice-btn').addEventListener('click', startVoice);
 
 // --- 비밀번호 게이트 (가계부와 동일한 비밀번호) ---
 const PW_HASH = '1eea1bc249e5cc50f45a1f73c66056448fc6a0e1a850de297bb9f4cd23b5f15e';
