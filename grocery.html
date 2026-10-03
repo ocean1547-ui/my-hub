@@ -132,7 +132,32 @@ function getItems() {
   } catch (e) { return []; }
 }
 function setItems(a) { localStorage.setItem(LS_ITEMS, JSON.stringify(a)); }
-function getHist() { try { return JSON.parse(localStorage.getItem(LS_HIST) || '[]'); } catch (e) { return []; } }
+function getHist() {
+  try {
+    const h = JSON.parse(localStorage.getItem(LS_HIST) || '[]');
+    let changed = false;
+    h.forEach(e => {
+      // 예전 형식(문자열)을 새 형식(품목 배열)으로 자동 변환
+      if (!Array.isArray(e.items) && typeof e.items === 'string') {
+        e.items = e.items.split(', ').filter(Boolean).map(s => {
+          const m = s.match(/^(.*)×(\d+)$/);
+          const name = m ? m[1] : s;
+          const qty = m ? parseInt(m[2]) : 1;
+          const food = (typeof findFood === 'function') ? findFood(name) : null;
+          return {
+            name, qty, remaining: qty, price: null,
+            cal: food && food.cal != null ? food.cal : null,
+            exp: food && food.shelf ? addDaysStr(food.shelf) : null
+          };
+        });
+        if (!e.id) e.id = uid();
+        changed = true;
+      }
+    });
+    if (changed) setHist(h);
+    return h;
+  } catch (e) { return []; }
+}
 function setHist(a) { localStorage.setItem(LS_HIST, JSON.stringify(a)); }
 const lineTotal = it => (it.price || 0) * (it.qty || 1);
 
