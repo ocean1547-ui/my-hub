@@ -127,7 +127,7 @@
       </div>
       <ul id="accounts-list" class="divide-y divide-slate-700/60"></ul>
     </div>
-    <p class="text-[11px] text-slate-500 px-1">잔액을 입력하면 이 기기에만 저장됩니다. 잔액은 오늘 기준 입력 가정 — 이달 고정 예정과 이달 카드 사용액(영수증 합계, 대금 결제 예정분)을 차감한 남을 금액을 자동 계산합니다.</p>
+    <p class="text-[11px] text-slate-500 px-1">잔액을 입력하면 이 기기에만 저장됩니다. 잔액은 오늘 기준 입력 가정 — 이달 고정 예정과 이달 현금·기타 사용액을 차감한 남을 금액을 자동 계산합니다. 카드 결제는 카드 섹션에서 확인하세요.</p>
   </section>
 
   <!-- 섹션: 고정 지출 -->
@@ -289,10 +289,13 @@ function renderAccounts(d) {
   let sum = 0, hasAny = false;
   const nowD = new Date();
   const curYM = nowD.getFullYear() + '-' + String(nowD.getMonth() + 1).padStart(2, '0');
-  // 이달 영수증(카드 사용)을 명의자 기준으로 계좌에 매핑
+  // 이달 영수증 중 카드 결제가 아닌 것(현금·체크 등)만 명의자 기준으로 계좌에 매핑
+  // 카드 결제는 카드 섹션에만 표시 (계좌와 중복 집계 방지)
+  const cardKeys = new Set(((d && d.cards) || []).map(c => (c.holder + '|' + c.name).replace(/[\s|]/g, '')));
   const cardSpend = {};
   ((d && d.receipts) || []).forEach(r => {
     if (!r.date || r.date.slice(0, 7) !== curYM) return;
+    if (cardKeys.has((r.pay || '').replace(/[\s|]/g, ''))) return;
     const holder = (r.pay || '').split(' ')[0];
     if (!holder) return;
     const acc = holder + ' 계좌';
@@ -308,7 +311,7 @@ function renderAccounts(d) {
     const c = cardSpend[a.label];
     const outSum = (s ? s.sum : 0) + (c ? c.sum : 0);
     const schedLine = s ? `<p class="text-[11px] text-amber-300/80">이달 고정 예정 −${fmt(s.sum)} (${s.n}건)</p>` : '';
-    const cardLine = c ? `<p class="text-[11px] text-amber-300/80">이달 카드 사용 −${fmt(c.sum)} (${c.n}건)</p>` : '';
+    const cardLine = c ? `<p class="text-[11px] text-amber-300/80">이달 현금·기타 사용 −${fmt(c.sum)} (${c.n}건)</p>` : '';
     const remainLine = (has && outSum > 0) ? `<p class="text-[11px] font-bold text-emerald-300">→ 남을 금액 ${fmt(b - outSum)}</p>` : '';
     return `
     <li class="px-4 py-2.5 flex items-center gap-3">
