@@ -307,19 +307,75 @@ function render() {
     });
   });
 
-  // 기록
+  // 기록 (탭하면 품목별 상세: 남은 개수 조절·칼로리·유통기한)
   const hist = getHist();
+  const openHist = render._openHist || (render._openHist = new Set());
   document.getElementById('hist-count').textContent = hist.length + '회';
-  document.getElementById('g-hist').innerHTML = hist.length ? hist.map(h => `
-    <li class="bg-slate-800 rounded-2xl border border-slate-700 px-4 py-3">
+  document.getElementById('g-hist').innerHTML = hist.length ? hist.map((h, idx) => {
+    const hid = h.id || ('old-' + idx);
+    const isOpen = openHist.has(hid);
+    const itemsArr = Array.isArray(h.items) ? h.items : null;
+    let warn = '';
+    if (itemsArr) {
+      const soon = itemsArr.filter(it => it.exp && (it.remaining || 0) > 0 && Math.round((parseYMD(it.exp) - todayNoon()) / 86400000) <= 3);
+      if (soon.length) warn = `<span class="text-[10px] font-bold text-amber-300 bg-amber-900/60 rounded px-1.5 py-0.5 ml-1">⚠️ ${soon.length}개 임박</span>`;
+    }
+    const sorted = itemsArr ? itemsArr.map((it, i2) => ({...it, i2})).sort((a, b) => {
+      if (!a.exp && !b.exp) return 0;
+      if (!a.exp) return 1;
+      if (!b.exp) return -1;
+      return a.exp < b.exp ? -1 : 1;
+    }) : null;
+    const detail = (isOpen && sorted) ? `
+      <div class="mt-2 pt-2 border-t border-slate-700/60 space-y-2">
+        ${sorted.map(it => `
+        <div class="flex items-center gap-2 ${it.remaining <= 0 ? 'opacity-40' : ''}">
+          <div class="flex-1 min-w-0">
+            <p class="text-[13px] font-bold truncate">${it.name}${expBadge(it.exp)}</p>
+            <p class="text-[10px] text-slate-500">${[it.cal ? it.cal + 'kcal' : '', it.exp ? '유통기한 ' + it.exp.slice(5).replace('-', '/') : '', it.price ? fmt(it.price) : ''].filter(Boolean).join(' · ')}</p>
+          </div>
+          <div class="flex items-center gap-1 shrink-0">
+            <button data-hdec="${hid}:${it.i2}" class="w-7 h-7 rounded-lg bg-slate-700 text-base font-bold leading-none">−</button>
+            <span class="w-10 text-center text-sm font-bold">${it.remaining}<span class="text-[10px] text-slate-500 font-normal">/${it.qty}</span></span>
+            <button data-hinc="${hid}:${it.i2}" class="w-7 h-7 rounded-lg bg-slate-700 text-base font-bold leading-none">+</button>
+          </div>
+        </div>`).join('')}
+      </div>` : '';
+    const itemsLine = itemsArr ? itemsArr.map(it => it.name + (it.qty > 1 ? '×' + it.qty : '')).join(', ') : h.items;
+    return `
+    <li class="bg-slate-800 rounded-2xl border border-slate-700 px-4 py-3 ${itemsArr ? 'cursor-pointer' : ''}" data-hist="${hid}">
       <div class="flex items-baseline justify-between mb-1">
-        <p class="text-sm font-bold">${h.date}</p>
+        <p class="text-sm font-bold">${h.date}${warn}${itemsArr ? `<span class="text-slate-500 text-xs ml-1">${isOpen ? '▲' : '▼'}</span>` : ''}</p>
         <p class="text-sm font-extrabold text-emerald-300">${fmt(h.total)}</p>
       </div>
       <p class="text-[11px] text-slate-400">${h.count}개 품목${h.cal ? ' · ' + h.cal.toLocaleString() + ' kcal' : ''}</p>
-      <p class="text-[11px] text-slate-500 truncate mt-0.5">${h.items}</p>
-    </li>`).join('')
+      <p class="text-[11px] text-slate-500 truncate mt-0.5">${itemsLine}</p>
+      ${detail}
+    </li>`;
+  }).join('')
     : '<li class="text-sm text-slate-500 text-center py-4">아직 기록이 없어요</li>';
+
+  document.querySelectorAll('[data-hist]').forEach(el => {
+    el.addEventListener('click', e => {
+      if (e.target.dataset.hdec != null || e.target.dataset.hinc != null) return;
+      const hid = el.dataset.hist;
+      if (openHist.has(hid)) openHist.delete(hid); else openHist.add(hid);
+      render();
+    });
+  });
+  const bump = (dataset, delta) => {
+    const [hid, i2] = dataset.split(':');
+    const hh = getHist();
+    const h = hh.find((x, ix) => (x.id || ('old-' + ix)) === hid);
+    if (h && Array.isArray(h.items) && h.items[+i2]) {
+      const it = h.items[+i2];
+      it.remaining = Math.max(0, Math.min(it.qty, (it.remaining || 0) + delta));
+      setHist(hh);
+      render();
+    }
+  };
+  document.querySelectorAll('[data-hdec]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); bump(b.dataset.hdec, -1); }));
+  document.querySelectorAll('[data-hinc]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); bump(b.dataset.hinc, 1); }));
 }
 
 document.getElementById('f-add').addEventListener('click', () => {
@@ -368,8 +424,8 @@ document.getElementById('btn-done').addEventListener('click', () => {
   const t = new Date();
   const date = t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
   const h = getHist();
-  h.unshift({date, count: done.length, total: Math.round(total * 100) / 100, cal: cal || null,
-    items: done.map(i => i.name + (i.qty > 1 ? '×' + i.qty : '')).join(', ')});
+  h.unshift({id: uid(), date, count: done.length, total: Math.round(total * 100) / 100, cal: cal || null,
+    items: done.map(i => ({name: i.name, qty: i.qty || 1, remaining: i.qty || 1, price: i.price || null, cal: i.cal || null, exp: i.exp || null}))});
   setHist(h);
   setItems(a.filter(i => !i.checked));
   render();
