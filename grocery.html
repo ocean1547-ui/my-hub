@@ -64,6 +64,7 @@
         <input id="f-name" placeholder="품목명 (예: 우유)" class="flex-1 min-w-0 bg-slate-900 rounded-lg px-3 py-2 text-sm text-slate-100">
         <input id="f-qty" type="number" min="1" value="1" class="w-16 bg-slate-900 rounded-lg px-2 py-2 text-sm text-center text-slate-100" title="수량">
       </div>
+      <p id="f-suggest" class="text-[11px] text-emerald-300/90 px-1 mb-2 h-4"></p>
       <div class="flex gap-1.5 mb-2">
         <input id="f-price" type="number" step="0.01" min="0" placeholder="가격 ($)" class="flex-1 min-w-0 bg-slate-900 rounded-lg px-3 py-2 text-sm text-slate-100">
         <input id="f-cal" type="number" min="0" placeholder="칼로리 (kcal)" class="flex-1 min-w-0 bg-slate-900 rounded-lg px-3 py-2 text-sm text-slate-100">
@@ -142,6 +143,117 @@ function expBadge(exp) {
   if (days <= 3) return `<span class="text-[10px] font-bold text-amber-300 bg-amber-900/60 rounded px-1.5 py-0.5 ml-1">D-${days}</span>`;
   return `<span class="text-[10px] text-slate-400 bg-slate-700 rounded px-1.5 py-0.5 ml-1">D-${days}</span>`;
 }
+
+// --- 식품 DB: 이름 → 칼로리(1단위당) · 유통기한(일) 자동 입력 ---
+// 칼로리·유통기한은 대략치. shelf: 개봉 전 냉장 기준.
+const FOODS = [
+  {name:'토마토', keys:['토마토'], unit:'개', cal:20, shelf:7},
+  {name:'양파', keys:['양파'], unit:'개', cal:40, shelf:30},
+  {name:'오이', keys:['오이'], unit:'개', cal:15, shelf:7},
+  {name:'감자', keys:['감자'], unit:'개', cal:130, shelf:14},
+  {name:'고구마', keys:['고구마'], unit:'개', cal:140, shelf:14},
+  {name:'당근', keys:['당근'], unit:'개', cal:30, shelf:14},
+  {name:'브로콜리', keys:['브로콜리'], unit:'100g', cal:30, shelf:7},
+  {name:'양배추', keys:['양배추'], unit:'100g', cal:25, shelf:7},
+  {name:'시금치', keys:['시금치'], unit:'100g', cal:20, shelf:5},
+  {name:'상추', keys:['상추'], unit:'100g', cal:10, shelf:5},
+  {name:'파프리카', keys:['파프리카'], unit:'개', cal:30, shelf:7},
+  {name:'마늘', keys:['마늘'], unit:'쪽', cal:10, shelf:30},
+  {name:'대파', keys:['대파'], unit:'대', cal:10, shelf:7},
+  {name:'양송이버섯', keys:['양송이','버섯'], unit:'100g', cal:20, shelf:5},
+  {name:'콩나물', keys:['콩나물'], unit:'100g', cal:20, shelf:3},
+  {name:'숙주', keys:['숙주'], unit:'100g', cal:20, shelf:3},
+  {name:'깻잎', keys:['깻잎'], unit:'10장', cal:10, shelf:5},
+  {name:'생강', keys:['생강'], unit:'10g', cal:10, shelf:21},
+  {name:'바나나', keys:['바나나'], unit:'개', cal:90, shelf:5},
+  {name:'사과', keys:['사과'], unit:'개', cal:80, shelf:14},
+  {name:'자두', keys:['자두'], unit:'개', cal:30, shelf:5},
+  {name:'오렌지', keys:['오렌지'], unit:'개', cal:60, shelf:14},
+  {name:'포도', keys:['포도'], unit:'100g', cal:60, shelf:7},
+  {name:'딸기', keys:['딸기'], unit:'100g', cal:30, shelf:3},
+  {name:'블루베리', keys:['블루베리'], unit:'100g', cal:60, shelf:7},
+  {name:'수박', keys:['수박'], unit:'조각', cal:90, shelf:5},
+  {name:'복숭아', keys:['복숭아'], unit:'개', cal:40, shelf:5},
+  {name:'키위', keys:['키위'], unit:'개', cal:40, shelf:7},
+  {name:'레몬', keys:['레몬'], unit:'개', cal:20, shelf:14},
+  {name:'아보카도', keys:['아보카도'], unit:'개', cal:160, shelf:4},
+  {name:'우유', keys:['우유'], unit:'컵(200ml)', cal:130, shelf:7},
+  {name:'계란', keys:['계란','달걀'], unit:'개', cal:70, shelf:21},
+  {name:'치즈', keys:['치즈'], unit:'장', cal:110, shelf:30},
+  {name:'요거트', keys:['요거트','요구르트'], unit:'개', cal:100, shelf:14},
+  {name:'버터', keys:['버터'], unit:'10g', cal:70, shelf:60},
+  {name:'닭가슴살', keys:['닭가슴살'], unit:'100g', cal:110, shelf:2},
+  {name:'닭고기', keys:['닭고기','닭다리','닭봉'], unit:'100g', cal:150, shelf:2},
+  {name:'돼지고기', keys:['돼지고기','삼겹살','목살'], unit:'100g', cal:250, shelf:2},
+  {name:'소고기', keys:['소고기'], unit:'100g', cal:250, shelf:2},
+  {name:'베이컨', keys:['베이컨'], unit:'2줄', cal:90, shelf:7},
+  {name:'소시지', keys:['소시지','소세지'], unit:'개', cal:150, shelf:7},
+  {name:'치킨 스트립', keys:['치킨스트립','치킨너겟','너겟'], unit:'100g', cal:250, shelf:180},
+  {name:'연어', keys:['연어'], unit:'100g', cal:200, shelf:2},
+  {name:'새우', keys:['새우'], unit:'100g', cal:100, shelf:2},
+  {name:'김', keys:['김'], unit:'10장', cal:30, shelf:180},
+  {name:'김치', keys:['김치'], unit:'100g', cal:20, shelf:30},
+  {name:'라면', keys:['라면'], unit:'개', cal:500, shelf:180},
+  {name:'햇반', keys:['햇반','즉석밥'], unit:'개', cal:300, shelf:270},
+  {name:'식빵', keys:['식빵'], unit:'장', cal:100, shelf:5},
+  {name:'두부', keys:['두부'], unit:'모', cal:80, shelf:7},
+  {name:'아이스크림', keys:['아이스크림'], unit:'컵', cal:250, shelf:180},
+  {name:'아몬드', keys:['아몬드'], unit:'30g', cal:170, shelf:180},
+  {name:'허니 로스티드 넛', keys:['honeyroasted','nutmix','허니로스티드'], unit:'30g', cal:170, shelf:180},
+  {name:'견과류', keys:['너트','견과류','호두','캐슈넛'], unit:'30g', cal:170, shelf:180},
+  {name:'오트밀', keys:['오트밀'], unit:'40g', cal:150, shelf:365},
+  {name:'땅콩버터', keys:['땅콩버터'], unit:'30g', cal:190, shelf:180},
+  {name:'시리얼', keys:['시리얼','씨리얼'], unit:'40g', cal:150, shelf:180},
+  {name:'그래놀라', keys:['그래놀라'], unit:'50g', cal:200, shelf:180},
+  {name:'냉동만두', keys:['냉동만두','만두'], unit:'개', cal:50, shelf:180},
+  {name:'냉동피자', keys:['냉동피자','피자'], unit:'조각', cal:300, shelf:180},
+  {name:'참치캔', keys:['참치캔','참치'], unit:'캔', cal:150, shelf:1095},
+  {name:'스팸', keys:['스팸'], unit:'100g', cal:300, shelf:1095},
+  {name:'파스타면', keys:['파스타면','파스타','스파게티'], unit:'100g', cal:350, shelf:730},
+  {name:'간장', keys:['간장'], unit:'15ml', cal:10, shelf:365},
+  {name:'고추장', keys:['고추장'], unit:'15g', cal:30, shelf:365},
+  {name:'된장', keys:['된장'], unit:'15g', cal:25, shelf:365},
+  {name:'케첩', keys:['케첩','케찹'], unit:'15g', cal:20, shelf:180},
+  {name:'마요네즈', keys:['마요네즈'], unit:'15g', cal:90, shelf:120},
+  {name:'설탕', keys:['설탕'], unit:'100g', cal:400, shelf:730},
+  {name:'소금', keys:['소금'], unit:'-', cal:0, shelf:1095},
+  {name:'밀가루', keys:['밀가루'], unit:'100g', cal:350, shelf:180},
+  {name:'식용유', keys:['식용유','카놀라유'], unit:'15ml', cal:120, shelf:365},
+  {name:'올리브유', keys:['올리브유','올리브오일'], unit:'15ml', cal:120, shelf:365},
+  {name:'꿀', keys:['꿀'], unit:'20g', cal:60, shelf:730},
+  {name:'초콜릿', keys:['초콜릿','초코'], unit:'30g', cal:150, shelf:365},
+  {name:'감자칩', keys:['감자칩','포테이토칩'], unit:'30g', cal:150, shelf:120},
+  {name:'콜라', keys:['콜라','펩시'], unit:'캔', cal:140, shelf:270},
+  {name:'주스', keys:['주스'], unit:'컵', cal:110, shelf:7},
+  {name:'커피', keys:['커피'], unit:'잔', cal:5, shelf:180},
+  {name:'녹차', keys:['녹차'], unit:'잔', cal:0, shelf:365},
+  {name:'쌀', keys:['쌀'], unit:'100g', cal:350, shelf:365},
+  {name:'베이글', keys:['베이글'], unit:'개', cal:250, shelf:5},
+  {name:'크로와상', keys:['크로와상'], unit:'개', cal:230, shelf:3},
+];
+const LS_CUSTOM_FOODS = 'grocery_custom_foods_v1';
+function getCustomFoods() { try { return JSON.parse(localStorage.getItem(LS_CUSTOM_FOODS) || '[]'); } catch (e) { return []; } }
+function normFood(s) { return (s || '').toLowerCase().replace(/[\s\-_]/g, ''); }
+function findFood(name) {
+  const n = normFood(name);
+  if (!n) return null;
+  let best = null, bestLen = 0;
+  for (const f of FOODS.concat(getCustomFoods())) {
+    for (const k of f.keys) {
+      const kk = normFood(k);
+      if (kk && n.includes(kk) && kk.length > bestLen) { best = f; bestLen = kk.length; }
+    }
+  }
+  return best;
+}
+const fmtYMD = dt => dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+const addDaysStr = days => { const t = todayNoon(); t.setDate(t.getDate() + days); return fmtYMD(t); };
+function foodSuggestText(name) {
+  const f = findFood(name);
+  if (!f) return '';
+  if (f.cal == null || !f.shelf) return '📦 ' + f.name + ' — 식품이 아니라 자동 입력 없어요';
+  return `✨ ${f.name} · ${f.cal}kcal/${f.unit} · 유통기한 약 ${f.shelf}일 → 자동 입력`;
+}
 function render() {
   const items = getItems();
   const open = items.filter(i => !i.checked), done = items.filter(i => i.checked);
@@ -215,8 +327,22 @@ document.getElementById('f-add').addEventListener('click', () => {
   if (!name) { document.getElementById('f-name').focus(); return; }
   const price = parseFloat(document.getElementById('f-price').value);
   const qty = parseInt(document.getElementById('f-qty').value) || 1;
-  const cal = parseInt(document.getElementById('f-cal').value) || null;
-  const exp = document.getElementById('f-exp').value || null;
+  const manualCal = parseInt(document.getElementById('f-cal').value);
+  const manualExp = document.getElementById('f-exp').value || null;
+  // 식품 DB에서 자동 입력 (직접 입력한 값이 우선)
+  const food = findFood(name);
+  let cal = isNaN(manualCal) ? null : manualCal;
+  let exp = manualExp;
+  if (food) {
+    if (cal == null && food.cal != null) cal = food.cal;
+    if (!exp && food.shelf) exp = addDaysStr(food.shelf);
+  } else if ((cal != null || exp) && normFood(name).length >= 2) {
+    // DB에 없는 품목을 직접 입력하면 다음부터 자동 입력되도록 학습
+    const shelf = exp ? Math.round((parseYMD(exp) - todayNoon()) / 86400000) : null;
+    const custom = getCustomFoods();
+    custom.unshift({name, keys: [name], unit: '개', cal, shelf: shelf > 0 ? shelf : null});
+    try { localStorage.setItem(LS_CUSTOM_FOODS, JSON.stringify(custom.slice(0, 200))); } catch (e) {}
+  }
   const a = getItems();
   a.unshift({id: uid(), name, qty: Math.max(1, qty), price: isNaN(price) ? null : price, cal, exp, checked: false});
   setItems(a);
@@ -229,6 +355,9 @@ document.getElementById('f-add').addEventListener('click', () => {
   render();
 });
 document.getElementById('f-name').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('f-add').click(); });
+document.getElementById('f-name').addEventListener('input', e => {
+  document.getElementById('f-suggest').textContent = foodSuggestText(e.target.value.trim());
+});
 
 document.getElementById('btn-done').addEventListener('click', () => {
   const a = getItems();
