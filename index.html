@@ -115,6 +115,15 @@
     <p class="text-[11px] text-slate-500 px-1">입금될 때마다 실제 금액을 입력하세요. 입력한 금액은 이 기기에만 저장됩니다.</p>
   </section>
 
+  <!-- 섹션: 변동 지출 (영수증) — 수입 바로 밑 -->
+  <section class="mb-7">
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="text-base font-bold">🧾 변동 지출 (영수증)</h2>
+      <span id="var-total" class="text-xs text-slate-400"></span>
+    </div>
+    <ul id="receipt-list" class="space-y-2"></ul>
+  </section>
+
   <!-- 섹션: 계좌 잔액 -->
   <section class="mb-7">
     <div class="flex items-baseline justify-between mb-2">
@@ -161,15 +170,6 @@
       <span id="affirm-total" class="text-xs text-slate-400"></span>
     </div>
     <div id="affirm-list" class="space-y-2"></div>
-  </section>
-
-  <!-- 섹션: 변동 지출 -->
-  <section>
-    <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-base font-bold">🧾 변동 지출 (영수증)</h2>
-      <span id="var-total" class="text-xs text-slate-400"></span>
-    </div>
-    <ul id="receipt-list" class="space-y-2"></ul>
   </section>
 
   <footer class="mt-8 text-center text-[11px] text-slate-500">
