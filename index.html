@@ -248,10 +248,27 @@ function renderIncome(d) {
     </li>`;
   }).join('');
 
-  const allRows = biweeklyRows + monthlyRows;
+  // 일회성 입금 (예: CRA CEB) — 해당 월에만 표시, 확정 금액
+  const onceIncomes = ((d && d.income) || []).filter(x => x.freq === 'once' && x.amount > 0 && (x.date || '').slice(0, 7) === curYM);
+  const onceRows = onceIncomes.map(m => {
+    const dt = parseYMD(m.date);
+    sum += m.amount;
+    const dateLabel = (dt.getMonth() + 1) + '/' + dt.getDate() + ' (' + KO_DAY[dt.getDay()] + ')';
+    return `
+    <li class="px-4 py-2.5 flex items-center gap-3">
+      <span class="w-[68px] shrink-0 text-center text-xs font-bold bg-slate-700 rounded-lg py-1">${dateLabel}</span>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm truncate">${m.label}</p>
+        <span class="text-[10px] font-bold text-emerald-400 bg-emerald-900/50 rounded px-1.5 py-0.5">확정</span>
+      </div>
+      <span class="text-sm font-bold text-emerald-300 whitespace-nowrap">${fmt(m.amount)}</span>
+    </li>`;
+  }).join('');
+
+  const allRows = biweeklyRows + monthlyRows + onceRows;
   document.getElementById('income-list').innerHTML = allRows || '<li class="px-4 py-4 text-sm text-slate-500 text-center">이 달 수입이 없어요</li>';
 
-  const hasRows = curPaydays.length + monthlyIncomes.length > 0;
+  const hasRows = curPaydays.length + monthlyIncomes.length + onceIncomes.length > 0;
   document.getElementById('income-total').textContent = hasRows ? (hasEst ? '~' : '') + fmt(sum) : '-';
   document.getElementById('sum-income').textContent = hasRows ? (hasEst ? '~' : '') + fmt(sum) : '-';
   document.getElementById('sum-income-note').textContent = !hasRows ? '' : (hasEst ? '추정 포함' : '전액 확정');
