@@ -264,6 +264,13 @@
    "items": "고기값",
    "merchant": "김창현",
    "pay": "현금"
+  },
+  {
+   "amount": 60.0,
+   "date": "2026-10-04",
+   "items": "",
+   "merchant": "미상",
+   "pay": "Costco Mastercard"
   }
  ],
  "income": [
