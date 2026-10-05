@@ -121,6 +121,24 @@
       <h2 class="text-base font-bold">🧾 변동 지출 (영수증)</h2>
       <span id="var-total" class="text-xs text-slate-400"></span>
     </div>
+    <details class="mb-2 bg-slate-800 rounded-2xl border border-slate-700">
+      <summary class="px-4 py-2.5 text-sm font-bold text-sky-300 cursor-pointer list-none">＋ 직접 입력</summary>
+      <div class="px-4 pb-4 pt-1 space-y-2">
+        <div class="grid grid-cols-2 gap-2">
+          <input id="m-date" type="date" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 [color-scheme:dark]">
+          <input id="m-amount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="금액 (CAD)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
+        </div>
+        <input id="m-merchant" type="text" placeholder="가게 / 내용 (예: Costco)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
+        <input id="m-items" type="text" placeholder="항목 (선택사항, 예: 장보기)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
+        <input id="m-pay" type="text" list="m-pay-list" placeholder="결제수단 (예: 현금)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
+        <datalist id="m-pay-list"></datalist>
+        <div class="flex gap-2">
+          <button id="m-add" class="flex-1 text-sm font-bold text-slate-900 bg-sky-400 rounded-xl px-3 py-2">추가</button>
+          <button id="m-copy" class="text-sm font-bold text-sky-300 bg-sky-900/50 rounded-xl px-3 py-2">수에게 보내기 (복사)</button>
+        </div>
+        <p class="text-[11px] text-slate-500">직접 입력한 내용은 이 기기에만 저장돼요. '수에게 보내기'로 복사해서 채팅에 붙여넣으면 가계부 원본에 합쳐드려요. 카드 월 지출 반영도 그때 함께 돼요.</p>
+      </div>
+    </details>
     <ul id="receipt-list" class="space-y-2"></ul>
   </section>
 
@@ -457,10 +475,10 @@ async function load() {
         ${dr.map(x => `
           <div>
             <div class="flex items-baseline justify-between gap-2">
-              <p class="text-[13px] text-slate-200 truncate">${x.voice ? '🎤 ' : ''}${x.merchant}</p>
+              <p class="text-[13px] text-slate-200 truncate">${x.voice ? '🎤 ' : x.manual ? '✏️ ' : ''}${x.merchant}</p>
               <div class="flex items-center gap-1 shrink-0">
                 <p class="text-[13px] font-bold text-slate-100 whitespace-nowrap">${fmt(x.amount)}</p>
-                ${x.voice ? `<button data-vrdel="${x.id}" class="text-slate-600 hover:text-red-400 text-base leading-none px-1">×</button>` : ''}
+                ${(x.voice || x.manual) ? `<button data-vrdel="${x.id}" class="text-slate-600 hover:text-red-400 text-base leading-none px-1">×</button>` : ''}
               </div>
             </div>
             ${(x.items || x.pay) ? `<p class="text-[10px] text-slate-500">${[x.items, x.pay].filter(Boolean).join(' · ')}</p>` : ''}
@@ -483,6 +501,46 @@ async function load() {
     setVoiceReceipts(getVoiceReceipts().filter(x => x.id !== b.dataset.vrdel));
     load();
   }));
+
+  // --- 변동 지출 직접 입력 (localStorage, 음성 입력과 같은 저장소에 합산) ---
+  const mDateEl = document.getElementById('m-date');
+  if (mDateEl && !mDateEl.value) {
+    const t = new Date();
+    mDateEl.value = t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
+  }
+  const paySet = new Set(['현금']);
+  (d.receipts || []).forEach(x => { if (x.pay) paySet.add(x.pay); });
+  getVoiceReceipts().forEach(x => { if (x.pay) paySet.add(x.pay); });
+  const payListEl = document.getElementById('m-pay-list');
+  if (payListEl) payListEl.innerHTML = [...paySet].map(p => `<option value="${p.replace(/"/g, '&quot;')}">`).join('');
+  document.getElementById('m-add').onclick = () => {
+    const date = document.getElementById('m-date').value;
+    const amount = parseFloat((document.getElementById('m-amount').value || '').replace(/,/g, ''));
+    const merchant = document.getElementById('m-merchant').value.trim();
+    const items = document.getElementById('m-items').value.trim();
+    const pay = document.getElementById('m-pay').value.trim() || '현금';
+    if (!date) { alert('날짜를 입력하세요'); return; }
+    if (!(amount > 0)) { alert('올바른 금액을 입력하세요'); return; }
+    if (!merchant) { alert('가게/내용을 입력하세요'); return; }
+    const arr = getVoiceReceipts();
+    arr.push({ id: 'm' + Date.now(), date, merchant, amount: Math.round(amount * 100) / 100, pay, items, manual: true });
+    setVoiceReceipts(arr);
+    document.getElementById('m-amount').value = '';
+    document.getElementById('m-merchant').value = '';
+    document.getElementById('m-items').value = '';
+    load();
+  };
+  document.getElementById('m-copy').onclick = async () => {
+    const arr = getVoiceReceipts().filter(x => x.manual).sort((a, b) => a.date.localeCompare(b.date));
+    if (!arr.length) { alert('직접 입력한 내역이 없어요'); return; }
+    const lines = arr.map(x => {
+      const [, mo, da] = x.date.split('-');
+      return `${parseInt(mo, 10)}/${parseInt(da, 10)} ${x.merchant} $${x.amount.toFixed(2)} (${x.pay})${x.items ? ' - ' + x.items : ''}`;
+    });
+    const text = '가계부 변동지출 직접입력:\n' + lines.join('\n');
+    try { await navigator.clipboard.writeText(text); alert('복사됐어요. 채팅에 붙여넣어 보내주세요'); }
+    catch (e) { prompt('아래 내용을 복사해서 채팅에 붙여넣어 주세요', text); }
+  };
 
   // --- 요약: 월 지출 / 차액 ---
   const expenseTotal = fixedTotal + vTotal;
