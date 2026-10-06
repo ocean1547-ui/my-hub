@@ -1,4 +1,4 @@
-# 📊 DBAS 5115 Data & PostgreSQL Sheet
+# 📊 DBAS 5115 Data & PostgreSQL Practice 1~9_code Sheet
 
 ## Practice 1 — Markdown & Git 제출 (Ex1)
 노트북 설명 셀과 README 작성용 문법 + 과제 제출 명령어입니다.
