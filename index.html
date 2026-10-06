@@ -229,22 +229,26 @@
     </div>
   </section>
 
-  <!-- 섹션: 카드별 -->
+  <!-- 섹션: 카드별 (접기/펼치기) -->
   <section class="mb-7">
-    <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-base font-bold">💳 카드별</h2>
-      <span class="text-[11px] text-slate-400"><span class="text-red-400">●</span> 사용액(지출) <span class="text-emerald-400 ml-1">●</span> 결제액</span>
-    </div>
-    <div id="cards-list" class="space-y-2"></div>
+    <details>
+      <summary class="flex items-baseline justify-between mb-2 cursor-pointer list-none">
+        <span class="text-base font-bold text-slate-100">💳 카드별</span>
+        <span class="text-[11px] text-slate-400"><span class="text-red-400">●</span> 사용액(지출) <span class="text-emerald-400 ml-1">●</span> 결제액</span>
+      </summary>
+      <div id="cards-list" class="space-y-2"></div>
+    </details>
   </section>
 
-  <!-- 섹션: Affirm -->
+  <!-- 섹션: Affirm (접기/펼치기) -->
   <section class="mb-7">
-    <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-base font-bold">📦 Affirm 할부</h2>
-      <span id="affirm-total" class="text-xs text-slate-400"></span>
-    </div>
-    <div id="affirm-list" class="space-y-2"></div>
+    <details>
+      <summary class="flex items-baseline justify-between mb-2 cursor-pointer list-none">
+        <span class="text-base font-bold text-slate-100">📦 Affirm 할부</span>
+        <span id="affirm-total" class="text-xs text-slate-400"></span>
+      </summary>
+      <div id="affirm-list" class="space-y-2"></div>
+    </details>
   </section>
 
   <footer class="mt-8 text-center text-[11px] text-slate-500">
@@ -504,36 +508,35 @@ async function load() {
     });
   });
 
-  // --- 변동 지출 (영수증): 월별 → 일별 그룹 (음성 입력분 합산) ---
+  // --- 변동 지출 (영수증): 일자별 접기/펼치기 — 오늘만 펼침, 나머지는 날짜 클릭 ---
   const receipts = [...(d.receipts || []), ...getVoiceReceipts()];
   const vTotal = receipts.reduce((s, x) => s + x.amount, 0);
   document.getElementById('var-total').textContent = '합계 ' + fmt(vTotal);
-  const MONTH_KO = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
-  const byMonth = {};
+  const _nowD = new Date();
+  const _todayStr = _nowD.getFullYear() + '-' + String(_nowD.getMonth() + 1).padStart(2, '0') + '-' + String(_nowD.getDate()).padStart(2, '0');
+  const _WEEK_KO = ['일', '월', '화', '수', '목', '금', '토'];
+  const byDayAll = {};
   receipts.forEach(x => {
-    const ym = (x.date || '').slice(0, 7);
-    if (ym) (byMonth[ym] = byMonth[ym] || []).push(x);
+    const dt = x.date || '';
+    if (dt) (byDayAll[dt] = byDayAll[dt] || []).push(x);
   });
-  const months = Object.keys(byMonth).sort().reverse();
-  document.getElementById('receipt-list').innerHTML = months.length ? months.map(ym => {
-    const items = byMonth[ym].slice().sort((a, b) => b.date.localeCompare(a.date));
-    const mTotal = items.reduce((s, x) => s + x.amount, 0);
-    const [yy, mm] = ym.split('-');
-    const byDay = {};
-    items.forEach(x => { (byDay[x.date] = byDay[x.date] || []).push(x); });
-    const dayRows = Object.keys(byDay).sort().reverse().map(dt => {
-      const dr = byDay[dt];
-      const dTotal = dr.reduce((s, x) => s + x.amount, 0);
-      const dLabel = dt.slice(8).replace(/^0/, '') + '일';
-      return `
-      <div class="px-4 py-2.5">
-        <div class="flex items-baseline justify-between mb-1.5">
-          <p class="text-xs font-bold text-slate-300">${dLabel}</p>
-          <p class="text-xs font-bold text-red-300">${fmt(dTotal)}</p>
-        </div>
-        <div class="space-y-1.5">
+  const dayKeys = Object.keys(byDayAll).sort().reverse();
+  document.getElementById('receipt-list').innerHTML = dayKeys.length ? dayKeys.map(dt => {
+    const dr = byDayAll[dt];
+    const dTotal = dr.reduce((s, x) => s + x.amount, 0);
+    const dLabel = Number(dt.slice(5, 7)) + '월 ' + Number(dt.slice(8, 10)) + '일';
+    const dWeek = _WEEK_KO[new Date(dt + 'T12:00:00').getDay()];
+    const isToday = dt === _todayStr;
+    return `
+    <li class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden">
+      <details${isToday ? ' open' : ''}>
+        <summary class="px-4 py-3 bg-slate-900/60 flex items-baseline justify-between cursor-pointer list-none">
+          <span class="text-sm font-bold text-slate-100">📅 ${dLabel} (${dWeek})${isToday ? ' <span class="text-[10px] text-sky-300 font-normal">오늘</span>' : ''}</span>
+          <span class="text-sm font-extrabold text-red-300">${fmt(dTotal)}</span>
+        </summary>
+        <div class="px-4 py-2 divide-y divide-slate-700/60">
         ${dr.map(x => `
-          <div>
+          <div class="py-1.5">
             <div class="flex items-baseline justify-between gap-2">
               <p class="text-[13px] text-slate-200 truncate">${x.voice ? '🎤 ' : x.manual ? '✏️ ' : ''}${x.merchant}</p>
               <div class="flex items-center gap-1 shrink-0">
@@ -544,15 +547,7 @@ async function load() {
             ${(x.items || x.pay) ? `<p class="text-[10px] text-slate-500">${[x.items, x.pay].filter(Boolean).join(' · ')}</p>` : ''}
           </div>`).join('')}
         </div>
-      </div>`;
-    }).join('');
-    return `
-    <li class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden">
-      <div class="px-4 py-3 bg-slate-900/60 flex items-baseline justify-between">
-        <span class="text-sm font-bold">${yy}년 ${MONTH_KO[parseInt(mm, 10) - 1]}</span>
-        <span class="text-sm font-extrabold text-red-300">${fmt(mTotal)}</span>
-      </div>
-      <div class="divide-y divide-slate-700/60">${dayRows}</div>
+      </details>
     </li>`;
   }).join('')
     : '<li class="text-sm text-slate-500 text-center py-4">아직 등록된 영수증이 없어요</li>';
