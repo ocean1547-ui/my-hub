@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>우리집 가계부</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f172a">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   body { background:#0f172a; -webkit-tap-highlight-color: transparent; }
@@ -27,7 +32,7 @@
   </div>
 </div>
 
-<div id="app" class="max-w-md mx-auto px-4 pb-10 pt-6" style="display:none">
+<div id="app" class="max-w-md md:max-w-2xl mx-auto px-4 pb-10 pt-6" style="display:none">
 
   <header class="mb-5">
     <h1 class="text-2xl font-extrabold">🏠 우리집 가계부</h1>
@@ -934,6 +939,12 @@ document.getElementById('pw-btn').addEventListener('click', tryUnlock);
 document.getElementById('pw').addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
 if (sessionStorage.getItem('household_auth') === '1') { unlock(); }
 else { document.getElementById('pw').focus(); }
+// PWA: 데스크탑/모바일 '설치' 지원 + 오프라인 캐시
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
 </script>
 </body>
 </html>
