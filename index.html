@@ -128,10 +128,58 @@
           <input id="m-date" type="date" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 [color-scheme:dark]">
           <input id="m-amount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="금액 (CAD)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
         </div>
-        <input id="m-merchant" type="text" placeholder="가게 / 내용 (예: Costco)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
-        <input id="m-items" type="text" placeholder="항목 (선택사항, 예: 장보기)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
-        <input id="m-pay" type="text" list="m-pay-list" placeholder="결제수단 (예: 현금)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
-        <datalist id="m-pay-list"></datalist>
+        <input id="m-merchant" type="text" list="m-merchant-list" placeholder="가게 / 내용 — 고르거나 직접 입력 (예: Costco)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500">
+        <datalist id="m-merchant-list"></datalist>
+        <div class="grid grid-cols-2 gap-2">
+          <select id="m-items" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100">
+            <option value="">항목 선택</option>
+            <optgroup label="🍽️ 식비">
+              <option value="장보기(식료품)">장보기(식료품)</option>
+              <option value="외식">외식</option>
+              <option value="배달">배달</option>
+              <option value="커피·간식">커피·간식</option>
+            </optgroup>
+            <optgroup label="🏠 주거">
+              <option value="집수리·용품">집수리·용품</option>
+              <option value="가구·가전">가구·가전</option>
+            </optgroup>
+            <optgroup label="🚗 교통·차량">
+              <option value="주유">주유</option>
+              <option value="차량정비">차량정비</option>
+              <option value="주차·통행료">주차·통행료</option>
+            </optgroup>
+            <optgroup label="📱 통신·구독">
+              <option value="휴대폰">휴대폰</option>
+              <option value="인터넷·스트리밍">인터넷·스트리밍</option>
+            </optgroup>
+            <optgroup label="🏥 의료">
+              <option value="병원·약국">병원·약국</option>
+            </optgroup>
+            <optgroup label="🎒 자녀·교육">
+              <option value="학용품">학용품</option>
+              <option value="학원·캠프">학원·캠프</option>
+              <option value="자녀 용돈">자녀 용돈</option>
+            </optgroup>
+            <optgroup label="👕 의류·미용">
+              <option value="의류">의류</option>
+              <option value="미용">미용</option>
+            </optgroup>
+            <optgroup label="🎁 기타">
+              <option value="선물·경조사">선물·경조사</option>
+              <option value="여행·여가">여행·여가</option>
+              <option value="기타">기타</option>
+            </optgroup>
+            <option value="__custom">✏️ 직접 입력…</option>
+          </select>
+          <select id="m-pay" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100">
+            <optgroup label="💵 현금·계좌">
+              <option value="현금">현금 (승재 계좌)</option>
+            </optgroup>
+            <optgroup label="💳 승재 카드" id="m-pay-sj"></optgroup>
+            <optgroup label="💳 효미 카드" id="m-pay-hm"></optgroup>
+          </select>
+        </div>
+        <input id="m-items-custom" type="text" placeholder="항목 직접 입력" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500 hidden">
         <div class="flex gap-2">
           <button id="m-add" class="flex-1 text-sm font-bold text-slate-900 bg-sky-400 rounded-xl px-3 py-2">추가</button>
           <button id="m-copy" class="text-sm font-bold text-sky-300 bg-sky-900/50 rounded-xl px-3 py-2">수에게 보내기 (복사)</button>
@@ -508,17 +556,28 @@ async function load() {
     const t = new Date();
     mDateEl.value = t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
   }
-  const paySet = new Set(['현금']);
-  (d.receipts || []).forEach(x => { if (x.pay) paySet.add(x.pay); });
-  getVoiceReceipts().forEach(x => { if (x.pay) paySet.add(x.pay); });
-  const payListEl = document.getElementById('m-pay-list');
-  if (payListEl) payListEl.innerHTML = [...paySet].map(p => `<option value="${p.replace(/"/g, '&quot;')}">`).join('');
+  // --- 가게/내용: 자주 쓰는 곳 목록 (선택 or 직접 입력) ---
+  const MERCHANT_SEED = ['Costco Halifax', 'Walmart', 'Superstore', 'Sobeys', 'Canadian Tire', '팀홀튼', 'Starbucks', '주유소'];
+  const mSet = new Set(MERCHANT_SEED);
+  (d.receipts || []).forEach(x => { if (x.merchant) mSet.add(x.merchant); });
+  getVoiceReceipts().forEach(x => { if (x.merchant) mSet.add(x.merchant); });
+  const mListEl = document.getElementById('m-merchant-list');
+  if (mListEl) mListEl.innerHTML = [...mSet].map(p => `<option value="${p.replace(/"/g, '&quot;')}">`).join('');
+  // --- 결제수단 셀렉트: data.json 카드 목록에서 자동 생성 (승재/효미 구분) ---
+  const cardOpt = c => `<option value="${(c.holder + ' ' + c.name).replace(/"/g, '&quot;')}">${c.name}${c.limit ? ' · 한도 $' + c.limit.toLocaleString('en-CA') : ''}</option>`;
+  const sjEl = document.getElementById('m-pay-sj'), hmEl = document.getElementById('m-pay-hm');
+  if (sjEl) sjEl.innerHTML = (d.cards || []).filter(c => c.holder === '승재').map(cardOpt).join('');
+  if (hmEl) hmEl.innerHTML = (d.cards || []).filter(c => c.holder === '효미').map(cardOpt).join('');
+  // --- 항목: '직접 입력' 선택 시 텍스트 필드 표시 ---
+  const itemsSel = document.getElementById('m-items'), itemsCustom = document.getElementById('m-items-custom');
+  if (itemsSel) itemsSel.onchange = () => { if (itemsCustom) itemsCustom.classList.toggle('hidden', itemsSel.value !== '__custom'); };
   document.getElementById('m-add').onclick = () => {
     const date = document.getElementById('m-date').value;
     const amount = parseFloat((document.getElementById('m-amount').value || '').replace(/,/g, ''));
     const merchant = document.getElementById('m-merchant').value.trim();
-    const items = document.getElementById('m-items').value.trim();
-    const pay = document.getElementById('m-pay').value.trim() || '현금';
+    const itemsSelV = document.getElementById('m-items').value;
+    const items = (itemsSelV === '__custom' ? document.getElementById('m-items-custom').value : itemsSelV).trim();
+    const pay = document.getElementById('m-pay').value || '현금';
     if (!date) { alert('날짜를 입력하세요'); return; }
     if (!(amount > 0)) { alert('올바른 금액을 입력하세요'); return; }
     if (!merchant) { alert('가게/내용을 입력하세요'); return; }
@@ -528,6 +587,8 @@ async function load() {
     document.getElementById('m-amount').value = '';
     document.getElementById('m-merchant').value = '';
     document.getElementById('m-items').value = '';
+    const ic = document.getElementById('m-items-custom');
+    if (ic) { ic.value = ''; ic.classList.add('hidden'); }
     load();
   };
   document.getElementById('m-copy').onclick = async () => {
