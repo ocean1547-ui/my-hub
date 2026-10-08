@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-10-04"
+  "updated": "2026-10-08"
  },
  "receipts": [
   {
@@ -336,6 +336,13 @@
    "date": "2026-10-05",
    "amount": 339.5,
    "note": "승재 계좌 입금"
+  },
+  {
+   "label": "어머니 용돈",
+   "freq": "once",
+   "date": "2026-10-08",
+   "amount": 200,
+   "note": "어머님 입금"
   }
  ],
  "cards": [
