@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PingPay 보안 및 개인정보 처리방침 | Security & Privacy</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #0A1628; color: #F0F6FC; line-height: 1.7; padding: 24px 18px 60px; max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 24px 0 8px; }
+  h2 { font-size: 18px; color: #10B981; margin: 32px 0 10px; }
+  p, li { font-size: 15px; color: #C9D4E3; }
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin-bottom: 6px; }
+  .updated { color: #8B949E; font-size: 13px; margin-bottom: 8px; }
+  .lang-toggle { text-align: center; margin: 20px 0 30px; }
+  .lang-toggle button { background: #12233D; color: #F0F6FC; border: 1px solid #243B5A; border-radius: 8px; padding: 8px 18px; margin: 0 4px; font-size: 14px; cursor: pointer; }
+  .lang-toggle button.active { background: #10B981; border-color: #10B981; color: #06281C; font-weight: 700; }
+  .section-en { display: none; }
+  body.en .section-ko { display: none; }
+  body.en .section-en { display: block; }
+  hr { border: none; border-top: 1px solid #243B5A; margin: 40px 0; }
+  a { color: #10B981; }
+</style>
+</head>
+<body>
+<div class="lang-toggle">
+  <button id="btn-ko" class="active" onclick="document.body.classList.remove('en');document.getElementById('btn-ko').classList.add('active');document.getElementById('btn-en').classList.remove('active')">한국어</button>
+  <button id="btn-en" onclick="document.body.classList.add('en');document.getElementById('btn-en').classList.add('active');document.getElementById('btn-ko').classList.remove('active')">English</button>
+</div>
+
+<div class="section-ko">
+  <h1>PingPay 보안 및 개인정보 처리방침</h1>
+  <p class="updated">최종 업데이트: 2026년 10월 9일</p>
+
+  <h2>1. 은행 로그인 정보는 PingPay가 보관하지 않습니다</h2>
+  <ul>
+    <li>은행 연결은 <strong>Plaid</strong>를 통해 이루어집니다. Plaid는 Wealthsimple, Shopify, Wise도 사용하는 은행 연결 서비스입니다.</li>
+    <li>은행 로그인 화면은 Plaid가 직접 제공합니다. 아이디와 비밀번호는 Plaid에만 입력되며, PingPay 서버에는 저장되지 않습니다.</li>
+    <li>연결이 끝나면 Plaid는 은행 데이터 접근용 <strong>토큰</strong>만 PingPay에 전달합니다.</li>
+  </ul>
+
+  <h2>2. 접근 토큰은 암호화되어 저장됩니다</h2>
+  <ul>
+    <li>은행 데이터에 접근하는 토큰은 암호화(AES-256 수준)된 상태로 서버에 저장됩니다.</li>
+    <li>토큰은 PingPay 서버 외부로 전송되지 않으며, 로그나 오류 메시지에 남지 않습니다.</li>
+  </ul>
+
+  <h2>3. 모든 통신은 암호화됩니다</h2>
+  <ul>
+    <li>앱과 서버 사이의 모든 통신은 HTTPS(TLS)로 암호화됩니다.</li>
+  </ul>
+
+  <h2>4. 수집하는 데이터와 사용 목적</h2>
+  <ul>
+    <li><strong>거래내역</strong> (가게명, 금액, 날짜): 결제 내역 표시 및 알림 제공 목적입니다.</li>
+    <li><strong>연결된 은행 목록</strong>: 알림 대상 관리 목적입니다.</li>
+    <li>수집한 데이터를 광고 목적으로 제3자에게 판매하거나 제공하지 않습니다.</li>
+  </ul>
+
+  <h2>5. 삭제 권리</h2>
+  <ul>
+    <li>은행 연결을 해제하면 해당 은행의 접근 토큰을 즉시 폐기합니다.</li>
+    <li>계정 삭제를 요청하면 저장된 모든 거래내역과 토큰을 삭제합니다.</li>
+  </ul>
+
+  <h2>6. 결제 알림에 대해</h2>
+  <ul>
+    <li>은행에서 거래내역을 제공하는 시점에 따라 알림이 전송됩니다 (은행별로 하루 1~4회 갱신). 실시간 카드 승인 알림이 아닙니다.</li>
+  </ul>
+
+  <h2>7. 문의</h2>
+  <p>보안 관련 문의: <a href="mailto:ocean1547@gmail.com">ocean1547@gmail.com</a></p>
+</div>
+
+<div class="section-en">
+  <h1>PingPay Security & Privacy Policy</h1>
+  <p class="updated">Last updated: October 9, 2026</p>
+
+  <h2>1. PingPay never stores your bank login credentials</h2>
+  <ul>
+    <li>Bank connections are handled by <strong>Plaid</strong>, the same bank-linking service used by Wealthsimple, Shopify, and Wise.</li>
+    <li>The bank login screen is provided directly by Plaid. Your username and password go only to Plaid — they are never stored on PingPay servers.</li>
+    <li>After linking, Plaid passes only an <strong>access token</strong> to PingPay.</li>
+  </ul>
+
+  <h2>2. Access tokens are stored encrypted</h2>
+  <ul>
+    <li>Tokens used to access bank data are stored encrypted (AES-256 level) on our servers.</li>
+    <li>Tokens are never transmitted outside PingPay servers and never appear in logs or error messages.</li>
+  </ul>
+
+  <h2>3. All communication is encrypted</h2>
+  <ul>
+    <li>All traffic between the app and our servers uses HTTPS (TLS).</li>
+  </ul>
+
+  <h2>4. Data we collect and why</h2>
+  <ul>
+    <li><strong>Transactions</strong> (merchant, amount, date): to display your spending and send alerts.</li>
+    <li><strong>Linked banks</strong>: to manage alert subscriptions.</li>
+    <li>We never sell or share your data with third parties for advertising.</li>
+  </ul>
+
+  <h2>5. Your right to deletion</h2>
+  <ul>
+    <li>Disconnecting a bank immediately revokes that bank's access token.</li>
+    <li>Requesting account deletion removes all stored transactions and tokens.</li>
+  </ul>
+
+  <h2>6. About payment alerts</h2>
+  <ul>
+    <li>Alerts are sent when your bank provides new transaction data (typically 1–4 updates per day depending on the bank). These are not real-time card authorization alerts.</li>
+  </ul>
+
+  <h2>7. Contact</h2>
+  <p>Security questions: <a href="mailto:ocean1547@gmail.com">ocean1547@gmail.com</a></p>
+</div>
+</body>
+</html>
