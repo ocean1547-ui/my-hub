@@ -1,0 +1,5 @@
+# nvidia/ is a read-only reference snapshot of NVIDIA Agent Skills.
+# Its SKILL.md files contain Go-template syntax ({{...}}) that breaks
+# Jekyll/Liquid, so keep the whole folder out of the Pages build.
+exclude:
+  - nvidia
