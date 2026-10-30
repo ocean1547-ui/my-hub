@@ -24,4 +24,4 @@ f. Have excellent SQL commenting for each section of the script.
 Take a screenshot of the resulting database tables to show that you can successfully run your DDL script and paste it into an image file within the repository called successful_table_creation.bmp.
 
 ---
-Status: ✅ Generated → ../test1_ddl_script.sql (2026-10-29, skeleton — ERD image pending; swap example tables for the real ERD)
+Status: ✅ Generated → ../request_results/test1_ddl_script.sql (2026-10-29, skeleton — ERD image pending; swap example tables for the real ERD)
