@@ -1,0 +1,24 @@
+DDL: CREATE, ALTER, & DROP
+Instructions:
+Open this repository in the browser as shown in class
+Launch the repository via the GitHub Codespace as shown in class and open it with VS Code
+When satisfied that you have completed the required changes in the repository folder, commit and push the entire repository as shown in class.
+You must ensure that your solution has been pushed to GitHub in order to get credit for the exercise.
+Tasks:
+Create a DDL script to create the tables shown in the ERD in the image below. Make sure to save this script in a SQL file within the repository.
+
+Your completed script should:
+
+a. Successfully create all five table objects with no errors.
+
+b. Include all columns for each table
+
+c. Include the appropriate datatypes as indicated in the ERD. Please Note: ERD datatypes do not always match the physical datatypes in a particular DB platform, so you may need to do some “translations”.
+
+d. Make use of at least one ALTER command after initially creating the table.
+
+e. Have a DROP section to drop all the tables at the top of the script so that the entire script can be run multiple times to recreate the database structure.
+
+f. Have excellent SQL commenting for each section of the script.
+
+Take a screenshot of the resulting database tables to show that you can successfully run your DDL script and paste it into an image file within the repository called successful_table_creation.bmp.
