@@ -1,0 +1,10 @@
+PostgreSQL Environment Setup
+Instructions:
+Open this repository in the browser as shown in class
+Launch the repository via the GitHub Codespace as shown in class and open it with VS Code
+When satisfied that you have completed the required changes in the repository folder, commit and push the entire repository as shown in class.
+You must ensure that your solution has been pushed to GitHub in order to get credit for the exercise.
+Tasks:
+Follow the environment setup steps as shown in class to get your VS Code development environment within your GitHub Codespace setup for PostgreSQL development.
+Use the provided PostGres_testing.sql file to test out your database connection. Do NOT run the provided "DROP TABLE" command the first time you run it.
+Take a screenshot of the resulting database table records to show that you have setup the environment correctly and paste it into an image file within the repository called successful_setup.bmp.
