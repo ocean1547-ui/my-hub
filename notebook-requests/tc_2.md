@@ -74,3 +74,6 @@ Final Grade	Requirement
 6/10	Tech check is correct (all tasks working) and is completed and submitted completely outside of class and/or after the 12-hour grace period has elapsed.
 0/10	Tech check is not submitted or does not fully work.
 Written with StackEdit.
+
+---
+Status: ⛔ 자동 생성 제외 — 채점 대상 인클래스 Tech Check라 James 본인이 직접 수행 (2026-11-02 수 확인)
