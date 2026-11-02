@@ -24,3 +24,5 @@ performing some basic calculations \& manipulation of the DataFrame in Pandas
 
 using MatplotLib to chart the resulting data
 
+---
+Status: ✅ Generated → ../notebooks/tc2_dml_pandas_practice.ipynb (2026-11-02)
