@@ -338,18 +338,11 @@
    "note": "매달 20일 입금"
   },
   {
-   "label": "CEB (캐나다 국세청)",
+   "label": "이모 건강식품",
    "freq": "once",
-   "date": "2026-10-05",
-   "amount": 339.5,
-   "note": "승재 계좌 입금"
-  },
-  {
-   "label": "어머니 용돈",
-   "freq": "once",
-   "date": "2026-10-08",
-   "amount": 200.0,
-   "note": "어머님 입금"
+   "note": "",
+   "amount": 100.0,
+   "date": "2026-11-04"
   }
  ],
  "cards": [
@@ -365,25 +358,25 @@
    "holder": "승재",
    "name": "Canadian Tire Mastercard",
    "limit": 1000.0,
-   "used": 995.0,
+   "used": 951.01,
    "payment": 40.0,
-   "note": ""
+   "note": "46.49"
   },
   {
    "holder": "효미",
    "name": "Walmart Mastercard",
    "limit": 1500.0,
-   "used": 1500.0,
+   "used": 1486.58,
    "payment": 100.0,
-   "note": ""
+   "note": "13.42"
   },
   {
    "holder": "승재",
    "name": "Costco Mastercard",
    "limit": 1500.0,
-   "used": 1450.0,
+   "used": 1450.1,
    "payment": 60.0,
-   "note": ""
+   "note": "42.65"
   },
   {
    "holder": "승재",
@@ -397,49 +390,49 @@
    "holder": "승재",
    "name": "Amex Points",
    "limit": 8800.0,
-   "used": 8750.0,
+   "used": 8758.78,
    "payment": 200.0,
-   "note": ""
+   "note": "41"
   },
   {
    "holder": "승재",
    "name": "Amex Cashback",
    "limit": 3400.0,
-   "used": 3350.0,
+   "used": 3309.18,
    "payment": 160.0,
-   "note": ""
+   "note": "23"
   },
   {
    "holder": "승재",
    "name": "Capital One Mastercard",
    "limit": 4250.0,
-   "used": 4250.0,
+   "used": 4229.79,
    "payment": 160.0,
-   "note": ""
+   "note": "20.21"
   },
   {
    "holder": "효미",
    "name": "Capital One Mastercard",
    "limit": 5000.0,
-   "used": 5000.0,
+   "used": 5035.56,
    "payment": 160.0,
-   "note": ""
+   "note": "-35.56"
   },
   {
    "holder": "효미",
    "name": "PC Mastercard",
    "limit": 5000.0,
-   "used": 5000.0,
-   "payment": 160.0,
-   "note": ""
+   "used": 5005.24,
+   "payment": 140.0,
+   "note": "-5.24"
   },
   {
    "holder": "효미",
    "name": "TD Visa",
    "limit": 9000.0,
-   "used": 8950.0,
+   "used": 8999.0,
    "payment": 300.0,
-   "note": ""
+   "note": "1"
   }
  ],
  "debt_goal": {
@@ -451,7 +444,7 @@
  "loans": [
   {
    "label": "Mitsubishi Outlander 차량 할부",
-   "balance": 42881,
+   "balance": 42881.0,
    "payment": 349.17,
    "freq": "biweekly",
    "start": "2025-06-20",
@@ -535,11 +528,21 @@
  "accounts": [
   {
    "label": "승재 계좌",
-   "note": "계좌 수수료 $17.95/월 (29일)"
+   "note": "계좌 수수료 $17.95/월 (29일)",
+   "balance": 151.5
+  },
+  {
+   "label": "승재 세이브 계좌",
+   "note": ""
   },
   {
    "label": "효미 계좌",
-   "note": "계좌 수수료 $3.95/월 (29일)"
+   "note": "계좌 수수료 $3.95/월 (29일)",
+   "balance": 5.64
+  },
+  {
+   "label": "효미 세이브 계좌",
+   "note": ""
   }
  ]
 }
