@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-04"
+  "updated": "2026-10-08"
  },
  "receipts": [
   {
@@ -313,13 +313,6 @@
    "items": "카드 결제",
    "amount": 60.0,
    "pay": "현금"
-  },
-  {
-   "date": "2026-11-04",
-   "merchant": "TEST LEDGER CHECK",
-   "items": "자동등록",
-   "amount": 3.21,
-   "pay": "승재 TD Visa"
   }
  ],
  "income": [
