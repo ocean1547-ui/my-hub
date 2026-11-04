@@ -350,9 +350,9 @@
    "holder": "효미",
    "name": "Canadian Tire Mastercard",
    "limit": 3000.0,
-   "used": 2600.0,
+   "used": 2931.52,
    "payment": 60.0,
-   "note": ""
+   "note": "68.48"
   },
   {
    "holder": "승재",
@@ -382,9 +382,9 @@
    "holder": "승재",
    "name": "TD Visa",
    "limit": 1500.0,
-   "used": 1450.0,
+   "used": 1462.41,
    "payment": 100.0,
-   "note": ""
+   "note": "37"
   },
   {
    "holder": "승재",
@@ -533,7 +533,8 @@
   },
   {
    "label": "승재 세이브 계좌",
-   "note": ""
+   "note": "",
+   "balance": 0.08
   },
   {
    "label": "효미 계좌",
@@ -542,7 +543,8 @@
   },
   {
    "label": "효미 세이브 계좌",
-   "note": ""
+   "note": "",
+   "balance": 3.78
   }
  ]
 }
