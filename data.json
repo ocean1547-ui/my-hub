@@ -320,6 +320,13 @@
    "items": "커피",
    "amount": 2.05,
    "pay": "승재 Costco Mastercard"
+  },
+  {
+   "date": "2026-11-04",
+   "merchant": "지윤이 용돈",
+   "items": "용돈",
+   "amount": 10.0,
+   "pay": "승재 계좌"
   }
  ],
  "income": [
@@ -529,7 +536,7 @@
   {
    "label": "승재 계좌",
    "note": "계좌 수수료 $17.95/월 (29일)",
-   "balance": 151.5
+   "balance": 141.5
   },
   {
    "label": "승재 세이브 계좌",
