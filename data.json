@@ -245,24 +245,24 @@
  },
  "receipts": [
   {
-   "amount": 31.65,
    "date": "2026-10-01",
-   "items": "계란 특대 3팩·바나나·로프케이크",
    "merchant": "Costco Halifax",
+   "items": "계란 특대 3팩·바나나·로프케이크",
+   "amount": 31.65,
    "pay": "효미 Canadian Tire Mastercard"
   },
   {
-   "amount": 3.5,
    "date": "2026-10-01",
-   "items": "아이스 모카 라떼 라지",
    "merchant": "팀홀튼",
+   "items": "아이스 모카 라떼 라지",
+   "amount": 3.5,
    "pay": "승재 Canadian Tire Mastercard"
   },
   {
-   "amount": 32.0,
    "date": "2026-10-03",
-   "items": "고기값",
    "merchant": "김창현",
+   "items": "고기값",
+   "amount": 32.0,
    "pay": "현금"
   },
   {
@@ -316,8 +316,8 @@
   },
   {
    "date": "2026-11-04",
-   "merchant": "NSCC - INSTITUTE OF TE",
-   "items": "장보기(식료품)",
+   "merchant": "NSCC - 팀",
+   "items": "커피",
    "amount": 2.05,
    "pay": "승재 Costco Mastercard"
   }
@@ -327,7 +327,7 @@
    "label": "Northwood 급여",
    "freq": "biweekly",
    "first_pay": "2026-10-08",
-   "estimate": 1100,
+   "estimate": 1100.0,
    "note": "격주 목요일, 보통 1,100 (변동)"
   },
   {
@@ -348,7 +348,7 @@
    "label": "어머니 용돈",
    "freq": "once",
    "date": "2026-10-08",
-   "amount": 200,
+   "amount": 200.0,
    "note": "어머님 입금"
   }
  ],
@@ -356,89 +356,89 @@
   {
    "holder": "효미",
    "name": "Canadian Tire Mastercard",
-   "limit": 3000,
-   "used": 2600,
-   "payment": 60,
+   "limit": 3000.0,
+   "used": 2600.0,
+   "payment": 60.0,
    "note": ""
   },
   {
    "holder": "승재",
    "name": "Canadian Tire Mastercard",
-   "limit": 1000,
-   "used": 995,
-   "payment": 40,
+   "limit": 1000.0,
+   "used": 995.0,
+   "payment": 40.0,
    "note": ""
   },
   {
    "holder": "효미",
    "name": "Walmart Mastercard",
-   "limit": 1500,
-   "used": 1500,
-   "payment": 100,
+   "limit": 1500.0,
+   "used": 1500.0,
+   "payment": 100.0,
    "note": ""
   },
   {
    "holder": "승재",
    "name": "Costco Mastercard",
-   "limit": 1500,
-   "used": 1450,
-   "payment": 60,
+   "limit": 1500.0,
+   "used": 1450.0,
+   "payment": 60.0,
    "note": "10/4 최소결제"
   },
   {
    "holder": "승재",
    "name": "TD Visa",
-   "limit": 1500,
-   "used": 1450,
-   "payment": 100,
+   "limit": 1500.0,
+   "used": 1450.0,
+   "payment": 100.0,
    "note": ""
   },
   {
    "holder": "승재",
    "name": "Amex Points",
-   "limit": 8800,
-   "used": 8750,
-   "payment": 200,
+   "limit": 8800.0,
+   "used": 8750.0,
+   "payment": 200.0,
    "note": "사용액 확인 필요"
   },
   {
    "holder": "승재",
    "name": "Amex Cashback",
-   "limit": 3400,
-   "used": 3350,
-   "payment": 160,
+   "limit": 3400.0,
+   "used": 3350.0,
+   "payment": 160.0,
    "note": "사용액 확인 필요"
   },
   {
    "holder": "승재",
    "name": "Capital One Mastercard",
-   "limit": 4250,
-   "used": 4250,
-   "payment": 160,
+   "limit": 4250.0,
+   "used": 4250.0,
+   "payment": 160.0,
    "note": "사용액 확인 필요"
   },
   {
    "holder": "효미",
    "name": "Capital One Mastercard",
-   "limit": 5000,
-   "used": 5000,
-   "payment": 160,
+   "limit": 5000.0,
+   "used": 5000.0,
+   "payment": 160.0,
    "note": "사용액 확인 필요"
   },
   {
    "holder": "효미",
    "name": "PC Mastercard",
-   "limit": 5000,
-   "used": 5000,
-   "payment": 160,
+   "limit": 5000.0,
+   "used": 5000.0,
+   "payment": 160.0,
    "note": "사용액 확인 필요"
   },
   {
    "holder": "효미",
    "name": "TD Visa",
-   "limit": 9000,
-   "used": 8950,
-   "payment": 300,
+   "limit": 9000.0,
+   "used": 8950.0,
+   "payment": 300.0,
    "note": "사용액 확인 필요"
   }
  ],
