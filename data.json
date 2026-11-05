@@ -341,6 +341,20 @@
    "items": "카드 결제",
    "amount": 140.0,
    "pay": "승재 계좌"
+  },
+  {
+   "date": "2026-11-05",
+   "merchant": "지윤·효미 폰",
+   "items": "고정지출 자동등록",
+   "amount": 80.78,
+   "pay": "승재 계좌"
+  },
+  {
+   "date": "2026-11-05",
+   "merchant": "ON THE WEDGE",
+   "items": "장보기(식료품)",
+   "amount": 6.5,
+   "pay": "승재 Costco Mastercard"
   }
  ],
  "income": [
