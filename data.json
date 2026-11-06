@@ -276,7 +276,7 @@
    "merchant": "효미 PC Mastercard",
    "items": "카드 결제",
    "amount": 180.0,
-   "pay": "현금",
+   "pay": "효미 PC Mastercard",
    "source": "import",
    "dup_of": null
   },
@@ -285,7 +285,7 @@
    "merchant": "효미 Walmart Mastercard",
    "items": "카드 결제",
    "amount": 80.0,
-   "pay": "현금",
+   "pay": "효미 Walmart Mastercard",
    "source": "import",
    "dup_of": null
   },
@@ -294,7 +294,7 @@
    "merchant": "승재 Costco Mastercard",
    "items": "카드 결제",
    "amount": 60.0,
-   "pay": "현금",
+   "pay": "승재 Costco Mastercard",
    "source": "import",
    "dup_of": null
   },
@@ -312,7 +312,7 @@
    "merchant": "승재 Amex Cashback",
    "items": "카드 결제",
    "amount": 10.0,
-   "pay": "현금",
+   "pay": "승재 Amex Cashback",
    "source": "import",
    "dup_of": null
   },
@@ -330,7 +330,7 @@
    "merchant": "효미 TD Visa",
    "items": "카드 결제",
    "amount": 60.0,
-   "pay": "현금",
+   "pay": "효미 TD Visa",
    "source": "import",
    "dup_of": null
   },
@@ -357,7 +357,7 @@
    "merchant": "효미 캐피탈 마스터 카드",
    "items": "카드 결제",
    "amount": 160.0,
-   "pay": "승재 계좌",
+   "pay": "효미 Capital One Mastercard",
    "source": "manual",
    "dup_of": null
   },
@@ -366,7 +366,7 @@
    "merchant": "효미 pc 마스터 카드",
    "items": "카드 결제",
    "amount": 140.0,
-   "pay": "승재 계좌",
+   "pay": "효미 PC Mastercard",
    "source": "manual",
    "dup_of": null
   },
@@ -393,7 +393,7 @@
    "merchant": "승재 비자 카드",
    "items": "카드 결제",
    "amount": 100.0,
-   "pay": "승재 계좌",
+   "pay": "승재 TD Visa",
    "source": "manual",
    "dup_of": null
   }
@@ -436,7 +436,7 @@
    "holder": "효미",
    "name": "Walmart Mastercard",
    "limit": 1500.0,
-   "used": 1486.58,
+   "used": 1406.58,
    "payment": 100.0,
    "note": "13.42"
   },
@@ -444,7 +444,7 @@
    "holder": "승재",
    "name": "Costco Mastercard",
    "limit": 1500.0,
-   "used": 1450.1,
+   "used": 1390.1,
    "payment": 60.0,
    "note": "42.65"
   },
@@ -452,7 +452,7 @@
    "holder": "승재",
    "name": "TD Visa",
    "limit": 1500.0,
-   "used": 1362.41,
+   "used": 1262.41,
    "payment": 100.0,
    "note": "137"
   },
@@ -468,7 +468,7 @@
    "holder": "승재",
    "name": "Amex Cashback",
    "limit": 3400.0,
-   "used": 3309.18,
+   "used": 3299.18,
    "payment": 160.0,
    "note": "23"
   },
@@ -484,7 +484,7 @@
    "holder": "효미",
    "name": "Capital One Mastercard",
    "limit": 5000.0,
-   "used": 5035.56,
+   "used": 4875.56,
    "payment": 160.0,
    "note": "-35.56"
   },
@@ -492,7 +492,7 @@
    "holder": "효미",
    "name": "PC Mastercard",
    "limit": 5000.0,
-   "used": 5005.24,
+   "used": 4685.24,
    "payment": 140.0,
    "note": "-5.24"
   },
@@ -500,7 +500,7 @@
    "holder": "효미",
    "name": "TD Visa",
    "limit": 9000.0,
-   "used": 8999.0,
+   "used": 8939.0,
    "payment": 300.0,
    "note": "1"
   }
