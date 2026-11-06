@@ -432,6 +432,24 @@
    "pay": "승재 비자 카드",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-06",
+   "merchant": "승재 비자 카드",
+   "items": "카드결제",
+   "amount": 40.0,
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-06",
+   "merchant": "ALC",
+   "items": "로또",
+   "amount": 10.0,
+   "pay": "승재 아멕스 캐시 카드",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
