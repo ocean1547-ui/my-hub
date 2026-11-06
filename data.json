@@ -249,112 +249,144 @@
    "merchant": "Costco Halifax",
    "items": "계란 특대 3팩·바나나·로프케이크",
    "amount": 31.65,
-   "pay": "효미 Canadian Tire Mastercard"
+   "pay": "효미 Canadian Tire Mastercard",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-01",
    "merchant": "팀홀튼",
    "items": "아이스 모카 라떼 라지",
    "amount": 3.5,
-   "pay": "승재 Canadian Tire Mastercard"
+   "pay": "승재 Canadian Tire Mastercard",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-03",
    "merchant": "김창현",
    "items": "고기값",
    "amount": 32.0,
-   "pay": "현금"
+   "pay": "현금",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-04",
    "merchant": "효미 PC Mastercard",
    "items": "카드 결제",
    "amount": 180.0,
-   "pay": "현금"
+   "pay": "현금",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-04",
    "merchant": "효미 Walmart Mastercard",
    "items": "카드 결제",
    "amount": 80.0,
-   "pay": "현금"
+   "pay": "현금",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-04",
    "merchant": "승재 Costco Mastercard",
    "items": "카드 결제",
    "amount": 60.0,
-   "pay": "현금"
+   "pay": "현금",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-05",
    "merchant": "미디어",
    "items": "인터넷·스트리밍",
    "amount": 10.0,
-   "pay": "승재 Amex Cashback"
+   "pay": "승재 Amex Cashback",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-05",
    "merchant": "승재 Amex Cashback",
    "items": "카드 결제",
    "amount": 10.0,
-   "pay": "현금"
+   "pay": "현금",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-05",
    "merchant": "Sobeys",
    "items": "장보기(식료품)",
    "amount": 7.09,
-   "pay": "승재 Costco Mastercard"
+   "pay": "승재 Costco Mastercard",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-10-06",
    "merchant": "효미 TD Visa",
    "items": "카드 결제",
    "amount": 60.0,
-   "pay": "현금"
+   "pay": "현금",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-11-04",
    "merchant": "NSCC - 팀",
    "items": "커피",
    "amount": 2.05,
-   "pay": "승재 Costco Mastercard"
+   "pay": "승재 Costco Mastercard",
+   "source": "import",
+   "dup_of": null
   },
   {
    "date": "2026-11-04",
    "merchant": "지윤이 용돈",
    "items": "용돈",
    "amount": 10.0,
-   "pay": "승재 계좌"
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
   },
   {
    "date": "2026-11-05",
    "merchant": "효미 캐피탈 마스터 카드",
    "items": "카드 결제",
    "amount": 160.0,
-   "pay": "승재 계좌"
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
   },
   {
    "date": "2026-11-05",
    "merchant": "효미 pc 마스터 카드",
    "items": "카드 결제",
    "amount": 140.0,
-   "pay": "승재 계좌"
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
   },
   {
    "date": "2026-11-05",
    "merchant": "지윤·효미 폰",
-   "items": "고정지출 자동등록",
+   "items": "지윤·효미 폰",
    "amount": 80.78,
-   "pay": "승재 계좌"
+   "pay": "승재 계좌",
+   "source": "fixed",
+   "dup_of": null
   },
   {
    "date": "2026-11-05",
    "merchant": "ON THE WEDGE",
    "items": "장보기(식료품)",
    "amount": 6.5,
-   "pay": "승재 Costco Mastercard"
+   "pay": "승재 Costco Mastercard",
+   "source": "cardalert",
+   "dup_of": null
   }
  ],
  "income": [
