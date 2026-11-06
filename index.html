@@ -533,9 +533,20 @@ async function load() {
   const fAmt = x => { const k = fKey(x); const a = fixedActuals[k]; return (a != null && !isNaN(a)) ? { amt: a, actual: true } : { amt: x.amount, actual: false }; };
   const monthly = d.fixed.filter(x => !x.freq).sort((a, b) => a.day - b.day);
   const biweekly = d.fixed.filter(x => x.freq === 'biweekly');
+  // 이번 달 이미 영수증으로 자동 등록된 고정지출은 고정 합계에서 뺀다
+  // (영수증 합계와 겹쳐 총지출에 두 번 잡히는 것 방지 — 어드민과 동일)
+  const regFixedAmt = x => {
+    let s = 0;
+    (d.receipts || []).forEach(r => {
+      if (r.source !== 'fixed' || r.dup_of) return;
+      if ((r.date || '').slice(0, 7) !== curYM) return;
+      if ((r.merchant || '') === x.label && Math.abs((r.amount || 0) - x.amount) < 0.005) s += r.amount;
+    });
+    return s;
+  };
   let fixedTotal = 0, fixedHasEst = false;
-  monthly.forEach(x => { const r = fAmt(x); if (!r.actual) fixedHasEst = true; fixedTotal += r.amt; });
-  biweekly.forEach(x => { const r = fAmt(x); if (!r.actual) fixedHasEst = true; fixedTotal += r.amt * 2; }); // 월 2회 가정
+  monthly.forEach(x => { const r = fAmt(x); if (!r.actual) fixedHasEst = true; fixedTotal += r.amt - regFixedAmt(x); });
+  biweekly.forEach(x => { const r = fAmt(x); if (!r.actual) fixedHasEst = true; fixedTotal += r.amt * 2 - regFixedAmt(x); }); // 월 2회 가정
 
   document.getElementById('fixed-total').textContent = (fixedHasEst ? '~' : '') + fmt(fixedTotal);
   document.getElementById('fixed-count').textContent = monthly.length + biweekly.length + '건';
@@ -1057,8 +1068,18 @@ function monthIncome(d, ym) {
   return sum;
 }
 function monthExpense(d, ym) {
-  const monthly = (d.fixed || []).filter(x => !x.freq).reduce((s, x) => s + x.amount, 0);
-  const biweekly = (d.fixed || []).filter(x => x.freq === 'biweekly').reduce((s, x) => s + x.amount * 2, 0);
+  // 그 달 이미 영수증으로 자동 등록된 고정지출은 고정분에서 빼서 이중합산 방지
+  const regAmt = x => {
+    let s = 0;
+    (d.receipts || []).forEach(r => {
+      if (r.source !== 'fixed' || r.dup_of) return;
+      if ((r.date || '').slice(0, 7) !== ym) return;
+      if ((r.merchant || '') === x.label && Math.abs((r.amount || 0) - x.amount) < 0.005) s += r.amount;
+    });
+    return s;
+  };
+  const monthly = (d.fixed || []).filter(x => !x.freq).reduce((s, x) => s + x.amount - regAmt(x), 0);
+  const biweekly = (d.fixed || []).filter(x => x.freq === 'biweekly').reduce((s, x) => s + x.amount * 2 - regAmt(x), 0);
   const receipts = [...(d.receipts || []), ...getVoiceReceipts()].filter(r => (r.date || '').slice(0, 7) === ym).reduce((s, r) => s + r.amount, 0);
   return monthly + biweekly + receipts;
 }
@@ -1148,8 +1169,14 @@ function renderStats(d) {
   const cats = {};
   if (statsMode === 'exp') {
     (d.fixed || []).forEach(x => {
+      // statsYM에 이미 영수증으로 자동 등록된 고정지출은 고정분에서 제외 (이중합산 방지)
+      let reg = 0;
+      (d.receipts || []).forEach(r => {
+        if (r.source === 'fixed' && !r.dup_of && (r.date || '').slice(0, 7) === statsYM
+          && (r.merchant || '') === x.label && Math.abs((r.amount || 0) - x.amount) < 0.005) reg += r.amount;
+      });
       const c = categorizeExpense(x.label, '', '');
-      cats[c] = (cats[c] || 0) + x.amount * (x.freq === 'biweekly' ? 2 : 1);
+      cats[c] = (cats[c] || 0) + x.amount * (x.freq === 'biweekly' ? 2 : 1) - reg;
     });
     [...(d.receipts || []), ...getVoiceReceipts()]
       .filter(r => (r.date || '').slice(0, 7) === statsYM)
