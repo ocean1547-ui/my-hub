@@ -477,6 +477,24 @@
    "pay": "승재 Costco Mastercard",
    "source": "cardalert",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-07",
+   "merchant": "지윤이 용돈",
+   "items": "용돈",
+   "amount": 30.0,
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-07",
+   "merchant": "승재 케네디어 타이어 마스터 카드",
+   "items": "카드결제",
+   "amount": 60.0,
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
