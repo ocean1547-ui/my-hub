@@ -513,6 +513,24 @@
    "pay": "승재 비자 카드",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-07",
+   "merchant": "승재 비자 카드",
+   "items": "카드 결제",
+   "amount": 40.0,
+   "pay": "승재 TD Visa",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-07",
+   "merchant": "승재 비자 카드",
+   "items": "토큰 _ sam",
+   "amount": 7.05,
+   "pay": "승재 비자 카드",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -569,7 +587,7 @@
    "holder": "승재",
    "name": "TD Visa",
    "limit": 1500.0,
-   "used": 1379.41,
+   "used": 1339.41,
    "payment": 100.0,
    "note": "137"
   },
