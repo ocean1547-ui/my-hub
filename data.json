@@ -471,15 +471,6 @@
   },
   {
    "date": "2026-11-07",
-   "merchant": "공항 주차장",
-   "items": "주차료",
-   "amount": 4.0,
-   "pay": "승재 코스트코 카드",
-   "source": "manual",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-07",
    "merchant": "HALIFAX INTL AIRPORT A",
    "items": "장보기(식료품)",
    "amount": 4.0,
