@@ -44,7 +44,7 @@
    "label": "집 렌트"
   },
   {
-   "amount": 44.0,
+   "amount": 7.78,
    "day": 3,
    "from": "",
    "label": "승재 Canadian Tire Mastercard 카드이자",
@@ -495,6 +495,15 @@
    "pay": "승재 계좌",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-07",
+   "merchant": "승재 케네디어 타이어 마스터 카드",
+   "items": "카드 이자",
+   "amount": 7.78,
+   "pay": "승재 케네디어 타이어 마스터카드",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -528,8 +537,8 @@
    "name": "Canadian Tire Mastercard",
    "limit": 1000.0,
    "used": 953.51,
-   "payment": 40.0,
-   "note": "46.49"
+   "payment": 60.0,
+   "note": "100"
   },
   {
    "holder": "효미",
