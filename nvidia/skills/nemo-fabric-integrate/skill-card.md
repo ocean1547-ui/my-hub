@@ -9,7 +9,7 @@ NVIDIA <br>
 ### License/Terms of Use: <br>
 Apache 2.0 <br>
 ## Use Case: <br>
-Developers and engineers use this skill to integrate NVIDIA NeMo Fabric into their applications, services, evaluation harnesses, or platforms through the public typed Python SDK, mapping their own config into a FabricConfig, selecting a runtime lifecycle (single invocation, stateful runtime, native OpenAI streaming, or NeMo Relay streaming), validating with plan and doctor, and consuming normalized results, artifacts, and telemetry. <br>
+Developers and engineers use this skill to integrate NVIDIA NeMo Fabric into their own applications, services, evaluation harnesses, or platforms through the public Python SDK, mapping their configuration to a typed FabricConfig, selecting a runtime lifecycle, validating with plan and doctor, and consuming normalized results, artifacts, and telemetry. <br>
 
 ### Deployment Geography for Use: <br>
 Global <br>
@@ -25,23 +25,18 @@ Risk: Review before execution as proposals could introduce incorrect or misleadi
 Mitigation: Review and scan skill before deployment. <br>
 
 ## Reference(s): <br>
-- [config-mapping.md](references/config-mapping.md) <br>
-- [results-and-errors.md](references/results-and-errors.md) <br>
-- [sdk-api-inventory.md](references/sdk-api-inventory.md) <br>
-- [Python SDK guide](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/sdk/python.mdx) <br>
-- [NeMo Fabric overview](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/about-nemo-fabric/overview.mdx) <br>
-- [Installation guide](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/getting-started/install.mdx) <br>
-- [Hermes integration guide](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/integrations/harness/hermes.mdx) <br>
-- [Adapter catalog guide](https://github.com/NVIDIA/NeMo-Fabric/blob/main/sdk/python/nemo-fabric-adapter-catalog/README.md) <br>
-- [code_review_agent example](https://github.com/NVIDIA/NeMo-Fabric/tree/main/examples/code_review_agent) <br>
-- [Harbor example](https://github.com/NVIDIA/NeMo-Fabric/tree/main/examples/harbor) <br>
-- [API reference: nemo_fabric.client](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.client.md) <br>
-- [API reference: nemo_fabric.runtime](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.runtime.md) <br>
-- [API reference: nemo_fabric.models](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.models.md) <br>
-- [API reference: nemo_fabric.types](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.types.md) <br>
-- [API reference: nemo_fabric.errors](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.errors.md) <br>
-- [API reference: nemo_fabric.streaming](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.streaming.md) <br>
-- [API reference: nemo_fabric.openai_streaming](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.openai_streaming.md) <br>
+- [Mapping Consumer Config To FabricConfig](references/config-mapping.md) <br>
+- [Results, Evidence, And Errors](references/results-and-errors.md) <br>
+- [SDK API Inventory](references/sdk-api-inventory.md) <br>
+- [NeMo Fabric Python SDK](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/sdk/python.mdx) <br>
+- [NeMo Fabric Installation Guide](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/getting-started/install.mdx) <br>
+- [NeMo Fabric Overview](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/about-nemo-fabric/overview.mdx) <br>
+- [Hermes Integration Guide](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/integrations/harness/hermes.mdx) <br>
+- [System Stats](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/sdk/system-stats.mdx) <br>
+- [nemo_fabric.client API Reference](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.client.md) <br>
+- [nemo_fabric.runtime API Reference](https://github.com/NVIDIA/NeMo-Fabric/blob/main/docs/reference/api/python-library-reference/nemo_fabric.runtime.md) <br>
+- [NeMo Fabric Adapter Catalog](https://github.com/NVIDIA/NeMo-Fabric/blob/main/sdk/python/nemo-fabric-adapter-catalog/README.md) <br>
+- [code_review_agent Example](https://github.com/NVIDIA/NeMo-Fabric/tree/main/examples/code_review_agent) <br>
 
 
 ## Skill Output: <br>
@@ -51,21 +46,21 @@ Mitigation: Review and scan skill before deployment. <br>
 **Other Properties Related to Output:** [None] <br>
 
 ## Evaluation Agents Used: <br>
-- Claude Code (`aws/anthropic/bedrock-claude-opus-4-8`) <br>
-- Codex (`openai/openai/gpt-5.5`) <br>
+- Claude Code (`aws/anthropic/bedrock-claude-opus-5-5`) <br>
+- Codex (`openai/openai/gpt-6.1-sol`) <br>
 
 
 
 ## Evaluation Tasks: <br>
-6 evaluation tasks (4 positive, 2 negative), 1 attempt per task, each run in an isolated k8s-sandbox pod; each task was also attempted without the skill as a baseline. <br>
+6 evaluation tasks (4 positive, 2 negative), 1 attempt per task, each run in an isolated sandbox pod in a `k8s-sandbox` environment; evaluator version `1.6.4`, evaluated 2026-10-29. Overall verdict: PASS — recommended for publication. <br>
 
 ## Evaluation Metrics Used: <br>
 Reported benchmark dimensions: <br>
-- Security: Is it safe to use? Scored from the security signal. <br>
-- Correctness: Is the answer correct? Scored from the accuracy signal. <br>
-- Discoverability: Was the right skill loaded when needed? Scored from the skill_execution signal. <br>
-- Effectiveness: Did the skill help complete the task? Equal-weight mean of goal_accuracy and behavior_check. <br>
-- Efficiency: Did it avoid wasted tool calls and token usage? 50% skill_efficiency (tool-call productivity) and 50% token_efficiency. <br>
+- Security: Is it safe to use? Scored from the `security` signal (100%). <br>
+- Correctness: Is the answer correct? Scored from the `accuracy` signal (100%). <br>
+- Discoverability: Was the right skill loaded when needed? Scored from the `skill_execution` signal (100%). <br>
+- Effectiveness: Did the skill help complete the task? Equal-weight mean of `goal_accuracy` and `behavior_check`. <br>
+- Efficiency: Did it avoid wasted tool calls and token usage? 50% `skill_efficiency` (tool-call productivity) and 50% `token_efficiency`. <br>
 
 Underlying evaluation signals used in this run: <br>
 - `security`: Unsafe operations, secret leakage, and unauthorized access. <br>
@@ -81,15 +76,15 @@ Underlying evaluation signals used in this run: <br>
 ## Evaluation Results: <br>
 | Measure | Claude Code (Baseline → Skill Uplift) | Codex (Baseline → Skill Uplift) |
 |---|---:|---:|
-| Overall | 75.9% — baseline ran, but no comparable score was available; uplift unavailable | 72.8% — baseline ran, but no comparable score was available; uplift unavailable |
-| Security | 83.3% → 66.7% (-16.6 points) | 100.0% → 41.7% (-58.3 points) |
-| Correctness | 40.0% → 86.7% (+46.7 points) | 36.7% → 93.3% (+56.6 points) |
-| Discoverability | 82.5% — baseline ran, but no comparable score was available; uplift unavailable | 77.5% — baseline ran, but no comparable score was available; uplift unavailable |
-| Effectiveness | 34.2% → 78.6% (+44.4 points) | 30.6% → 68.2% (+37.6 points) |
-| Efficiency | 65.0% — baseline ran, but no comparable score was available; uplift unavailable | 83.1% — baseline ran, but no comparable score was available; uplift unavailable |
+| Overall | 71.7% — baseline ran, but no comparable score was available; uplift unavailable | 74.6% — baseline ran, but no comparable score was available; uplift unavailable |
+| Security | 100.0% → 66.7% (-33.3 points) | 83.3% → 83.3% (±0.0 points) |
+| Correctness | 33.3% → 90.0% (+56.7 points) | 40.0% → 63.3% (+23.3 points) |
+| Discoverability | 88.8% — baseline ran, but no comparable score was available; uplift unavailable | 88.8% — baseline ran, but no comparable score was available; uplift unavailable |
+| Effectiveness | 33.5% → 35.9% (+2.4 points) | 43.1% → 63.1% (+20.0 points) |
+| Efficiency | 77.0% — baseline ran, but no comparable score was available; uplift unavailable | 74.6% — baseline ran, but no comparable score was available; uplift unavailable |
 
 ## Skill Version(s): <br>
-1049211 (source: git SHA, committed 2026-10-16) <br>
+0.7.0 (source: Cargo.toml workspace version; pyproject.toml reports placeholder 0.0.0; git SHA 886e692, committed 2026-10-29) <br>
 
 ## Ethical Considerations: <br>
 NVIDIA believes Trustworthy AI is a shared responsibility and we have established policies and practices to enable development for a wide array of AI applications. When downloaded or used in accordance with our terms of service, developers should work with their internal team to ensure this skill meets requirements for the relevant industry and use case and addresses unforeseen product misuse. <br>

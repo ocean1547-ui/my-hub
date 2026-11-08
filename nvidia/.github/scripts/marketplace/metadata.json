@@ -133,6 +133,78 @@
       }
     },
     {
+      "path": "skills/bionemo-complexa-evaluate-pdbs",
+      "name": "complexa-evaluate-pdbs",
+      "description": "Agent runbook for evaluating an existing PDB directory through the separately installed first-party Proteina-Complexa CLI. Use to refold or score designs, compute interface pAE, i_pLDDT, scRMSD, motif RMSD, or designability, run complexa analysis, or assess third-party BindCraft, AlphaProteo, or RFdiffusion outputs. SKILL.md selects and invokes the evaluation configuration; bundled executables only inspect local readiness and write a run manifest.\n",
+      "metadata": {
+        "product.primary": "BioNeMo Open Models",
+        "classification.category.primary": "ai_and_machine_learning",
+        "catalog.subdomain": "inference-ai",
+        "audience": "computational_biologist,bioinformatician,research_academic,genomics_researcher,ml_engineer",
+        "discovery.activity_tags": "evaluate,assess,benchmark,measure,validate"
+      }
+    },
+    {
+      "path": "skills/bionemo-complexa-sweep",
+      "name": "complexa-sweep",
+      "description": "Agent runbook for Proteina-Complexa parameter sweeps through the separately installed first-party CLI and config generator. Use for cartesian-product hyperparameter scans, sweeper YAML authoring, configuration comparisons, ablations, tuning, success-rate ranking, or Pareto searches over quality and wall-clock cost. Do not use for a single existing-job launch or SLURM submission template. SKILL.md performs the orchestration; bundled executables only inspect local readiness and write a run manifest.",
+      "metadata": {
+        "product.primary": "BioNeMo Open Models",
+        "classification.category.primary": "ai_and_machine_learning",
+        "catalog.subdomain": "inference-ai",
+        "audience": "computational_biologist,ml_engineer,research_academic,bioinformatician,data_scientist",
+        "discovery.activity_tags": "optimize,configure,evaluate,compare,orchestrate"
+      }
+    },
+    {
+      "path": "skills/bionemo-complexa-target",
+      "name": "complexa-target",
+      "description": "Add, edit, inspect, or validate Proteina-Complexa target definitions for protein binders, ligand binders, and AME motif scaffolding. Use for target registries, chain/residue selectors, hotspots, ligand fields, and incomplete motif inputs. Covers direct YAML edits and complexa target/validate target commands; running a campaign with an already registered target belongs to complexa-design.\n",
+      "metadata": {
+        "product.primary": "BioNeMo Open Models",
+        "classification.category.primary": "ai_and_machine_learning",
+        "catalog.subdomain": "data-science",
+        "audience": "computational_biologist,bioinformatician,research_academic,application_developer",
+        "discovery.activity_tags": "configure,validate,inspect"
+      }
+    },
+    {
+      "path": "skills/bionemo-cuequivariance",
+      "name": "cuequivariance",
+      "description": "Use when defining cuEquivariance groups and irreps, building equivariant tensor products, or validating segmented polynomials with NumPy.",
+      "metadata": {
+        "product.primary": "BioNeMo Libraries",
+        "classification.category.primary": "ai_and_machine_learning",
+        "catalog.subdomain": "training-ai",
+        "audience": "ml_engineer,ai_engineer,research_academic,application_developer,computational_biologist",
+        "discovery.activity_tags": "configure,integrate,validate,test,generate"
+      }
+    },
+    {
+      "path": "skills/bionemo-cuequivariance-jax",
+      "name": "cuequivariance-jax",
+      "description": "Use when writing or debugging cuEquivariance JAX polynomials, irrep dictionaries, Flax NNX layers, or CPU/CUDA execution and layouts.",
+      "metadata": {
+        "product.primary": "BioNeMo Libraries",
+        "classification.category.primary": "ai_and_machine_learning",
+        "catalog.subdomain": "gpu-development",
+        "audience": "application_developer,ml_engineer,ai_engineer,research_academic,hpc_developer",
+        "discovery.activity_tags": "debug,generate,test,validate,configure"
+      }
+    },
+    {
+      "path": "skills/bionemo-cuequivariance-torch",
+      "name": "cuequivariance-torch",
+      "description": "Use when building or debugging cuEquivariance PyTorch tensor products or equivariant GNNs, especially CPU references, layouts, indexing, and gradients.",
+      "metadata": {
+        "product.primary": "BioNeMo Libraries",
+        "classification.category.primary": "ai_and_machine_learning",
+        "catalog.subdomain": "gpu-development",
+        "audience": "application_developer,ml_engineer,ai_engineer,research_academic,hpc_developer",
+        "discovery.activity_tags": "debug,integrate,test,validate,optimize"
+      }
+    },
+    {
       "path": "skills/bionemo-diffdock-nim",
       "name": "diffdock-nim",
       "description": "Run DiffDock molecular docking via NVIDIA NIM to predict small-molecule binding poses against protein targets. Use for DiffDock, molecular docking, ligand docking, blind docking, SMILES or SDF ligands, ranked poses, confidence scores, hosted NVIDIA API, or local Docker deployment.\n",
@@ -413,7 +485,7 @@
       "name": "cdf-anomalygen",
       "description": "Use when running the CDF AnomalyGen pipeline over a defect dataset — mask placement, fine-tuning, synthetic defect-image generation (SDG), evaluation, quality refinement, and pseudo-labeling — even when the user names only one stage.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "ml_engineer,ai_engineer,application_developer,data_scientist,developer",
@@ -425,7 +497,7 @@
       "name": "cdf-augmentation",
       "description": "Use when authoring or validating Cosmos Data Factory (CDF) augmentation YAML configs, or running remote Cosmos Transfer (including Cosmos3 WSM controls), Cosmos Predict, image-edit, or image-to-video inference.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "ai_engineer,ml_engineer,developer,data_engineer,robotics_developer",
@@ -437,7 +509,7 @@
       "name": "cdf-auto-labeling",
       "description": "Use when a user needs to get started with CDF Auto-Labeling, plan a scenario, run or debug a shipped cookbook, author prompts or cookbooks, migrate a pipeline, configure a stage, or pull the prebuilt stage containers from NGC (nvcr.io). Confirm critical inputs (data path, output path, endpoints) and ask when any are missing. This is a router: read the matching reference instead of inventing a workflow.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "physical-ai",
         "audience": "developer,ml_engineer,ai_engineer,data_engineer,application_developer",
@@ -449,7 +521,7 @@
       "name": "cdf-autonomous-vehicle-dataset-generation",
       "description": "Prepare payloads, run and monitor the Autonomous Vehicle Dataset Generation Airflow workflow, and inspect results for driving-clip retrieval and Cosmos3-Nano variants. Existing clips with no retrieval use cdf-video-data-augmentation; seed-image event or anomaly generation uses cdf-event-video-generation.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "av-simulation",
         "audience": "data_engineer,ml_engineer,simulation_engineer,ai_engineer,developer",
@@ -461,7 +533,7 @@
       "name": "cdf-curation-and-retrieval",
       "description": "NVIDIA CDF curation and retrieval. Cosmos Curator video and image pipelines (split, dedup, shard, annotate) with filtering, captioning, and embedding. Cosmos Dataset Search ingest, search, and capability qualification. TAO data mining embeddings and neighbor matching. Ships domain event catalogs, including workplace employee conduct monitoring, which requires legal review before use. Use when a request names Cosmos Curator, Cosmos Dataset Search, CDF, or their Make and CLI surfaces. Not for model training, orchestration, or unrelated dataset questions.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "data_engineer,ml_engineer,ai_engineer,developer,production_operator",
@@ -473,7 +545,7 @@
       "name": "cdf-defect-image-generation",
       "description": "Generate synthetic PCB inspection images on Kubernetes with the SMT Defect Image Generation (DIG) DAG in CDF Orchestration. The DAG renders components in simulation, turns the renders into realistic golden images (sim2real), and uses AnomalyGen to add texture defects such as solder bridges, excess solder or missing components. Simulation can also render shift, tombstone and sideflip pose defects. Use it to build DIG payloads, pick a pipeline mode (full, simulation, sim2real or defect-only), check GPU readiness, follow a run, and match each defect image to its golden and simulated source. Not for running Simulation, Augmentation or AnomalyGen on their own.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "application_developer,simulation_engineer,ml_engineer,devops_engineer,data_scientist",
@@ -485,7 +557,7 @@
       "name": "cdf-event-video-generation",
       "description": "Run the CDF Orchestration Event Video Generation DAG on Kubernetes or OSMO - image-to-video anomaly generation, auto-labeling, and anomaly dataset generation. Select for requests about event video generation, anomaly video generation, image-to-video synthesis, Cosmos3 image2video, anomaly dataset creation, safety/surveillance SDG, or generating person-falling, person-climbing, person-running, fighting, smoking/vaping, fire/smoke, or shoplifting video clips from a seed image. Covers both event_video_generation_dag_k8s and the external-endpoints-only event_video_generation_dag_osmo. Runs environment setup first when controller readiness is unknown. Not for person-crop clothing/attribute augmentation (that is cdf-image-attribute-augmentation) and not for video style transfer.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "application_developer,ai_engineer,ml_engineer,data_engineer,platform_engineer",
@@ -497,7 +569,7 @@
       "name": "cdf-image-attribute-augmentation",
       "description": "Run the CDF Orchestration Image Attribute Augmentation DAG on Kubernetes - person-crop clothing augmentation, attribute search, and augmented dataset generation. Select for requests about image attribute augmentation, person attribute search, person re-identification data, clothing augmentation, attribute captions, augmentation payloads, run status, or result retrieval. Runs environment setup first when controller readiness is unknown. Not for video or defect-image generation.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "data_engineer,ml_engineer,ai_engineer,platform_engineer,devops_engineer",
@@ -509,7 +581,7 @@
       "name": "cdf-orchestration-preflight",
       "description": "Set up missing Linux prerequisites and audit whether a Cosmos Data Factory (CDF) Orchestration checkout and its Kubernetes or OSMO environment are ready to install the controller and run every packaged DAG. Use for prerequisite, pre-setup, Kubernetes, GPU, RWX/NFS, credential, controller-readiness, and quick-start checks. Not for deploying the controller (use cdf-orchestration-setup, which calls this audit first), authoring payloads, or running workflows.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "platform_engineer,devops_engineer,it_operations,solutions_architect,developer",
@@ -521,7 +593,7 @@
       "name": "cdf-orchestration-setup",
       "description": "Use when the user asks to deploy, install, reinstall, redeploy, upgrade, or connect to the CDF Orchestration Airflow controller. Owns the end-to-end deploy sequence and runs the cdf-orchestration-preflight audit first. Covers make setup, controller image builds, Helm installation, controller connection, port-forwarding, and post-install verification. Not for standalone prerequisite audits or remediation, K3s environments, authoring DAGs, or running workflow payloads.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "devops_engineer,platform_engineer,application_developer,solutions_architect,developer",
@@ -533,7 +605,7 @@
       "name": "cdf-orchestration-write-dag",
       "description": "Use when a user describes a custom CDF Orchestration pipeline — a specific ordered combination of stages such as augmentation only, auto-labeling only, detection+captioning only, or image attribute augmentation without full auto-labeling — that no existing DAG in airflow/dags/workflows/ covers, and asks for a new Kubernetes DAG. Also use to check that a generated or existing DAG's model/container/prompt choices match an external spec document (e.g. a CDF `launchable.md`). Not for requests that an existing DAG already covers, including payload-only changes such as different inputs, endpoints, models, or variant counts — route those to the matching workflow skill, unless the user still wants a separate DAG after being pointed to it.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "developer,platform_engineer,devops_engineer,ml_engineer,ai_engineer",
@@ -541,11 +613,23 @@
       }
     },
     {
+      "path": "skills/cdf-simulation",
+      "name": "cdf-simulation",
+      "description": "Component-owned guidance for CDF Simulation requests submitted directly or through Airflow-triggered DIG Flow Catalog prompts — golden THT board, THT pin-geometry variation, good/clean SMT images, structural pose defects, and solder texture defects, from a board USD. Turns one matched prompt into one validated `cdf.CDFJob` build and its compiled JobOrder payload; it never executes a render itself. Requires a caller-supplied board USD and output root, asks for either when missing from an interactive request, and resolves optional details with fixed, documented defaults.",
+      "metadata": {
+        "product.primary": "Cosmos Data Factory",
+        "classification.category.primary": "physical_ai",
+        "catalog.subdomain": "physical-ai",
+        "audience": "simulation_engineer,ml_engineer,data_scientist,application_developer,ai_engineer",
+        "discovery.activity_tags": "configure,generate,validate,orchestrate,synthesize"
+      }
+    },
+    {
       "path": "skills/cdf-video-data-augmentation",
       "name": "cdf-video-data-augmentation",
       "description": "Run the CDF Video Data Augmentation Airflow workflow on Kubernetes or OSMO to create Cosmos video-to-video variants and auto-label both source and generated videos. Use for VDA payload authoring, preflight, execution, monitoring, output verification, or result retrieval. OSMO requires external endpoints. Standalone augmentation or auto-labeling configuration belongs to the respective component skill. Not for retrieval-driven CDF pipelines or image-to-video event generation.",
       "metadata": {
-        "product.primary": "Cosmos",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "ai_engineer,ml_engineer,data_engineer,devops_engineer,platform_engineer",
@@ -586,6 +670,30 @@
         "catalog.subdomain": "quantum-computing",
         "audience": "quantum_researcher,application_developer,hpc_developer,research_academic,developer",
         "discovery.activity_tags": "migrate,convert,integrate,validate,transform"
+      }
+    },
+    {
+      "path": "skills/cudf-query-engine-builder",
+      "name": "cudf-query-engine-builder",
+      "description": "Build the first native, single-GPU cuDF path in a query engine, or complete its initial adapter. Use for libcudf C++ or cuDF Java implementation, buffer ownership, worker readiness and CPU/reference comparison, including identifying missing POC inputs. Excludes standalone dataframe analysis, cuDF mainline changes, production integration and distributed or multi-GPU execution. Bundled maintainer evaluations use CPU simulations and source review; they do not run CUDA.",
+      "metadata": {
+        "product.primary": "cuDF",
+        "classification.category.primary": "accelerated_computing",
+        "catalog.subdomain": "gpu-development",
+        "audience": "developer,application_developer,data_engineer,hpc_developer,platform_engineer",
+        "discovery.activity_tags": "integrate,extend,validate,test,compare"
+      }
+    },
+    {
+      "path": "skills/cuml",
+      "name": "cuml",
+      "description": "Use when writing, running, debugging or upgrading Python code that uses NVIDIA cuML (GPU machine learning), cuml.accel (zero-code-change GPU acceleration of scikit-learn, umap-learn and hdbscan), or GPU UMAP/HDBSCAN/RandomForest/KMeans/SVC, including through libraries that wrap cuML (BERTopic, rapids-singlecell). Covers APIs removed or renamed in 2025-2026 releases, verifying code really ran on the GPU, large-data UMAP/HDBSCAN memory recipes, and exporting trained models. Not for cuDF-only dataframe work, PyTorch or XGBoost.",
+      "metadata": {
+        "product.primary": "cuML",
+        "classification.category.primary": "ai_and_machine_learning",
+        "catalog.subdomain": "data-science",
+        "audience": "data_scientist,ml_engineer,ai_engineer,developer,data_engineer",
+        "discovery.activity_tags": "debug,optimize,migrate,validate,train"
       }
     },
     {
@@ -687,9 +795,9 @@
     {
       "path": "skills/data-designer",
       "name": "data-designer",
-      "description": "Use when the user wants to create a dataset, generate synthetic data, or build a data generation pipeline.",
+      "description": "Use when the user wants to create a dataset, generate synthetic data, or build a data generation pipeline. The argument is the description of the dataset to generate.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Data Designer",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "developer,ai_engineer,ml_engineer,data_engineer",
@@ -766,6 +874,18 @@
         "catalog.subdomain": "vision-ai",
         "audience": "application_developer,ai_engineer,ml_engineer,devops_engineer,solutions_architect",
         "discovery.activity_tags": "inference,deploy,debug,evaluate,measure"
+      }
+    },
+    {
+      "path": "skills/dgx-spark-skills",
+      "name": "dgx-spark-skills",
+      "description": "Use for NVIDIA DGX Spark and related GB10 system identification, capacity, troubleshooting, known issues, updates, recovery, playbooks, examples, NVIDIA Sync, clustering, Custom Apps, Field Diagnostics, or support evidence. Always route through this skill. Do not use for Apache Spark or unrelated meanings of spark.",
+      "metadata": {
+        "product.primary": "DGX Spark",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "infrastructure",
+        "audience": "it_operations,platform_engineer,devops_engineer,developer,ml_engineer",
+        "discovery.activity_tags": "troubleshoot,operate,configure,recover,inspect"
       }
     },
     {
@@ -867,7 +987,7 @@
     {
       "path": "skills/doca-argp",
       "name": "doca-argp",
-      "description": "Use this skill for hands-on DOCA Arg Parser CLI work on a shipped sample or new DOCA-using app — adding / removing / renaming flags; wiring `doca_argp_init` → register params → `doca_argp_start` → `doca_argp_destroy` in order; picking a parameter type from the full public enum (`DOCA_ARGP_TYPE_STRING`, `_INT`, `_BOOLEAN`, `_DEVICE`, `_DEVICE_REP`, `_DOUBLE` — six values, not three); preserving the standard `--device` / `--representor` / `--json` (`-j`; real flag is `--json`, NOT `--json-config`) / `--sdk-log-level` surface; or debugging `DOCA_ERROR_BAD_STATE` / `INVALID_VALUE` / `NOT_SUPPORTED` / `IO_FAILED` from `doca_argp_*`. Trigger on implicit phrasings: \"add a custom flag to a DOCA sample\", \"should I use getopt here\", \"BAD_STATE registering a new param\", \"my JSON config key is rejected\", or \"my sample's --json is ignored\". Refuse and route elsewhere for variadic-flag / subcommand / shell-completion features, DOCA Core context, or DOCA Log internals.\n",
+      "description": "Use this skill for hands-on DOCA Arg Parser CLI work on a shipped sample or new DOCA-using app — adding / removing / renaming flags; wiring `doca_argp_init` → register params → `doca_argp_start` → `doca_argp_destroy` in order; picking a parameter type from the full public enum (`DOCA_ARGP_TYPE_STRING`, `_INT`, `_BOOLEAN`, `_DEVICE`, `_DEVICE_REP`, `_DOUBLE` — six values, not three); preserving the built-in DOCA flags (`-h` `-v` `-l` `--sdk-log-level` `--log-filter` `-j`/`--json`, NOT `--json-config`); `--device` is per-program; or debugging `DOCA_ERROR_BAD_STATE` / `INVALID_VALUE` / `NOT_SUPPORTED` / `IO_FAILED` from `doca_argp_*`. Trigger on implicit phrasings: \"add a custom flag to a DOCA sample\", \"should I use getopt here\", \"BAD_STATE registering a new param\", \"my JSON config key is rejected\", or \"my sample's --json is ignored\". Refuse and route elsewhere for variadic-flag / subcommand / shell-completion features, DOCA Core context, or DOCA Log internals.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "developer_tools",
@@ -891,7 +1011,7 @@
     {
       "path": "skills/doca-bare-metal-deployment",
       "name": "doca-bare-metal-deployment",
-      "description": "Running a DOCA-linked binary directly on the hardware, with no container or kubelet: on host x86 with a BlueField NIC over PCIe, or bare-metal on BlueField Arm. Use for launching and supervising it (direct, tmux, systemd), and when it \"exits 1 right after launch\", \"systemd keeps restarting it\", reports \"no matching device on the BF\", or the BlueField itself is unhealthy: \"bfb-install exited 0 but DPU is dead\", \"ping 192.168.100.2 works but ssh fails\", \"host PFs aren't showing netdevs\". Service containers under kubelet belong to doca-container-deployment. Covers PCI/NUMA/CPU/IRQ binding, co-tenant isolation (cgroup-v2/netns/numactl), a seven-layer error taxonomy, platform lifecycle (BFB install, RShim/TMFIFO, host PF rebind, post-BFB recovery) and a six-state BlueField lifecycle classifier. Destructive firmware burn / mlxconfig set requires explicit confirmation via doca-hardware-safety; library APIs, env prep, and build use other skills.\n",
+      "description": "Running a DOCA-linked binary directly on the hardware, with no container or kubelet: on host x86 with a BlueField NIC over PCIe, or bare-metal on BlueField Arm. Use this skill for launching and supervising it (direct, tmux, systemd), and when it \"exits 1 right after launch\", \"systemd keeps restarting it\", reports \"no matching device on the BF\", or the BlueField itself is unhealthy: \"bfb-install exited 0 but DPU is dead\", \"ping 192.168.100.2 works but ssh fails\", \"host PFs aren't showing netdevs\". Refuse service containers under kubelet (doca-container-deployment). Covers PCI/NUMA/CPU/IRQ binding, co-tenant isolation (cgroup-v2/netns/numactl), a seven-layer error taxonomy, platform lifecycle (BFB install, RShim/TMFIFO, host PF rebind, post-BFB recovery) and a six-state BlueField lifecycle classifier. Destructive firmware burn / mlxconfig set requires explicit confirmation via doca-hardware-safety; library APIs, env prep, and build use other skills.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -913,18 +1033,6 @@
       }
     },
     {
-      "path": "skills/doca-bench-extension",
-      "name": "doca-bench-extension",
-      "description": "Use this skill when the operator is authoring, building, loading, or debugging a custom doca-bench plug-in — a versioned shared library with DOCA_EXPERIMENTAL-marked C entry points that doca-bench loads to measure a workload class its built-in modes do not cover, with doca_bench_cuda as the shipped reference exemplar. Trigger even when the user does not say \"doca-bench-extension\" or \"doca_bench_cuda\" — typical implicit phrasings include \"no built-in doca-bench mode fits my workload\", \"how do I benchmark a CUDA GPUNetIO RX/TX kernel\", \"doca-bench cannot find or load my custom .so\", \"extension exported symbols do not match what the parent expects\", \"soversion mismatch after a DOCA upgrade\", or \"my GPU kernel hangs because stop_flag was never set\". Refuse and route elsewhere for questions about which built-in doca-bench mode to pick, DOCA GPUNetIO programming semantics, CUDA toolkit installation, or contributor work on in-tree extensions — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "developer_tools",
-        "catalog.subdomain": "networking",
-        "audience": "platform_engineer,developer,application_developer",
-        "discovery.activity_tags": "benchmark,extend,debug,integrate,package"
-      }
-    },
-    {
       "path": "skills/doca-bf3-deployment",
       "name": "doca-bf3-deployment",
       "description": "Use this skill for BlueField-3 (BF3) day-1 platform bring-up via the classic RShim/BFB path: pushing a BlueField bundle (BFB) to the DPU over RShim with bfb-install from the host, the host-to-DPU TMFIFO management channel (tmfifo_net0, the 192.168.100.x convention), RShim daemon state and console-over-rshim, DPU mode selection (DPU/embedded-function vs separated-host/NIC mode) via mlxconfig, post-BFB recovery, a six-state BlueField-state classifier, and verifying the install (cat /etc/mlnx-release plus version checks). Trigger even when the user does not say \"BF3\" — typical phrasings include {push a BFB to my BlueField-3}, {bfb-install exited 0 but the DPU never came back}, {ping 192.168.100.2 works but ssh fails}, or {is DOCA on the host or the Arm side?}. BFB reflash, mlxconfig set, mode changes, and firmware burns are destructive: require explicit target-bound confirmation and load doca-hardware-safety. App launch, container deploy, env install, and the BF4 BMC-Redfish path route elsewhere.\n",
@@ -939,7 +1047,7 @@
     {
       "path": "skills/doca-bf4-deployment",
       "name": "doca-bf4-deployment",
-      "description": "WARNING: guides IRREVERSIBLE BlueField-4 hardware operations (PLDM firmware burns, ISO reflashes, power cycles, BMC factory resets); every mutating step is governed by doca-hardware-safety (window, rollback). BlueField-4 only: BlueField-3 bring-up is doca-bf3-deployment. Use this skill for BlueField-4 (BF4) day-1 platform bring-up from the BMC: installing the BlueField/DOCA bundle ISO onto the DPU (Grace, the Arm complex) over UEFI HTTP Boot, PXE, or Redfish Virtual Media; the PLDM firmware-update flow (BMC, NIC firmware, SBIOS, ERoT) via the Redfish UpdateService and pldmtool; and a Grace Ubuntu image with optional cloud-init. Trigger on BlueField-4/BF4 bring-up phrasings even without \"BF4\": {bring up my new BlueField-4}, {the BlueField ISO will not boot over HTTP from the BMC}, {attach BF4 virtual media via Redfish}, {BF4 firmware Task stuck at Running}, {prepare a BlueField-4 host: platform support, version alignment, safest first smoke test}. Application launch and library APIs belong to other skills.\n",
+      "description": "WARNING: guides IRREVERSIBLE BlueField-4 hardware operations (PLDM firmware burns, ISO reflashes, power cycles, BMC factory resets); every mutating step is governed by doca-hardware-safety (window, rollback). BlueField-4 only: BlueField-3 bring-up is doca-bf3-deployment. Use this skill for BlueField-4 (BF4) day-1 platform bring-up from the BMC: installing the BlueField/DOCA bundle ISO onto the DPU (Grace, the Arm complex) over UEFI HTTP Boot, PXE, or Redfish Virtual Media; the PLDM platform-firmware update via the Redfish UpdateService and pldmtool; and a Grace Ubuntu image with optional cloud-init. Trigger on BlueField-4/BF4 bring-up phrasings even without \"BF4\": {bring up my new BlueField-4}, {the BlueField ISO will not boot over HTTP from the BMC}, {attach BF4 virtual media via Redfish}, {BF4 firmware Task stuck at Running}, {prepare a BlueField-4 host: platform support, version alignment, safest first smoke test}. Route application launch and library APIs to other skills.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -958,18 +1066,6 @@
         "catalog.subdomain": "networking",
         "audience": "platform_engineer,devops_engineer,it_operations,developer,solutions_architect",
         "discovery.activity_tags": "inspect,validate,troubleshoot,debug,test"
-      }
-    },
-    {
-      "path": "skills/doca-collectx-deployment",
-      "name": "doca-collectx-deployment",
-      "description": "Use this skill to deploy and operate a CollectX (clx) based DOCA telemetry collector on a host or BlueField — wiring providers / counters into the collector, running the collection daemon, and shaping its exporters (Prometheus pull, Fluent Bit push, NetFlow, file / IPC) so the metrics actually leave the box. Trigger even when the user never says CollectX or clx — implicit phrasings: {collector emits nothing downstream}, {add a provider to the clx collector}, {turn on the Prometheus endpoint}, {ship counters to Fluent Bit from the DPU}, {daemon starts but no schema rows appear}. This skill owns the CollectX collection mechanism plus the operator's own doca-telemetry / doca-telemetry-exporter usage; it ROUTES the productized DOCA Telemetry Service (DTS) to public docs (AGENTS.md Non-goal #7), the reader API to doca-telemetry, and the publisher API to doca-telemetry-exporter. Refuse to invent clx symbols, provider names, schema fields, flags, or config paths — describe the class and route to the live source.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "infrastructure",
-        "catalog.subdomain": "networking",
-        "audience": "platform_engineer,devops_engineer,it_operations,production_operator",
-        "discovery.activity_tags": "deploy,operate,monitor,configure,troubleshoot"
       }
     },
     {
@@ -1071,7 +1167,7 @@
     {
       "path": "skills/doca-dms",
       "name": "doca-dms",
-      "description": "Operate NVIDIA DOCA Management Service on a BlueField, Arm/x86 host, or Kubernetes pod: from DOCA 3.5 the local `dms-cli` (one command per YANG path, no server), and the `dmsd` + `dmspe` service: choose deployment and authentication, configure `-allowed_users` and `dmsgroup`, use gNMI Get/Set/Subscribe, run supported gNOI workflows, and debug frontend/backend failures. Trigger even without \"DMS\" for \"manage a remote BlueField over gRPC\", \"gNOI reboot from orchestrator\", or fleet-management requests. SAFETY: reboot, OS install, factory-reset, and managed-file deletion are destructive and require target-bound explicit confirmation; never invoke them speculatively. Route installation and library/API build questions elsewhere, and route turnkey aggregation to the externally-productized DOCA Telemetry Service.\n",
+      "description": "Operate NVIDIA DOCA Management Service on a BlueField, Arm/x86 host, or Kubernetes pod: from DOCA 3.5 the local `dms-cli` (one command per YANG path, no server), and the `dmsd` + `dmspe` service: choose deployment and authentication, configure `-allowed_users` and `dmsgroup`, use gNMI Get/Set, run supported gNOI workflows, and debug frontend/backend failures. Trigger even without \"DMS\" for \"manage a remote BlueField over gRPC\", \"gNOI reboot from orchestrator\", or fleet-management requests. SAFETY: reboot, OS install, factory-reset, and managed-file deletion are destructive and require target-bound explicit confirmation; never invoke them speculatively. Route installation and library/API build questions elsewhere, and route telemetry streaming and aggregation to doca-dts (DOCA Telemetry Service).\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1093,18 +1189,6 @@
       }
     },
     {
-      "path": "skills/doca-dpa-hl-tracer",
-      "name": "doca-dpa-hl-tracer",
-      "description": "Use this skill when the user runs doca_dpa_hl_tracer to capture/decode DPA-side traces at the programming-events layer (kernel entry/exit, sync points, comm primitive calls, RDMA WR submission, completion drain) — picking TRACE vs CRIT, tuning the JSON config (file-size limits + file_size_limit_policy, thread priorities/cores), decoding against the matching DPA-side ELF, or diagnosing empty/noisy captures. Trigger even when the user does not explicitly mention \"DOCA DPA tracer\" or \"high-level tracer\" — typical implicit phrasings include \"DPA kernel returns wrong result but host completions look clean\", \"kernel-entry to first-comm latency is huge\", \"RDMA WR to drain gap on the DPA\", \"trace file truncated mid-run\", \"TRACE doubled my DPA latency\", or \"tracer wrote a file but parser shows zero events\". Refuse and route elsewhere for writing DPA kernels, DPA-Comms/DPA-Verbs programming, raw per-cycle DPA profiling, host-side doca-dpa debugging, or production DPA telemetry — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "developer_tools",
-        "catalog.subdomain": "networking",
-        "audience": "developer,platform_engineer,production_operator,hpc_developer",
-        "discovery.activity_tags": "troubleshoot,debug,profile,configure,optimize"
-      }
-    },
-    {
       "path": "skills/doca-dpdk-bridge",
       "name": "doca-dpdk-bridge",
       "description": "Use this skill when the user has an existing DPDK application and is adding DOCA capabilities in-place — most commonly DOCA Flow hardware steering — without rewriting the data-plane in DOCA-native form: binding a DPDK port id to a `doca_dev` (`doca_dpdk_port_probe` / `doca_dpdk_port_as_dev`), converting `rte_mbuf` ↔ `doca_buf`, querying `doca_dpdk_cap_is_rep_port_supported`, or debugging `DOCA_ERROR_*` from a bridge call. Trigger even without \"DOCA DPDK Bridge\": \"how do I add DOCA Flow to my DPDK app\", \"make a DPDK port visible to DOCA\", \"the bridge loads but every operation returns errors\", \"pkg-config --exists doca-dpdk-bridge fails\", or \"DOCA_ERROR_NOT_FOUND on port registration\". Route elsewhere for fresh DOCA-native packet I/O (doca-eth), flow-rule programming (doca-flow), DOCA or DPDK install (doca-setup), or RDMA data movement (doca-rdma).\n",
@@ -1114,6 +1198,18 @@
         "catalog.subdomain": "networking",
         "audience": "application_developer,developer,platform_engineer",
         "discovery.activity_tags": "integrate,debug,configure,troubleshoot,convert"
+      }
+    },
+    {
+      "path": "skills/doca-dts",
+      "name": "doca-dts",
+      "description": "Deploy and configure the NVIDIA DOCA Telemetry Service (DTS) as it is actually run: (A) BlueField (built-in static pod), (B) Host (docker) on x86_64 / aarch64, or (C) DPF (DPUService / helm chart) — plus the shared configuration layer (`dts_config.ini`, providers, exporters, level labels) that all three share. The user's DEPLOYMENT TYPE decides everything; pick it first. Trigger even without \"DTS\" for \"prometheus on the DPU shows nothing on 9100\", \"telemetry container exits right after start\", \"add ethtool counters to the telemetry DPUService\", \"how do I upgrade the built-in telemetry on BlueField\", or \"level labels per rack/pod\". Refuse and route elsewhere for installing DOCA itself, the `doca_telemetry` / `doca_telemetry_exporter` library API, installing the DPF cluster, Grafana / Prometheus server setup or dashboard / PromQL authoring, and BFB / BSP imaging — those belong to other skills or to external products.\n",
+      "metadata": {
+        "product.primary": "DOCA",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "networking",
+        "audience": "platform_engineer,devops_engineer,it_operations,developer",
+        "discovery.activity_tags": "deploy,configure,troubleshoot,monitor,operate"
       }
     },
     {
@@ -1155,7 +1251,7 @@
     {
       "path": "skills/doca-flow",
       "name": "doca-flow",
-      "description": "DOCA Flow packet steering on NVIDIA NICs/DPUs, linked into a C application: match/action pipes, ports, representors, forwarding, hairpin, counters. Trigger on packet steering, classifier, rule-matching, representor, hairpin or 5-tuple-to-queue questions even when \"DOCA Flow\" is not named. Remote or non-C++ control over gRPC belongs to doca-flow-grpc-server. Also covers pipe validation before hardware programming, Flow/DOCA version match, and Flow API errors. First app: follow the local bundle (doca-setup, doca-programming-guide, doca-flow, doca-public-knowledge-map). Stage 1 pull nvcr.io/nvidia/doca/doca (NGC catalog tag, never invent); Stage 2 needs a real NIC. Then ls samples inside the container; never emit main.c, a Dockerfile, or hand-typed -l flags. Route software-only host pipelines, plain DPDK `rte_flow`, kernel TC, OVS, BFB bring-up, and DPU OS installation elsewhere. DPU OS installation is destructive and always requires explicit confirmation.\n",
+      "description": "DOCA Flow packet steering on NVIDIA NICs/DPUs, linked into a C application: match/action pipes, ports, representors, forwarding, hairpin, counters. Trigger on packet steering, classifier, rule-matching, representor, hairpin or 5-tuple-to-queue questions even when \"DOCA Flow\" is not named. Also covers pipe validation before hardware programming, Flow/DOCA version match, and Flow API errors. First app: follow the local bundle (doca-setup, doca-programming-guide, doca-flow, doca-public-knowledge-map). Stage 1 pull nvcr.io/nvidia/doca/doca (NGC catalog tag, never invent); Stage 2 needs a real NIC. Then ls samples inside the container; never emit main.c, a Dockerfile, or hand-typed -l flags. Route software-only host pipelines, plain DPDK `rte_flow`, kernel TC, OVS, BFB bring-up, and DPU OS installation elsewhere. DPU OS installation is destructive and always requires explicit confirmation.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1165,75 +1261,15 @@
       }
     },
     {
-      "path": "skills/doca-flow-dpa-perf",
-      "name": "doca-flow-dpa-perf",
-      "description": "Use this skill when the user is invoking doca_flow_dpa_perf on DPA-capable hardware (ConnectX-7 minimum supported, ConnectX-8 recommended, or BlueField-3) to measure rule update / disable rates on the DPA-offloaded DOCA Flow path — picking the active / passive device split, choosing workload-shape axes (burst, queue, completion threshold, workers, hash pipe algo, PSL tables), or reading Kops/sec iteration stats and the optional self-test. Trigger even when the user does not explicitly mention \"doca_flow_dpa_perf\" or \"DPA Provider\" — typical implicit phrasings include \"how fast can the DPA program path-selector entries\", \"baseline rule-update rate on ConnectX-8\", \"tool reports zero ops on my BlueField\", \"self-test sentinel never shows on tcpdump\", or \"is my BlueField-2 DPA-capable\". Refuse and route elsewhere for the host / DPU-CPU Flow path (doca-flow-perf), Flow pipeline tuning (doca-flow-tune), writing doca-flow / doca-dpa applications, or DOCA install — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "infrastructure",
-        "catalog.subdomain": "networking",
-        "audience": "platform_engineer,developer,devops_engineer,it_operations",
-        "discovery.activity_tags": "benchmark,measure,configure,troubleshoot,profile"
-      }
-    },
-    {
-      "path": "skills/doca-flow-dpa-provider",
-      "name": "doca-flow-dpa-provider",
-      "description": "Use this skill when the user is doing hands-on DOCA Flow DPA Provider work — exporting a `doca-flow` pipe or external resource (index-selector/memory) into BlueField DPA address space so a DPACC-built kernel can read counters, mutate hash-pipe entries, and update/read memory or index-selector resources inline with Flow. Covers per-port `doca_flow_dpa_ctx`, three queue types (general/resources-write/resources-read), the order-sensitive export handshake (`_export_prepare` → add entries → `_export` → `_get_device_addr`), and DPA-side device API. Trigger even when the user does not say \"DOCA Flow DPA Provider\" — implicit phrasings include \"DPA kernel never sees entries in the exported pipe\", \"BAD_STATE from `_pipe_export`\", \"how do I disable a hash entry from a DPA kernel\", \"DPA memory read returns no value\", or \"DPA-side post keeps returning AGAIN\". Refuse and route elsewhere for `doca-flow` pipe construction, generic host-side DPA (`doca-dpa`), or DPA-side kernel-writing — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "infrastructure",
-        "catalog.subdomain": "networking",
-        "audience": "application_developer,developer,platform_engineer,hands_on_builder",
-        "discovery.activity_tags": "integrate,debug,troubleshoot,configure,extend"
-      }
-    },
-    {
-      "path": "skills/doca-flow-grpc-server",
-      "name": "doca-flow-grpc-server",
-      "description": "Remote control of DOCA Flow over gRPC with the shipped `doca_flow_grpc` server: program Flow pipes and entries from Python, Go, Rust or Java, or from another host, instead of linking `libdoca_flow.so`. PLAINTEXT-ONLY: the server uses `grpc::InsecureServerCredentials()` with NO TLS / mTLS / token-auth knob; transport security must come from external infrastructure (e.g. an mTLS proxy / sidecar) on a trusted segment. Trigger even without \"gRPC\": \"program Flow rules from Python on another host\", \"remotely configure pipes on the BlueField\", \"client times out connecting to the Flow server\", \"where is the .proto for Flow\", \"UNAUTHENTICATED / FAILED_PRECONDITION on a Flow RPC\". Covers bringing up, configuring, hardening and debugging the server. Route elsewhere for the underlying doca-flow C API, generic gRPC tooling (protoc, language bindings), or DOCA install / BFB bring-up.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "infrastructure",
-        "catalog.subdomain": "networking",
-        "audience": "platform_engineer,devops_engineer,application_developer,developer,solutions_architect",
-        "discovery.activity_tags": "configure,troubleshoot,debug,deploy,integrate"
-      }
-    },
-    {
-      "path": "skills/doca-flow-perf",
-      "name": "doca-flow-perf",
-      "description": "Use this skill when the user is measuring the host or DPU-CPU control-plane rate of a DOCA Flow pipeline with doca_flow_perf — picking a JSON policy from configs/, choosing the DPDK or DOCA backend, running the single-iteration smoke then the iterative eval loop, interpreting per-iteration CPU cycles and num_pushed / num_failed, or capturing the four-tuple (DOCA version, BlueField/firmware, JSON policy, worker/queue/burst config) that makes a Kops/sec number defensible. Trigger even when the user does not explicitly mention \"doca-flow-perf\" — typical implicit phrasings include \"how many rules per second can my BlueField insert\", \"5-tuple hairpin rule rate\", \"Kops/sec for steering\", \"flow-perf number does not match release notes\", \"DPDK vs DOCA benchmark\", or \"rule-install variance too high\". Refuse and route elsewhere for optimizing a live Flow app (doca-flow-tune), the DPA-offloaded path (doca-flow-dpa-perf), dataplane throughput or latency, or library-internal pipe semantics — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "infrastructure",
-        "catalog.subdomain": "networking",
-        "audience": "platform_engineer,developer,devops_engineer,solutions_architect,application_developer",
-        "discovery.activity_tags": "benchmark,measure,profile,compare,validate"
-      }
-    },
-    {
       "path": "skills/doca-flow-tune",
       "name": "doca-flow-tune",
-      "description": "Use this skill when the user is tuning a live or captured `doca-flow` pipeline with `doca_flow_tune` — snapshotting pipe / counter / KPI state, picking a tuning axis (rule placement, resource hints / table sizing, HW-offload mode) and a matching measurement (rule-install rate, lookup latency, hardware-counter delta), running offline or online (read-only or state-changing) modes, reading the dumper CSV / analyze JSON / visualize mermaid, or applying a recommendation back into the Flow program. Trigger even when the user does not explicitly mention \"doca_flow_tune\" — typical implicit phrasings include \"Flow rule-install rate is low on BlueField\", \"table sizing looks wrong for this pipe\", \"tune visualize step is empty\", \"before/after counters don't move\", or \"which doca-flow knob does this recommendation hit\". Refuse and route elsewhere for measuring baseline numbers (doca-flow-perf, doca-flow-dpa-perf), writing the doca-flow application, DOCA install, or streaming Flow telemetry — those belong to other skills.\n",
+      "description": "Use this skill when the user is tuning a live or captured `doca-flow` pipeline with `doca_flow_tune` — snapshotting pipe / counter / KPI state, picking a tuning axis (rule placement, resource hints / table sizing, HW-offload mode) and a matching measurement (rule-install rate, lookup latency, hardware-counter delta), running offline or online (read-only or state-changing) modes, reading the dumper CSV / analyze JSON / visualize mermaid, or applying a recommendation back into the Flow program. Trigger even when the user does not explicitly mention \"doca_flow_tune\" — typical implicit phrasings include \"Flow rule-install rate is low on BlueField\", \"table sizing looks wrong for this pipe\", \"tune visualize step is empty\", \"before/after counters don't move\", or \"which doca-flow knob does this recommendation hit\". Refuse and route elsewhere for writing the doca-flow application, DOCA install, or streaming Flow telemetry — those belong to other skills.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
         "catalog.subdomain": "networking",
         "audience": "platform_engineer,application_developer,production_operator,devops_engineer",
         "discovery.activity_tags": "optimize,profile,measure,configure,troubleshoot"
-      }
-    },
-    {
-      "path": "skills/doca-gpi",
-      "name": "doca-gpi",
-      "description": "Use this skill for hands-on DOCA GPI programming — wiring a GPU-Packet-Initiator context so a CUDA kernel drives RDMA queues directly from GPU memory without host CPU mediation. Covers picking GPI vs doca-gpunetio, the doca_gpi / domain / channel object model, the GPU-side handle handoff (doca_gpu_gpi_channel*), attaching GPU memory to a GPI domain, the domain and channel attribute objects, and debugging DOCA_ERROR_* from doca_gpi_* calls. Trigger even when the user does not explicitly mention \"DOCA GPI\" — implicit phrasings include \"my CUDA kernel needs to post RDMA directly from GPU memory\", \"DOCA_ERROR_* from doca_gpi_gpu_channel_get\", \"how do I hand a GPU handle to my CUDA kernel\", \"how many channels can a GPI domain hold\", or \"GPU kernel driving RDMA without the host CPU on the path\". Refuse and route elsewhere for the doca-gpunetio Send/Receive surface, the doca-rdma queue lifecycle, DPA-side initiation (doca-rdmi), or the CUDA programming model — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "accelerated_computing",
-        "catalog.subdomain": "networking",
-        "audience": "application_developer,hpc_developer,platform_engineer,developer",
-        "discovery.activity_tags": "integrate,configure,debug,troubleshoot,select"
       }
     },
     {
@@ -1246,30 +1282,6 @@
         "catalog.subdomain": "networking",
         "audience": "developer,hpc_developer,application_developer,platform_engineer,hands_on_builder",
         "discovery.activity_tags": "integrate,debug,configure,optimize,validate"
-      }
-    },
-    {
-      "path": "skills/doca-gpunetio-ib-write-bw",
-      "name": "doca-gpunetio-ib-write-bw",
-      "description": "Use this skill when the user is building, running, or interpreting the doca/tools/gpunetio_ib_write_bw client+server benchmark — a CUDA kernel on the client posts RDMA WRITE work requests through the doca-gpunetio device-side surface to measure sustained GPU-driven WRITE bandwidth on a GPU+IB-device pair. Trigger even when the user does not explicitly mention \"doca-gpunetio-ib-write-bw\" or \"GPUNetIO\" — typical implicit phrasings include \"measure WRITE BW when the GPU posts the WRs\", \"BW swings between runs on the same flags\", \"is the NIC saturated or am I CPU-bound on the CUDA kernel\", \"meson compile fails for the GPUNetIO bw tool\", \"nvidia_peermem isn't picking up my GPU buffer\", or \"GPU-initiated WRITE throughput vs CPU-initiated perftest\". Refuse and route elsewhere for general doca-gpunetio library work, DOCA install, the GPU-initiated WRITE latency analog, the CPU-initiated upstream perftest, or application-level end-to-end throughput — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "infrastructure",
-        "catalog.subdomain": "networking",
-        "audience": "developer,hpc_developer,platform_engineer,hands_on_builder",
-        "discovery.activity_tags": "benchmark,measure,troubleshoot,optimize,debug"
-      }
-    },
-    {
-      "path": "skills/doca-gpunetio-ib-write-lat",
-      "name": "doca-gpunetio-ib-write-lat",
-      "description": "Use this skill when the user is measuring GPU-kernel-initiated RDMA WRITE latency through doca-gpunetio — building and running the `gpunetio_ib_write_lat` client + server pair under `doca/tools/gpunetio_ib_write_lat/`, checking GPU-NIC pairing, reading the half-iter / full-iter / CUDA-side usec columns, characterizing median / p99 / jitter for a real-time control loop, picking GPUNetIO vs GPI vs CPU-initiated `perftest`, or weighing the latency-vs-batching trade-off. Trigger even without 'GPUNetIO' or 'ib_write_lat': 'GPU kernel RDMA latency benchmark', 'how fast can a CUDA kernel post a WRITE', 'p99 RDMA latency on H100 + ConnectX', 'kernel-launched WR tail latency', or 'compare GPU-init vs CPU-init perftest'. Route elsewhere for bandwidth runs (doca-gpunetio-ib-write-bw), the GPI surface (doca-gpi), library debugging (doca-gpunetio), or DOCA install.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "infrastructure",
-        "catalog.subdomain": "networking",
-        "audience": "platform_engineer,hpc_developer,developer,devops_engineer",
-        "discovery.activity_tags": "benchmark,measure,profile,compare,optimize"
       }
     },
     {
@@ -1297,6 +1309,18 @@
       }
     },
     {
+      "path": "skills/doca-ngauge",
+      "name": "doca-ngauge",
+      "description": "Use this skill when the operator is driving the DOCA ngauge tool to analyze, visualize, and debug network performance on a single node by probing NIC hardware counters and storing collected data in HDF5 format. Trigger even when the user does not say \"DOCA ngauge\" — implicit phrasings include \"probe NIC hardware counters\", \"collect HDF5 performance data\", \"plot ngauge output\", \"sample counters on BlueField/ConnectX\", \"measure network performance on a single node\", \"debug network performance with hardware counters\", \"run ngauge YAML config\", \"parse ngauge HDF5 output\". Refuse and route elsewhere: DOCA install/bring-up to doca-setup, version questions to doca-version, hardware/firmware state changes to doca-hardware-safety, raw packet I/O to doca-eth, and host-DPU messaging to doca-comch.\n",
+      "metadata": {
+        "product.primary": "DOCA",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "networking",
+        "audience": "platform_engineer,devops_engineer,it_operations,developer,solutions_architect",
+        "discovery.activity_tags": "measure,monitor,debug,profile,troubleshoot"
+      }
+    },
+    {
       "path": "skills/doca-pcc",
       "name": "doca-pcc",
       "description": "Use this skill when the user is doing hands-on host-side DOCA PCC work to load a CUSTOM Programmable Congestion Control algorithm onto a BlueField DPU — creating per-port `doca_pcc` contexts, loading a `dpacc`-compiled `doca_pcc_app` onto the `doca_dev` for the RoCE-bearing port, parameterizing it, walking triple-axis capability discovery (DOCA cap-query + DPA-capable BlueField + firmware custom-PCC slot enabled), or debugging `DOCA_ERROR_*` from `doca_pcc_*`. Trigger even without explicit \"DOCA PCC\" phrasing — implicit forms include \"loading my own congestion control onto a BF port\", \"DOCA_ERROR_NOT_PERMITTED on algorithm load\", \"DOCA_ERROR_DRIVER when I attach my custom algorithm\", \"my custom rate-update isn't affecting RoCE traffic\", or \"load succeeds but no on-wire change\". Refuse and route elsewhere for DPA-side algorithm-body design, the `pcc_counters` CLI, default factory PCC in ConnectX firmware, or setting up the RDMA / RoCE traffic — those belong to other skills.\n",
@@ -1321,15 +1345,27 @@
       }
     },
     {
-      "path": "skills/doca-pcc-ztr-rttcc-algo",
-      "name": "doca-pcc-ztr-rttcc-algo",
-      "description": "DOCA-shipped Zero-Touch RoCE RTT congestion control (ZTR RTTCC) reference algorithm on a BlueField-3 DPA: deploy, tune and evaluate doca_pcc_dev_ztr_rttcc_algo through the shipped DOCA PCC sample. Trigger on \"my RoCE-v2 flows aren't being throttled\", \"PCC sample isn't dispatching to my algo\", \"set-params returns fail\", \"algorithm loaded but counters are flat\", \"how do I pick the multipath PCC variant\", or \"do I need a custom CC algorithm on BF3\", even without naming ZTR RTTCC. Your own algorithm through the host library belongs to doca-pcc; the doca_spcx_cc command line to doca-spcx-cc. Covers picking a variant (vanilla / PM / RX-rate / multipath / window-probeless) at DPACC build time, tuning host-set parameters, and DOCA_PCC_DEV_STATUS_FAIL from the algorithm. Refuse and route elsewhere for writing a custom PCC algorithm from scratch, read-only PCC counter inspection, or firmware-only pre-Programmable PCC.\n",
+      "path": "skills/doca-perftest",
+      "name": "doca-perftest",
+      "description": "Use this skill when the user is running DOCA Perftest (doca_perftest), the RDMA benchmark that measures bandwidth, message rate and latency for RDMA verbs, point-to-point or across a cluster, with an optional DOCA Verbs backend (-r dv) or GPUNetIO engine (--engine gpunetio). Trigger even when the user does not say \"DOCA Perftest\" — implicit phrasings include \"how do I benchmark RDMA write bandwidth with DOCA\", \"run ib_write_bw but across 8 nodes\", \"perftest says the device is busy\", \"my latency numbers differ between client and server\", \"launch the server over SSH\", or \"run an all-to-all RDMA test from a JSON scenario\". Refuse and route elsewhere for DOCA install (doca-setup), DOCA Bench (doca-bench), and application-level throughput.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
         "catalog.subdomain": "networking",
-        "audience": "platform_engineer,developer,hands_on_builder,devops_engineer,it_operations",
-        "discovery.activity_tags": "deploy,configure,optimize,troubleshoot,evaluate"
+        "audience": "platform_engineer,devops_engineer,it_operations,developer,hpc_developer",
+        "discovery.activity_tags": "benchmark,measure,troubleshoot,debug,configure"
+      }
+    },
+    {
+      "path": "skills/doca-pipeline-language-developer-tools",
+      "name": "doca-pipeline-language-developer-tools",
+      "description": "Use this skill when the operator is driving the DOCA Pipeline Language (DPL) Developer Tools to inspect or debug DPL programs on a BlueField DPU — DPL Nspect for runtime state such as tables, keys, and counters, DPL Debugger for packet flow, DPL Admin for dynamic configuration changes in the DPL Runtime Daemon, P4 Runtime Shell as a P4Runtime control plane manager, or DPL Runtime Controller SDK for custom P4Runtime applications and DPL shared memory APIs. Trigger even when the user does not explicitly mention \"DPL Developer Tools\" — implicit phrasings include \"inspect the DPL tables on the DPU\", \"why can't I start a DPL debug session\", \"change a dpl_rtd configuration item without restarting\", \"build my own P4Runtime app for DPL\", or \"visualize packet flow through my DPL program\". Refuse and route elsewhere: authoring, compiling and deploying DPL programs to the DOCA Pipeline Language Service Guide, DOCA install/bring-up to doca-setup, and hardware or firmware state changes to doca-hardware-safety.\n",
+      "metadata": {
+        "product.primary": "DOCA",
+        "classification.category.primary": "developer_tools",
+        "catalog.subdomain": "networking",
+        "audience": "developer,platform_engineer,devops_engineer,application_developer",
+        "discovery.activity_tags": "debug,inspect,configure,troubleshoot,operate"
       }
     },
     {
@@ -1369,21 +1405,9 @@
       }
     },
     {
-      "path": "skills/doca-rdmi",
-      "name": "doca-rdmi",
-      "description": "Use this skill when the user is doing hands-on DOCA RDMI (RDMA Initiator) programming — picking doca-rdmi vs doca-rdma for an accelerator-initiated one-sided RDMA flow, standing up a doca_rdmi_connection or doca_rdmi_poster, attaching a doca_dpa_completion or doca_verbs_cq before doca_ctx_start(), retrieving the DPA-side handle for a DPA kernel, auditing whether a doca_rdmi_* symbol is EXPERIMENTAL on this DOCA, or debugging DOCA_ERROR_* returns from RDMI calls. Trigger even when the user does not say \"DOCA RDMI\" or \"initiator\" — implicit phrasings include \"my DPA kernel needs to post RDMA writes to a remote responder\", \"DPA kernel sees no completions\", \"function not found on doca_rdmi_* at link time\", \"DOCA_ERROR_BAD_STATE from completion attach\", or \"the DPA posted but the work request never arrived\". Refuse and route elsewhere for two-sided or host-CPU RDMA, the DPA programming model, GPU-side RDMA initiation, or general RDMA/IB/RoCE concepts — those belong to other skills.\n",
-      "metadata": {
-        "product.primary": "DOCA",
-        "classification.category.primary": "accelerated_computing",
-        "catalog.subdomain": "networking",
-        "audience": "developer,application_developer,platform_engineer,hpc_developer,hands_on_builder",
-        "discovery.activity_tags": "debug,troubleshoot,configure,integrate,inspect"
-      }
-    },
-    {
       "path": "skills/doca-rmax",
       "name": "doca-rmax",
-      "description": "DOCA Rivermax (doca_rmax) receive streams for timing-precise media over IP (SMPTE ST 2110 video / audio, market data, scientific feeds) on a BlueField DPU or ConnectX host, once the Rivermax SDK and its license are installed; getting the SDK or license is doca-setup / doca-public-knowledge-map territory. Trigger on \"ST 2110 receive isn't getting frames\", \"sub-microsecond jitter on my media receiver\", \"NOT_SUPPORTED from doca_rmax_init\", \"no recv events after stream start\", or \"license check failing on a media receiver\", even without naming Rivermax. Covers doca_rmax_in_stream sessions, the SDK + license precondition check, doca_rmax_get_*_supported capability queries, pairing with doca-eth queues and doca-flow steering, and DOCA_ERROR_* from Rivermax calls. Refuse and route elsewhere for programming the underlying queue (doca-eth), steering rules (doca-flow), PTP / clock sync (doca-firefly), or best-effort packet I/O.\n",
+      "description": "DOCA Rivermax (doca_rmax) receive streams for timing-precise media over IP (SMPTE ST 2110 video / audio, market data, scientific feeds) on a target BlueField DPU (DOCA Rivermax apps run only there), once the Rivermax libraries and license are installed; getting them is doca-setup / doca-public-knowledge-map territory. Trigger on \"ST 2110 receive isn't getting frames\", \"sub-microsecond jitter on my media receiver\", \"NOT_SUPPORTED from doca_rmax_init\", \"no recv events after stream start\", or \"license check failing on a media receiver\", even without naming Rivermax. Covers doca_rmax_in_stream sessions, the SDK + license precondition check, doca_rmax_get_*_supported capability queries, pairing with doca-eth queues and doca-flow steering, and DOCA_ERROR_* from Rivermax calls. Refuse and route elsewhere for programming the underlying queue (doca-eth), steering rules (doca-flow), PTP / clock sync (doca-firefly), or best-effort packet I/O.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1407,7 +1431,7 @@
     {
       "path": "skills/doca-sha",
       "name": "doca-sha",
-      "description": "Use this skill when the user is doing hands-on DOCA SHA programming — offloading SHA-1, SHA-256, or SHA-512 hashing onto a BlueField DPU or ConnectX accelerator, picking between one-shot `doca_sha_task_hash` and incremental `doca_sha_task_partial_hash`, querying `doca_sha_cap_*` for algorithm support and min destination / max source buffer sizes, setting source / destination `doca_mmap` permissions, or decoding DOCA_ERROR_* returns from the SHA API. Trigger even when the user does not explicitly mention \"DOCA SHA\" or \"doca_sha_task\" — typical implicit phrasings include \"hash a multi-GiB file on the DPU\", \"offload SHA-256 to the BlueField\", \"streaming hash over chunks\", \"partial hash returns BAD_STATE\", \"destination buffer too small for digest\", or \"is SHA-512 available on this card\". Refuse and route elsewhere for general cryptographic-hash theory (collision resistance, SHA-3 selection), other DOCA crypto libraries (AES-GCM, Compress, DMA), or DOCA install / BFB bring-up — those belong to other skills.\n",
+      "description": "Use this skill when the user needs SHA-1, SHA-256, or SHA-512 digest acceleration on BlueField-2 silicon via doca_sha (absent on BF-3) — selecting one-shot `doca_sha_task_hash` versus incremental `doca_sha_task_partial_hash` for chunked input, consulting `doca_sha_cap_*` for per-algorithm digest-size limits and input alignment, or decoding DOCA_ERROR_* statuses such as BAD_STATE on a resumed partial hash. Also load it for implied asks like \"accelerate SHA-256 on the NIC\", \"streaming digest over chunks\", \"digest output size mismatch\", or \"is SHA-512 present on this card\". Refuse and route to the proper owner for cryptographic-hash theory (collision resistance, SHA-3 selection), the AES-GCM / Compress / DMA libraries, or SDK install and BFB bring-up.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "accelerated_computing",
@@ -1443,7 +1467,7 @@
     {
       "path": "skills/doca-spcx-cc",
       "name": "doca-spcx-cc",
-      "description": "Use this skill when the user is invoking `doca_spcx_cc` (the host-side CLI under /opt/mellanox/doca/tools/) to load, parameterize, start, observe, or stop a Programmable Congestion Control (SPCX) algorithm on a BlueField with a DPA processor against a live RDMA / RoCE fabric, or picking SPCX vs the established `doca-pcc` surface. Trigger even when the user does not say \"DOCA SPCX\" or \"doca_spcx_cc\" — typical implicit phrasings include \"I want to write a custom RTT-based CC algorithm for my RoCE fabric\", \"my SPCX session loaded but throughput / latency didn't change\", \"doca_pcc status shows Active but factory CC seems to still be in charge\", \"DOCA_PCC_PS_ERROR on start\", \"is the programmable-CC surface available on my install\", or \"DPA-side algorithm image won't load\". Refuse and route elsewhere for DPA-side algorithm authoring detail, factory PCC firmware configuration, read-only PCC counter inspection, raw DPA cycle profiling, RDMA library programming, or general DOCA install — those belong to other skills.\n",
+      "description": "Use this skill when the user is invoking `doca_spcx_cc` (the host-side CLI under /opt/mellanox/doca/tools/) to load, parameterize, start, observe, or stop an SPC-X congestion-control algorithm on a BlueField with a DPA processor against a live RDMA / RoCE fabric, or picking SPCX vs the established `doca-pcc` surface. Trigger even when the user does not say \"DOCA SPCX\" or \"doca_spcx_cc\" — typical implicit phrasings include \"I want to write a custom RTT-based CC algorithm for my RoCE fabric\", \"my SPCX session loaded but throughput / latency didn't change\", \"doca_pcc status shows Active but factory CC seems to still be in charge\", \"DOCA_PCC_PS_ERROR on start\", \"is the programmable-CC surface available on my install\", or \"DPA-side algorithm image won't load\". Refuse and route elsewhere for DPA-side algorithm authoring detail, factory PCC firmware configuration, read-only PCC counter inspection, raw DPA cycle profiling, RDMA library programming, or general DOCA install — those belong to other skills.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1455,7 +1479,7 @@
     {
       "path": "skills/doca-sta",
       "name": "doca-sta",
-      "description": "Use this skill when the user is doing hands-on NVMe-over-Fabrics storage-target work on a BlueField DPU or ConnectX NIC with DOCA STA — standing up a doca_sta DOCA Core context that accelerates the target-side NVMe-oF data path over RDMA, defining doca_sta_subsystem targets (NQN + namespaces) backed by local NVMe-PCI backend disks (doca_sta_be), checking device support via doca_sta_cap_is_supported, sizing the per-connection I/O queues, or debugging DOCA_ERROR_* from a STA call. Trigger even when the user does not say \"DOCA STA\" — typical implicit phrasings include \"my NVMe-oF Connect never completes\", \"Identify Controller times out over RoCE\", \"16 I/O queues at depth 1024 — does this BlueField support that\", \"offload the nvmf target onto the DPU\", or \"DOCA_ERROR_IO_FAILED on an NVMe read\". Refuse and route elsewhere for DOCA install, raw RDMA data movement, raw packet I/O, flow-rule programming, or initiator-side / host NVMe stack work — those belong to other skills.\n",
+      "description": "Use this skill when the user builds an NVMe-over-Fabrics storage target on BlueField with DOCA STA — instantiating doca_sta, declaring doca_sta_subsystem NQNs and namespaces over local NVMe disks via doca_sta_be, validating platform support with doca_sta_cap_is_supported, sizing I/O queue depth, or decoding DOCA_ERROR_* statuses such as IO_FAILED on NVMe reads. Also load it for implied asks like \"Identify Controller times out over RoCE\", \"offload the nvmf target\", \"NVMe-oF Connect never completes\", or \"16 I/O queues at depth 1024 — supported?\". Refuse and route to the proper owner for raw RDMA movement, packet I/O, steering rules, initiator-side NVMe, or SDK install.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1467,7 +1491,7 @@
     {
       "path": "skills/doca-structured-tools-contract",
       "name": "doca-structured-tools-contract",
-      "description": "Not for writing library code (name that library skill). Use this skill whenever another DOCA skill says \"prefer the structured tool per doca-structured-tools-contract\", or when the user wants a one-shot answer that consolidates info multiple manual commands would produce — DOCA env / version / devices / capabilities / validate / host vs DPU state. Trigger even when the user does not explicitly mention \"structured tool\" or \"doca-env --json\" — typical implicit phrasings include \"is there one command that tells me everything about my DOCA install\", \"what version is X capability available since\", \"every PF/VF/SF visible on this BlueField with PCIe address\", \"will this pipe pass validate before commit\", \"diff host vs DPU state\", or \"why does the agent give a one-line answer on host A and five commands on host B\". Refuse and route elsewhere for general DOCA orientation, specific library API how-to, or install-from-scratch guidance — those belong to the per-library skill, doca-public-knowledge-map, or doca-setup.\n",
+      "description": "Not for writing library code (name that library skill). Use this skill whenever another DOCA skill says \"prefer the structured tool per doca-structured-tools-contract\", or when the user wants a one-shot answer consolidating what multiple manual commands would produce — DOCA env / version / devices / capabilities / validate / host vs DPU state. Trigger even without the phrases \"structured tool\" or \"doca-env --json\" — typical phrasings include \"is there one command that tells me everything about my DOCA install\", \"what version is X capability available since\", \"every PF/VF/SF visible on this BlueField with PCIe address\", or \"will this pipe pass validate before commit\". Refuse and route elsewhere for general DOCA orientation, library API how-to, or install-from-scratch guidance — those belong to the per-library skill, doca-public-knowledge-map, or doca-setup.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "developer_tools",
@@ -1501,9 +1525,21 @@
       }
     },
     {
+      "path": "skills/doca-telemetry-traceback-application",
+      "name": "doca-telemetry-traceback-application",
+      "description": "Use this skill when the operator is driving the DOCA Telemetry Traceback application to monitor telemetry data locally on a BlueField DPU or ConnectX NIC, detect long-term trends and threshold breaches with user-defined rules, and capture pre-event history plus active-event data to a log file. Trigger even when the user does not explicitly mention \"DOCA Telemetry Traceback\" — typical implicit phrasings include \"monitor telemetry trends on the DPU without streaming all raw data\", \"log the samples before and after a threshold breach\", \"set up a rule that triggers when rx bytes/s exceeds 1M\", \"differential greater than rule on a data ID\", \"circular buffer of telemetry samples\", or \"traceback event log\". Refuse and route elsewhere: the DOCA Telemetry Diag programming API and raw counter reads to doca-telemetry, DOCA install/bring-up to doca-setup, and version questions to doca-version.\n",
+      "metadata": {
+        "product.primary": "DOCA",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "networking",
+        "audience": "production_operator,platform_engineer,devops_engineer,developer",
+        "discovery.activity_tags": "monitor,configure,troubleshoot,debug,operate"
+      }
+    },
+    {
       "path": "skills/doca-telemetry-utils",
       "name": "doca-telemetry-utils",
-      "description": "doca_telemetry_utils command line on a host with DOCA: discover the diagnostic-counter schema, translate counter names to binary Data IDs and back, and check per-device counter support before committing a DOCA Telemetry exporter config. Start here when telemetry counters vanish between the exporter and the collector: \"my exporter ships but the collector sees nothing\", \"this metric silently drops downstream\", \"which counters does this BlueField expose\", \"translate this 0x... back to a counter name\", \"what do node / pcie_index / depth mean here\", or \"is this counter supported on this device\", even without naming the tool. Writing exporter or collector code belongs to doca-telemetry-exporter / doca-telemetry; DTS deployment to doca-dts; DOCA install or repair to doca-setup.\n",
+      "description": "doca_telemetry_utils command line on a host with DOCA: discover the diagnostic-counter schema, translate counter names to binary Data IDs and back, and check per-device counter support before committing a DOCA Telemetry exporter config. Use this skill when telemetry counters vanish between the exporter and the collector: \"my exporter ships but the collector sees nothing\", \"this metric silently drops downstream\", \"which counters does this BlueField expose\", \"translate this 0x... back to a counter name\", \"what do node / pcie_index / depth mean here\", or \"is this counter supported on this device\", even without naming the tool. Route exporter or collector code to doca-telemetry-exporter / doca-telemetry, DTS deployment to doca-dts, and DOCA install or repair to doca-setup.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1515,7 +1551,7 @@
     {
       "path": "skills/doca-upgrade",
       "name": "doca-upgrade",
-      "description": "Changing DOCA versions safely: upgrading or downgrading the host DOCA packages, refreshing the BlueField BFB, bumping the NGC DOCA container tag, or rolling back, with the discipline detect -> report -> ASK -> only then a guided upgrade. Trigger on \"is there a newer DOCA\", \"I want the newest DOCA features, can I just apt upgrade in place\", \"should I move to the next release\", \"the upgrade stopped midway and dpkg is in a broken state\", \"my component is being deprecated, what now\", or \"roll me back\", even without the word upgrade. Detect what is installed, find the newer release, report the gap, then STOP and ask for explicit confirmation; never upgrade automatically. Not for a runtime error on an unchanged install (doca-debug). Version detection alone belongs to doca-version, first-time install to doca-setup, any hardware / firmware / reboot step to doca-hardware-safety, and public-docs or sunset routing to doca-public-knowledge-map.\n",
+      "description": "Changing DOCA versions safely: upgrading or downgrading the host DOCA packages, refreshing the BlueField BFB, bumping the NGC DOCA container tag, or rolling back, with the discipline detect -> report -> ASK -> only then a guided upgrade. Trigger on \"is there a newer DOCA\", \"I want the newest DOCA features, can I just apt upgrade in place\", \"should I move to the next release\", \"the upgrade stopped midway and dpkg is in a broken state\", \"my component is being deprecated, what now\", or \"roll me back\", even without the word upgrade. Detect what is installed, find the newer release, report the gap, then STOP and ask for explicit confirmation; never upgrade automatically. Do not use it for a runtime error on an unchanged install (doca-debug). Version detection alone belongs to doca-version, first-time install to doca-setup, any hardware / firmware / reboot step to doca-hardware-safety, and public-docs or sunset routing to doca-public-knowledge-map.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1551,7 +1587,7 @@
     {
       "path": "skills/doca-verbs",
       "name": "doca-verbs",
-      "description": "Raw verbs inside DOCA Core (doca-verbs): direct control of QP, CQ, PD, SRQ and address-handle objects through doca_verbs_context, doca_verbs_qp_create / doca_verbs_qp_modify and doca_verbs_cq_create, porting libibverbs code into DOCA Core, or a QP attribute, opcode or WR flag the doca-rdma task API does not expose. Trigger on \"raw QP attribute the task API does not expose\", \"porting libibverbs code\", \"IO_FAILED on WR submit\", \"QP state transition rejected\", or \"attach a congestion-control group\", even without naming doca-verbs. Its first job is to route MOST users back up to doca-rdma, doca-eth or doca-rmax. Covers CC-group and Ethernet SQ/RQ primitives, capability queries via doca_verbs_query_device, and DOCA_ERROR_* from doca_verbs_* calls. Refuse and route elsewhere for ordinary doca-rdma / doca-eth / doca-rmax workloads, DOCA install, Core internals, and general libibverbs theory.\n",
+      "description": "Raw verbs inside DOCA Core (doca-verbs): direct control of QP, CQ, PD, SRQ and address-handle objects through doca_verbs_context and doca_verbs_qp_create / doca_verbs_qp_modify / doca_verbs_cq_create, porting libibverbs code into DOCA Core, or a QP attribute, opcode or WR flag the doca-rdma task API does not expose. Trigger on \"raw QP attribute the task API does not expose\", \"porting libibverbs code\", \"IO_FAILED on WR submit\", \"QP state transition rejected\", or \"attach a congestion-control group\", even without naming doca-verbs. Refuse and route elsewhere for ordinary doca-rdma / doca-eth / doca-rmax workloads, DOCA install, Core internals, and general libibverbs theory.\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "infrastructure",
@@ -1563,7 +1599,7 @@
     {
       "path": "skills/doca-version",
       "name": "doca-version",
-      "description": "DOCA version handling: detect the installed release and validate the four-way match across pkg-config doca-common, applications/VERSION, doca_caps --version, and bfver/mlnx-release on BlueField; reason about NGC tags; look up whether a capability exists on this release; diagnose build-vs-runtime drift. Load it alongside doca-debug when a symptom smells of version skew: \"built but nothing on the wire\", \"undefined reference to a symbol the docs claim exists\", \"DOCA_ERROR_NOT_SUPPORTED at runtime\", \"what does latest mean for this tag\", or \"is my LTS still supported\". Once all four sources match, the component's build / run workflow belongs to its own library, service or tool skill. Refuse install / package choice (doca-setup), per-library API questions (matching library skill), DOCA_ERROR_* taxonomy (doca-programming-guide), and the general debug ladder (doca-debug).\n",
+      "description": "DOCA version handling: detect the installed release and validate the four-way match across pkg-config doca-common, applications/VERSION, doca_caps --version, and bfver/mlnx-release on BlueField; reason about NGC tags; look up whether a capability exists on this release; diagnose build-vs-runtime drift. Use this skill alongside doca-debug when a symptom smells of version skew: \"built but nothing on the wire\", \"undefined reference to a symbol the docs claim exists\", \"DOCA_ERROR_NOT_SUPPORTED at runtime\", \"what does latest mean for this tag\", or \"is my LTS still supported\". Once all four sources match, the component's build / run workflow belongs to its own library, service or tool skill. Refuse install / package choice (doca-setup), per-library API questions (matching library skill), DOCA_ERROR_* taxonomy (doca-programming-guide), and the general debug ladder (doca-debug).\n",
       "metadata": {
         "product.primary": "DOCA",
         "classification.category.primary": "developer_tools",
@@ -1709,7 +1745,7 @@
       "name": "ethos-explore",
       "description": "Captures what an AI agent is supposed to do — its purpose, boundaries, and success criteria — as a durable snapshot for anyone building, evaluating, reviewing, or changing it. Explores the user's codebase and docs first, then asks one intent question at a time for what source cannot supply. Hands its answers to ethos-write, which writes ethos.md. Use over generic brainstorming when the goal is an agent's ethos.md.",
       "metadata": {
-        "product.primary": "NeMo Agent Toolkit",
+        "product.primary": "ETHOS.md",
         "classification.category.primary": "developer_tools",
         "catalog.subdomain": "agentic-ai",
         "audience": "developer,ai_engineer,ml_engineer,application_developer,hands_on_builder",
@@ -1719,9 +1755,9 @@
     {
       "path": "skills/ethos-orchestrate",
       "name": "ethos-orchestrate",
-      "description": "Entry point for an AI agent's ethos.md: a durable snapshot of what the agent is for, what it must not do, and what success looks like. Routes a request to explore and capture intent (ethos-explore), or write or edit the file (ethos-write), including renaming an Eval Author 0.1.0 ETHOS.md. Owns the standard every ethos sub-flow follows. Use when the user asks \"help me write an ethos.md\", \"does my agent have an ethos.md?\", \"update my agent's ethos.md\", or when you need to pick between the ethos sub-flows.",
+      "description": "Entry point for an AI agent's ETHOS.md: a durable snapshot of what the agent is for, what it must not do, and what success looks like. Routes a request to explore and capture intent (ethos-explore), or write or edit the file (ethos-write). Owns the standard every ethos sub-flow follows. Use when the user asks \"help me write an ETHOS.md\", \"does my agent have an ETHOS.md?\", \"update my agent's ETHOS.md\", or when you need to pick between the ethos sub-flows.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "ETHOS.md",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "ai_engineer,developer,application_developer",
@@ -1733,7 +1769,7 @@
       "name": "ethos-write",
       "description": "Writes an AI agent's ethos.md — a durable snapshot of its purpose, intended behavior, boundaries, and success criteria — from the answers gathered by ethos-explore. Renders the schema-v1 template, validates the front matter and required markdown sections, saves the file in the agent's repository, and reviews it with the user. Also edits an existing ethos.md. Use over generic planning skills for an agent's ethos.md.",
       "metadata": {
-        "product.primary": "NeMo Agent Toolkit",
+        "product.primary": "ETHOS.md",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "ai_engineer,developer,ml_engineer,application_developer",
@@ -1769,7 +1805,7 @@
       "name": "g-assist-mcp-skill",
       "description": "Use this skill to check or change this machine's NVIDIA display and GPU settings, such as resolution, refresh rate, V-Sync, G-SYNC, brightness, color, and GPU performance.",
       "metadata": {
-        "product.primary": "Settings",
+        "product.primary": "G-Assist",
         "classification.category.primary": "graphics_and_media",
         "catalog.subdomain": "gaming",
         "audience": "developer,hands_on_builder,it_operations,other",
@@ -2122,6 +2158,42 @@
         "catalog.subdomain": "robotics-simulation",
         "audience": "robotics_developer,simulation_engineer,ml_engineer,ai_engineer,developer",
         "discovery.activity_tags": "validate,evaluate,test,benchmark,debug"
+      }
+    },
+    {
+      "path": "skills/isaac-cable-insertion-policy-deployment",
+      "name": "isaac-cable-insertion-policy-deployment",
+      "description": "Export a trained Isaac Lab DisplayPort task-space checkpoint with LEAPP, run it through Isaac ROS Deploy and Isaac Sim 6.0 in separate Docker containers, verify training asset parity, and record insertion video and measured results. Use for post-training simulation deployment and testing of cable insertion policies.",
+      "metadata": {
+        "product.primary": "Isaac ROS",
+        "classification.category.primary": "physical_ai",
+        "catalog.subdomain": "robotics-simulation",
+        "audience": "robotics_developer,simulation_engineer,ml_engineer,developer",
+        "discovery.activity_tags": "deploy,validate,test,measure,package"
+      }
+    },
+    {
+      "path": "skills/isaac-cable-insertion-policy-training",
+      "name": "isaac-cable-insertion-policy-training",
+      "description": "Set up the standalone IsaacLabTraining package from NVIDIA-ISAAC-ROS/isaac_ros_manipulation, then launch, monitor, resume, evaluate, and tune DisplayPort insertion policies without a separate Isaac Lab source installation. Use for setup and campaign planning, dependency repair, curriculum or PhysX troubleshooting, video evidence, and long GPU runs.",
+      "metadata": {
+        "product.primary": "Isaac Lab",
+        "classification.category.primary": "physical_ai",
+        "catalog.subdomain": "robotics-simulation",
+        "audience": "robotics_developer,simulation_engineer,ml_engineer,ai_engineer,developer",
+        "discovery.activity_tags": "train,configure,monitor,evaluate,troubleshoot"
+      }
+    },
+    {
+      "path": "skills/isaac-humanoid-cloud-control",
+      "name": "isaac-humanoid-cloud-control",
+      "description": "Run streamed Unitree G1 cloud-navigation demos in Isaac Sim with guarded gantry release. Use for demo, destination, Mission Control, or cleanup requests.",
+      "metadata": {
+        "product.primary": "Isaac ROS",
+        "classification.category.primary": "physical_ai",
+        "catalog.subdomain": "robotics-simulation",
+        "audience": "robotics_developer,simulation_engineer,developer,devops_engineer",
+        "discovery.activity_tags": "operate,orchestrate,integrate,deploy,configure"
       }
     },
     {
@@ -2561,7 +2633,7 @@
       "name": "jetson-video-pipeline",
       "description": "Use when planning, executing, and independently validating Jetson Video Codec SDK or PyNvVideoCodec encode/decode, transcode, segmentation, container decode, AV1, or concise acceptance workflows.",
       "metadata": {
-        "product.primary": "Video Codec",
+        "product.primary": "Jetson",
         "classification.category.primary": "graphics_and_media",
         "catalog.subdomain": "gpu-development",
         "audience": "application_developer,developer,platform_engineer",
@@ -2585,7 +2657,7 @@
       "name": "jetson-video-setup",
       "description": "Use when installing, repairing, reusing, inspecting, or verifying readiness of the native NVIDIA Video Codec SDK or PyNvVideoCodec on Jetson, including the one-frame encode/decode smoke test with official samples, and when interpreting what those readiness results, including CPU-buffer and device-memory sample modes, do and do not establish.",
       "metadata": {
-        "product.primary": "Video Codec",
+        "product.primary": "Jetson",
         "classification.category.primary": "graphics_and_media",
         "catalog.subdomain": "gpu-development",
         "audience": "developer,application_developer,platform_engineer,hands_on_builder",
@@ -2669,7 +2741,7 @@
       "name": "medtech-model-evidence-export",
       "description": "Exports sanitized metadata, parameters, reproducibility details, quality metrics, and optional review artifacts from Medical AI inference runs or evidence packs to MLflow. Use after inference, including NV-Generate runs; not for live training tracking, model registration, or clinical use.",
       "metadata": {
-        "product.primary": "NIM for Healthcare",
+        "product.primary": "MONAI",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "inference-ai",
         "audience": "ml_engineer,ai_engineer,application_developer,data_scientist,developer",
@@ -2681,7 +2753,7 @@
       "name": "nemo-automodel-distributed-training",
       "description": "Guide for selecting and configuring distributed training strategies in NeMo AutoModel, including FSDP2, Megatron FSDP, DDP, and parallelism settings.",
       "metadata": {
-        "product.primary": "NeMo Framework",
+        "product.primary": "NeMo AutoModel",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "developer,ai_engineer,ml_engineer,hpc_developer",
@@ -2693,7 +2765,7 @@
       "name": "nemo-automodel-launcher-config",
       "description": "Configure NeMo AutoModel job launches for interactive runs, Slurm clusters, and SkyPilot cloud execution.",
       "metadata": {
-        "product.primary": "NeMo Framework",
+        "product.primary": "NeMo AutoModel",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "developer,ai_engineer,ml_engineer,devops_engineer",
@@ -2705,7 +2777,7 @@
       "name": "nemo-automodel-model-onboarding",
       "description": "Guide for onboarding new model architectures into NeMo AutoModel, including architecture discovery, implementation patterns, registration, and validation.",
       "metadata": {
-        "product.primary": "NeMo Framework",
+        "product.primary": "NeMo AutoModel",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "developer,ai_engineer,ml_engineer",
@@ -2717,7 +2789,7 @@
       "name": "nemo-automodel-recipe-development",
       "description": "Create and modify NeMo AutoModel training and evaluation recipes, including YAML structure, builders, and execution flow.",
       "metadata": {
-        "product.primary": "NeMo Framework",
+        "product.primary": "NeMo AutoModel",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "developer,ai_engineer,ml_engineer",
@@ -2729,7 +2801,7 @@
       "name": "nemo-fabric-build-adapter",
       "description": "Build, migrate, review, and maintain third-party NVIDIA NeMo Fabric adapters against the public adapter contract. Use when creating adapter or target descriptors, mapping AgentConfig into an agent harness or custom-agent runtime, implementing start/invoke/stop, declaring schemas and capabilities, packaging discovery metadata, or assessing adapter conformance. Do not use for consumer applications that only call the NVIDIA NeMo Fabric SDK.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Fabric",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "developer,application_developer,ai_engineer,platform_engineer,solutions_architect",
@@ -2741,7 +2813,7 @@
       "name": "nemo-fabric-integrate",
       "description": "Use this skill when integrating NVIDIA NeMo Fabric into a consumer application, service, evaluation harness, or platform through the typed Python SDK — translating the consumer's own application, job, or deployment config into an in-memory FabricConfig, choosing the single-invocation convenience API or an explicitly started runtime, validating with plan and doctor, and consuming normalized results, artifacts, and telemetry.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Fabric",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "application_developer,platform_engineer,ai_engineer,ml_engineer,devops_engineer",
@@ -2993,7 +3065,7 @@
       "name": "nemo-relay-debug-runtime-integration",
       "description": "Use this skill when NeMo Relay is installed or imported but application-side runtime behavior is missing or incorrect, including load failures, inactive scopes, missing events, and plugin or adaptive wiring problems.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "application_developer,ai_engineer,ml_engineer,developer,platform_engineer",
@@ -3003,9 +3075,9 @@
     {
       "path": "skills/nemo-relay-get-started",
       "name": "nemo-relay-get-started",
-      "description": "Use this skill when first-time NeMo Relay users want to try Relay, choose the least-complex supported quick start, or verify initial value through the CLI, a maintained integration, or direct Python, Node.js, or Rust instrumentation before production setup.",
+      "description": "Use this skill when first-time NeMo Relay users want help selecting and following an appropriate quick-start guide or verifying their first working integration. Do not use it for production rollout or broad integration development.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "application_developer,ai_engineer,ml_engineer,platform_engineer,devops_engineer",
@@ -3015,13 +3087,13 @@
     {
       "path": "skills/nemo-relay-install",
       "name": "nemo-relay-install",
-      "description": "Use this skill when choosing or running NeMo Relay installation for the CLI, Python, Node.js, Rust, OpenClaw, Hermes, or maintained framework integrations before runtime configuration or quick-start setup.",
+      "description": "Use this skill when choosing or running NeMo Relay installation for an agent runtime, application language, framework integration, or plugin bundle, or checking a runtime's native Relay readiness. Do not use it for first-run instrumentation or export configuration.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "developer,application_developer,ai_engineer,devops_engineer,platform_engineer",
-        "discovery.activity_tags": "get_started,integrate,select,configure,deploy"
+        "discovery.activity_tags": "get_started,integrate,select,package,validate"
       }
     },
     {
@@ -3029,7 +3101,7 @@
       "name": "nemo-relay-instrument-calls",
       "description": "Use this skill when an application owns tool or LLM/provider call sites and needs to wrap them with NeMo Relay scopes and managed execution APIs for lifecycle events, middleware, or guardrails.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "application_developer,ai_engineer,developer,ml_engineer,platform_engineer",
@@ -3041,7 +3113,7 @@
       "name": "nemo-relay-instrument-context-isolation",
       "description": "Use this skill when concurrent requests, async tasks, threads, workers, goroutines, or agents need independent NeMo Relay scope stacks and correct ancestry propagation.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "developer_tools",
         "catalog.subdomain": "agentic-ai",
         "audience": "application_developer,ai_engineer,platform_engineer,devops_engineer,developer",
@@ -3053,7 +3125,7 @@
       "name": "nemo-relay-instrument-typed-wrappers",
       "description": "Use this skill when adding NeMo Relay typed wrappers, domain types, or provider codecs while preserving JSON middleware semantics and caller-visible behavior.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "developer,application_developer,ai_engineer,platform_engineer",
@@ -3065,7 +3137,7 @@
       "name": "nemo-relay-migrate-from-flow",
       "description": "Use this skill when migrating applications, examples, integrations, documentation, manifests, or repository code from NeMo Flow to NeMo Relay across Python, Rust, Node.js, Go, C FFI, CLI, configuration, and observability surfaces.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "application_developer,developer,ai_engineer,platform_engineer,devops_engineer",
@@ -3077,7 +3149,7 @@
       "name": "nemo-relay-plugin-adaptive-tuning",
       "description": "Use this skill when baseline NeMo Relay instrumentation exists and the user wants to configure or evaluate adaptive plugin behavior, including telemetry, state, adaptive_hints, tool_parallelism, ACG, hint consumption, or measured rollout.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "ai_engineer,ml_engineer,developer,application_developer,platform_engineer",
@@ -3089,7 +3161,7 @@
       "name": "nemo-relay-plugin-build",
       "description": "Use this skill when building or packaging reusable NeMo Relay runtime behavior as an embedded configuration component or a manifest-backed `rust_dynamic` native or `worker` gRPC plugin, with deterministic validation and rollback-safe registration.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "developer,application_developer,platform_engineer,devops_engineer,ai_engineer",
@@ -3101,7 +3173,7 @@
       "name": "nemo-relay-plugin-observability",
       "description": "Use this skill when choosing or configuring NeMo Relay 0.6 or 0.7 observability through the built-in plugin, subscribers, or exporters, including raw ATOF events, ATIF trajectories, OpenTelemetry, OpenInference, or custom event handling.",
       "metadata": {
-        "product.primary": "NeMo",
+        "product.primary": "NeMo Relay",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "agentic-ai",
         "audience": "application_developer,ai_engineer,platform_engineer,devops_engineer,developer",
@@ -3197,7 +3269,7 @@
       "name": "nemotron-asr-finetune",
       "description": "Orchestration skill for NVIDIA Nemotron Speech (Riva) / NeMo ASR domain and language adaptation. Given a goal like \"improve/fine-tune ASR for my domain or language\", it scopes the task, picks the cheapest sufficient path (word boosting → n-gram LM → fine-tuning), delegates each stage to the right sub-skill (data generation, training, evaluation, deployment), and answers cost/time/data questions along the way.",
       "metadata": {
-        "product.primary": "Riva",
+        "product.primary": "Nemotron Speech",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "conversational-ai",
         "audience": "ml_engineer,ai_engineer,application_developer,solutions_architect,developer",
@@ -3245,7 +3317,7 @@
       "name": "nemotron-speech",
       "description": "Routes NVIDIA Nemotron Speech (Formerly Riva) NIM tasks — deploys, runs, and tests ASR, TTS, and NMT NIMs on build.nvidia.com or self-hosted.",
       "metadata": {
-        "product.primary": "Riva",
+        "product.primary": "Nemotron Speech",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "conversational-ai",
         "audience": "developer,application_developer,ai_engineer,devops_engineer",
@@ -3329,7 +3401,7 @@
       "name": "nv-reason-ct",
       "description": "Run NV-Reason-CT inference on user-provided 3D NIfTI chest or abdominal CT volumes for engineering and research workflows. Not for diagnosis, treatment, or clinical reporting.",
       "metadata": {
-        "product.primary": "NIM for Healthcare",
+        "product.primary": "MONAI",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "inference-ai",
         "audience": "application_developer,ai_engineer,ml_engineer,research_academic,research_non_academic",
@@ -3389,7 +3461,7 @@
       "name": "nvflare-autofl",
       "description": "Use for agent-assisted Auto-FL optimization of an existing NVFLARE job in simulation, POC, or production. Do not use for code conversion, diagnosis-only work, or deployment setup.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,ai_engineer,data_scientist,platform_engineer,developer",
@@ -3401,7 +3473,7 @@
       "name": "nvflare-autofl-report",
       "description": "Generate a reproducible final report, literature-outcome synthesis, JSON summary, and refreshed progress plot for a stopped or interrupted NVFLARE Auto-FL campaign.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,data_scientist,ai_engineer,developer,platform_engineer",
@@ -3413,7 +3485,7 @@
       "name": "nvflare-convert-huggingface",
       "description": "Convert existing Hugging Face Transformers Trainer or TRL SFTTrainer training code into an NVFLARE federated job using flare.patch(trainer), local validation, and job export; use when the user names Hugging Face or preliminary source inspection identifies one Hugging Face owner, and not for manual PyTorch loops, Lightning, inference-only pipelines, deployment, or experiment workflows.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,ai_engineer,developer,data_scientist",
@@ -3425,7 +3497,7 @@
       "name": "nvflare-convert-lightning",
       "description": "Convert existing PyTorch Lightning training code into an NVFLARE federated job using the Lightning Client API patch, local validation, and job export; use only when the request names federated/NVFLARE conversion or asks multiple sites to train collaboratively while keeping each site's data local, and either names PyTorch Lightning or preliminary source inspection identifies one Lightning owner; do not use for non-federated Lightning work such as DDP, profiling, inference serving, or training-loop changes, nor for plain PyTorch, TensorFlow/Keras, other frameworks, deployment, POC/production lifecycle, or experiment workflows.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,ai_engineer,application_developer,developer",
@@ -3437,7 +3509,7 @@
       "name": "nvflare-convert-pytorch",
       "description": "Convert existing plain or manual PyTorch training code into an NVFLARE federated job using Client API model exchange, local validation, and job export; use when the user names plain PyTorch or preliminary source inspection identifies one plain-PyTorch owner, and not for Lightning, other frameworks, deployment, POC/production lifecycle, or experiment workflows.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,ai_engineer,developer,application_developer",
@@ -3449,7 +3521,7 @@
       "name": "nvflare-diagnose-job",
       "description": "Use when the user asks why a reported NVFLARE job failure signal occurred: the job failed, stalled, timed out, lost clients, ended with EXECUTION_EXCEPTION, or produced suspicious errors. Diagnose in simulation, POC, or production by collecting bounded evidence and mapping failure patterns to recovery actions.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,devops_engineer,platform_engineer,ai_engineer,production_operator",
@@ -3461,7 +3533,7 @@
       "name": "nvflare-fed-stats",
       "description": "Compute federated statistics over tabular data (count, sum, mean, stddev, var, histogram, quantile, noise-protected min/max) and image data (count, failure_count, pixel-intensity histogram) across NVFLARE sites via FedStatsRecipe — automatic and non-interactive from the dataset, feature names (header or supplied), and optionally a README or notes declaring which statistics to compute; do not use for model training conversion, hierarchical statistics, deployment, POC/production lifecycle, or failed-job diagnosis.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "data-science",
         "audience": "ml_engineer,data_scientist,developer,data_engineer,ai_engineer",
@@ -3473,7 +3545,7 @@
       "name": "nvflare-orient",
       "description": "Route open-ended NVFLARE advice and only conversion requests whose preliminary source inspection reports unresolved or conflicting ownership; never load this skill merely to inspect a concrete conversion request before selecting its detected framework converter.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,ai_engineer,developer,application_developer,solutions_architect",
@@ -3485,7 +3557,7 @@
       "name": "nvflare-shared",
       "description": "Internal NVFLARE conversion references and templates. Use only when another NVFLARE skill directs you to a shared workflow, policy, or asset.",
       "metadata": {
-        "product.primary": "NVFLare",
+        "product.primary": "NVIDIA FLARE",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "training-ai",
         "audience": "ml_engineer,ai_engineer,developer,application_developer",
@@ -3497,7 +3569,7 @@
       "name": "nvidia-app",
       "description": "NVIDIA App MCP: drivers, games, laptops, overlay. Check drivers, manage and optimize games, configure laptop features.\n",
       "metadata": {
-        "product.primary": "Client",
+        "product.primary": "NVIDIA App",
         "classification.category.primary": "graphics_and_media",
         "catalog.subdomain": "gaming",
         "audience": "developer,it_operations,hands_on_builder",
@@ -3509,7 +3581,7 @@
       "name": "nvidia-broadcast",
       "description": "Use when controlling NVIDIA Broadcast through MCP to apply effects, process local media, select devices, or change camera resolution, or when Broadcast is missing or too old to expose the gateway and the user wants it installed; not for Broadcast app settings outside the MCP gateway.",
       "metadata": {
-        "product.primary": "Maxine",
+        "product.primary": "NVIDIA Broadcast",
         "classification.category.primary": "graphics_and_media",
         "catalog.subdomain": "vision-ai",
         "audience": "application_developer,developer,ai_engineer,hands_on_builder",
@@ -3685,13 +3757,25 @@
       }
     },
     {
-      "path": "skills/omniverse-realtime-viewer",
-      "name": "omniverse-realtime-viewer",
-      "description": "Use as the top-level router for Omniverse Realtime Viewer USD app requests and focused viewer reference documents.",
+      "path": "skills/omniverse-content-services",
+      "name": "omniverse-content-services",
+      "description": "Omniverse Content Services, also discoverable as Omniverse Content Workspace or USD Content Workspace. Use for USD content collaboration as well as content access. Guide USD workflows on existing infrastructure, USD content versioning, 3D creation pipelines, and data access across distributed and scale-out compute. Use for manufacturing, automotive, factory and digital-twin workflows, architecture and construction, media and 3D content, robotics, fleet simulation, and physical AI content delivery. Discover requirements and route to ovstorage, ovpackage, ovlive, usd-content-workspace, and usd-caches experts.",
       "metadata": {
         "product.primary": "Omniverse",
         "classification.category.primary": "physical_ai",
-        "catalog.subdomain": "physical-ai",
+        "catalog.subdomain": "digital-twins",
+        "audience": "solutions_architect,application_developer,simulation_engineer,platform_engineer,developer",
+        "discovery.activity_tags": "integrate,configure,orchestrate,assess,deploy"
+      }
+    },
+    {
+      "path": "skills/omniverse-realtime-viewer",
+      "name": "omniverse-realtime-viewer",
+      "description": "Use as the top-level router for Omniverse Realtime Viewer USD apps, XR delivery, SPG GPU processing, stylized rendering, and focused viewer reference documents.",
+      "metadata": {
+        "product.primary": "Omniverse",
+        "classification.category.primary": "graphics_and_media",
+        "catalog.subdomain": "digital-twins",
         "audience": "developer,simulation_engineer,application_developer",
         "discovery.activity_tags": "deploy,integrate,validate,debug"
       }
@@ -3699,11 +3783,11 @@
     {
       "path": "skills/omniverse-usd-performance-tuning",
       "name": "omniverse-usd-performance-tuning",
-      "description": "Top-level workflow skill for USD performance diagnosis and optimization. Handles slow loading, high memory, low FPS, and broad scene-optimization requests; delegates auth/runtime setup to Phase 0 owners.",
+      "description": "Diagnose and optimize USD stages for slow loading, high memory, low FPS or validation; preserve asset boundaries and reuse shared definitions.",
       "metadata": {
         "product.primary": "Omniverse",
         "classification.category.primary": "physical_ai",
-        "catalog.subdomain": "physical-ai",
+        "catalog.subdomain": "digital-twins",
         "audience": "developer,simulation_engineer,application_developer",
         "discovery.activity_tags": "profile,optimize,validate,measure"
       }
@@ -3737,7 +3821,7 @@
       "name": "physical-ai-defect-image-generation",
       "description": "Use when the user wants to orchestrate defect image generation with NVIDIA Cosmos AnomalyGen (Cosmos-Predict2-derived) on OSMO for PCBA, metal surface, and glass inspection. The Day 0 path handles cold-start with USD-to-ROI, image-edit augmentation, and AnomalyGen to create initial PCBA datasets. The Day 1 path performs inference and labeling on real images. This skill helps with first-time asset setup, creation of finetuning checkpoints, and configuring deployment.\nTrigger keywords: defect image generation, dig workflow, dig pipeline, defect image detection workflow, aoi pipeline, aoi anomalygen, usd2roi anomalygen, day 0 pcba, day 1 pcba, day 1 real-photo alignment, day 1 manual roi, metal surface anomaly, glass defect, anomalygen finetune, setup_pcb, setup_metal, setup_glass, setup_pretrained, dig setup, dig datasets, dig pretrained checkpoint, dig image-edit endpoint, cosmos defect generation, cosmos-predict2 defect, cosmos-anomalygen, cosmos predict2 finetune.",
       "metadata": {
-        "product.primary": "Physical AI Dataset",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "developer,ai_engineer,ml_engineer",
@@ -3785,7 +3869,7 @@
       "name": "physical-ai-video-data-augmentation",
       "description": "Use when running video data augmentation and auto-labeling workflows on OSMO: flow selection, preflight, submit-time interpolation, monitoring, and output retrieval. Trigger keywords: video data augmentation, data enrichment, auto labeling, VDA demo, OSMO workflow, pseudo labeling.",
       "metadata": {
-        "product.primary": "Physical AI Dataset",
+        "product.primary": "Cosmos Data Factory",
         "classification.category.primary": "physical_ai",
         "catalog.subdomain": "physical-ai",
         "audience": "developer,ai_engineer,ml_engineer",
@@ -3829,6 +3913,78 @@
       }
     },
     {
+      "path": "skills/pva-build-test",
+      "name": "pva-build-test",
+      "description": "Build and verify an NVIDIA PVA operator with the public PVA SDK. Use alone or from OpGen. Run optional EMU correctness, a fresh L4T build with the NVVPU or ASIP/Chess backend that Doctor proved, direct-SSH Tegra hardware correctness, and optional hardware performance. Return PASSED, FAILED, or BLOCKED with exact evidence.",
+      "metadata": {
+        "product.primary": "PVA",
+        "classification.category.primary": "accelerated_computing",
+        "catalog.subdomain": "gpu-development",
+        "audience": "developer,application_developer,platform_engineer,hands_on_builder",
+        "discovery.activity_tags": "test,validate,benchmark,debug,configure"
+      }
+    },
+    {
+      "path": "skills/pva-debug",
+      "name": "pva-debug",
+      "description": "Diagnose and narrowly repair one reproduced NVIDIA PVA operator failure. Use from OpGen or manually for compile, link, cuPVA lifecycle, dataflow, DMA, numerical, EMU-versus-hardware, runtime, or performance failures. Preserve the original evidence and return the repaired source to the caller for a fresh Build-Test.",
+      "metadata": {
+        "product.primary": "PVA",
+        "classification.category.primary": "developer_tools",
+        "catalog.subdomain": "gpu-development",
+        "audience": "developer,application_developer,platform_engineer",
+        "discovery.activity_tags": "troubleshoot,debug,test,optimize,profile"
+      }
+    },
+    {
+      "path": "skills/pva-doctor",
+      "name": "pva-doctor",
+      "description": "Check whether a host is ready for requested NVIDIA PVA work. Use before Spec, OpGen, Build-Test, or Debug. Verify references to the installed SDK documentation, inspect only the requested capabilities, and prove that either NVVPU or ASIP/Chess can compile target VPU code when L4T compilation is required. Report READY, READY_WITH_LIMITATIONS, or NOT_READY. Do not install or configure software.",
+      "metadata": {
+        "product.primary": "PVA",
+        "classification.category.primary": "developer_tools",
+        "catalog.subdomain": "in-vehicle-computing",
+        "audience": "developer,application_developer,platform_engineer,devops_engineer,robotics_developer",
+        "discovery.activity_tags": "validate,inspect,troubleshoot,test,debug"
+      }
+    },
+    {
+      "path": "skills/pva-opgen",
+      "name": "pva-opgen",
+      "description": "Generate, change, or repair a complete vectorized NVIDIA PVA operator from a validated pva-spec handoff. Deliver the contract's API, host and VPU code, independent CPU reference, sample, build integration, tests, and documentation. Verify with pva-build-test and use pva-debug within the configured attempt limit.",
+      "metadata": {
+        "product.primary": "PVA",
+        "classification.category.primary": "developer_tools",
+        "catalog.subdomain": "gpu-development",
+        "audience": "developer,application_developer,hands_on_builder,platform_engineer",
+        "discovery.activity_tags": "generate,integrate,test,debug,validate"
+      }
+    },
+    {
+      "path": "skills/pva-setup",
+      "name": "pva-setup",
+      "description": "Install and configure the NVIDIA PVA SDK, NVVPU compiler, and L4T target runtime from the selected installation guide. Use when the user requests PVA environment setup on a development host and board.",
+      "metadata": {
+        "product.primary": "PVA",
+        "classification.category.primary": "accelerated_computing",
+        "catalog.subdomain": "gpu-development",
+        "audience": "developer,application_developer,platform_engineer",
+        "discovery.activity_tags": "configure,get_started,validate,deploy"
+      }
+    },
+    {
+      "path": "skills/pva-spec",
+      "name": "pva-spec",
+      "description": "Create and validate an NVIDIA PVA operator specification, test matrix, evidence manifest, and deterministic OpGen handoff. Use after Doctor for new operators, changes, or repairs, using requirements, a partial spec, reference code, or an existing operator. Accept text, files, and public URLs. Record unresolved requirements without inventing behavior.",
+      "metadata": {
+        "product.primary": "PVA",
+        "classification.category.primary": "accelerated_computing",
+        "catalog.subdomain": "gpu-development",
+        "audience": "developer,application_developer",
+        "discovery.activity_tags": "generate,validate,test,synthesize,configure"
+      }
+    },
+    {
       "path": "skills/rag-blueprint",
       "name": "rag-blueprint",
       "description": "NVIDIA RAG Blueprint — deploy, configure, troubleshoot, and manage. Handles any RAG action: deploy, install, start, enable, disable, toggle, change, configure, troubleshoot, debug, fix, shutdown, stop, or tear down any RAG feature or service (Agentic RAG, VLM, guardrails, query rewriting, models, search, ingestion, observability, summarization, reasoning, and more).",
@@ -3869,7 +4025,7 @@
       "name": "rtvi-cv-customize-model",
       "description": "How to swap the DeepStream CV detection model in the VSS Alerts Blueprint verification (2d_cv) mode - covers ONNX export, custom bbox parsers, compose mount gotchas, nvinfer config, runtime TRT engine build, deployment, and a segmentation-capable model addendum handoff.",
       "metadata": {
-        "product.primary": "Video Search and Summarization (VSS)",
+        "product.primary": "DeepStream SDK",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "vision-ai",
         "audience": "application_developer,ml_engineer,ai_engineer,devops_engineer",
@@ -3881,7 +4037,7 @@
       "name": "rtvi-cv-scaffold-vss-service",
       "description": "Scaffold a standalone RTVI CV microservice that plugs into VSS Search and Alerts profiles via Kafka mdx-raw. The shipped scaffold script is a YOLO26 reference implementation (ONNX, labels, custom parser required). Use when building a new perception microservice repo, validating the VSS integration contract, extending that scaffold for segmentation frame-mask payloads, or scaffolding with placeholders before customer YOLO26 assets exist. For swapping the detector in the stock vss-rt-cv container, use rtvi-cv-customize-model instead. Live DeepStream integration cannot run until the customer-supplied ONNX, labels file, and parser library exist.\n",
       "metadata": {
-        "product.primary": "Video Search and Summarization (VSS)",
+        "product.primary": "DeepStream SDK",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "vision-ai",
         "audience": "application_developer,ml_engineer,solutions_architect,devops_engineer",
@@ -3893,7 +4049,7 @@
       "name": "rtvi-vlm-customize-model",
       "description": "How to swap the VLM in the VSS Alerts Blueprint — covers RTVI-VLM microservice deployment methods, all three VLM consumers (rtvi-vlm, vlm-as-verifier, vss-agent), and health checks.",
       "metadata": {
-        "product.primary": "Video Search and Summarization (VSS)",
+        "product.primary": "DeepStream SDK",
         "classification.category.primary": "ai_and_machine_learning",
         "catalog.subdomain": "vision-ai",
         "audience": "application_developer,devops_engineer,platform_engineer,solutions_architect,ai_engineer",
@@ -3910,6 +4066,66 @@
         "catalog.subdomain": "gaming",
         "audience": "developer,application_developer,hands_on_builder,designer",
         "discovery.activity_tags": "transform,configure,integrate,inspect,operate"
+      }
+    },
+    {
+      "path": "skills/runai-audit-assigned-quota",
+      "name": "runai-audit-assigned-quota",
+      "description": "Audit GPU quota fairness across a Run:ai cluster — find which projects are starved and which are borrowing over their deserved quota in each node pool, and where GPUs can be reclaimed. Use when an admin asks \"who is over quota in node-pool X\", \"which projects are starved\", \"is the cluster shared fairly\", \"where can I reclaim GPUs\", \"show deserved vs allocated by project or department\", or when a team reports it can't get GPUs and you suspect unfair borrowing. This is the quota / fairness axis (deserved vs allocated). For idle-but-held GPUs use runai-get-utilization-overview; for a health/scheduling verdict use runai-get-cluster-health-summary.",
+      "metadata": {
+        "product.primary": "Run:ai",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "ai-factory",
+        "audience": "platform_engineer,it_operations,devops_engineer",
+        "discovery.activity_tags": "assess,inspect,troubleshoot,monitor,optimize"
+      }
+    },
+    {
+      "path": "skills/runai-diagnose-failed-workload",
+      "name": "runai-diagnose-failed-workload",
+      "description": "Use to diagnose failed, crashed, stopped, OOMKilled, CrashLoopBackOff, ImagePullBackOff, init, mount, node, or policy-terminated Run:ai workloads. Investigate one workload's failure; use other skills for workload health summaries, cluster health, scheduling-only Pending, or inference latency without a confirmed failure.",
+      "metadata": {
+        "product.primary": "Run:ai",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "ai-factory",
+        "audience": "platform_engineer,devops_engineer,ml_engineer,it_operations,production_operator",
+        "discovery.activity_tags": "troubleshoot,debug,inspect,classify,monitor"
+      }
+    },
+    {
+      "path": "skills/runai-get-cluster-health-summary",
+      "name": "runai-get-cluster-health-summary",
+      "description": "Point-in-time Run:ai cluster and node-health check: a HEALTHY, DEGRADED, or STUCK verdict per node pool with the dominant blocker — NotReady nodes, offline or failing GPU capacity, GPU counts, allocation vs utilization, the pending backlog, and a stuck scheduler vs a full pool. Use for \"is the cluster healthy?\", \"is the scheduler stuck?\", \"any nodes down?\", \"are GPUs failing?\", \"how many GPUs are free?\", \"is the cluster saturated?\", or \"why isn't node pool X scheduling?\". Not for quota fairness, team GPU waste, one workload, failed-workload node correlation, XID errors on one node, or writes.",
+      "metadata": {
+        "product.primary": "Run:ai",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "ai-factory",
+        "audience": "platform_engineer,devops_engineer,it_operations,solutions_architect",
+        "discovery.activity_tags": "troubleshoot,monitor,inspect,summarize,assess"
+      }
+    },
+    {
+      "path": "skills/runai-get-utilization-overview",
+      "name": "runai-get-utilization-overview",
+      "description": "GPU efficiency check for a Run:ai cluster: are the GPUs that projects, departments, and node pools hold actually computing? Classifies holders as WELL_UTILIZED, UNDER_UTILIZED, or IDLE from average and p95 GPU utilization over one window of any length (default 7 days), quantifies idle GPUs and GPU-hours, and names idle workloads. Use for \"which projects hold GPUs but aren't using them?\", \"GPU utilization by project or department\", \"where are we wasting GPU cycles?\", \"is llm-serving actually busy? its GPU memory is full\", \"is project X actually using its GPUs?\", \"which workloads in project X are idle?\", \"which node pool wastes the most GPUs?\", or \"idle GPU-hours per project last quarter\". For \"find the idle GPUs and stop them\" it answers the read part only. Not for quota fairness, cluster health or free capacity, one workload's status, comparing windows, forecasts, or prices.",
+      "metadata": {
+        "product.primary": "Run:ai",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "ai-factory",
+        "audience": "platform_engineer,devops_engineer,it_operations,ml_engineer",
+        "discovery.activity_tags": "monitor,measure,assess,inspect,optimize"
+      }
+    },
+    {
+      "path": "skills/runai-get-workload-health-summary",
+      "name": "runai-get-workload-health-summary",
+      "description": "Summarizes scoped Run:ai workload health or one workload. Not for root cause, quota, cluster health, fleet utilization, history, or mutations.",
+      "metadata": {
+        "product.primary": "Run:ai",
+        "classification.category.primary": "infrastructure",
+        "catalog.subdomain": "ai-factory",
+        "audience": "platform_engineer,devops_engineer,it_operations,production_operator,developer",
+        "discovery.activity_tags": "summarize,monitor,inspect,assess,troubleshoot"
       }
     },
     {

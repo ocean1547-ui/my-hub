@@ -79,6 +79,48 @@
       "last_modified": "2026-10-09"
     },
     {
+      "name": "bionemo-complexa-evaluate-pdbs",
+      "path": "skills/bionemo-complexa-evaluate-pdbs",
+      "content_digest": "sha256:7a43fb5c8a17b17179069c21333e2c2b488369e6f82806a7e8c6d6229ef3ed18",
+      "last_commit": "69abc1503d755f9c778e4c884554aea3bd83c131",
+      "last_modified": "2026-10-21"
+    },
+    {
+      "name": "bionemo-complexa-sweep",
+      "path": "skills/bionemo-complexa-sweep",
+      "content_digest": "sha256:506d842aacd6a7bb704e9624eeda2ad7c85bac342d42ddb11d1206ea423ffc38",
+      "last_commit": "69abc1503d755f9c778e4c884554aea3bd83c131",
+      "last_modified": "2026-10-21"
+    },
+    {
+      "name": "bionemo-complexa-target",
+      "path": "skills/bionemo-complexa-target",
+      "content_digest": "sha256:fb95f734f1631c0a4146ac710cdda6e77ed010372d93bcb77b3e1372837ff378",
+      "last_commit": "69abc1503d755f9c778e4c884554aea3bd83c131",
+      "last_modified": "2026-10-21"
+    },
+    {
+      "name": "bionemo-cuequivariance",
+      "path": "skills/bionemo-cuequivariance",
+      "content_digest": "sha256:d8cfe1726336e40714f04d26b24a1d95f5c7986fc25a66b288b4576ad9b00bd2",
+      "last_commit": "00ce147f35ce48f84ab482b38ecb911bc93783dd",
+      "last_modified": "2026-11-04"
+    },
+    {
+      "name": "bionemo-cuequivariance-jax",
+      "path": "skills/bionemo-cuequivariance-jax",
+      "content_digest": "sha256:73d098f669ba885cf9c51a75ac3fe08a0137a7c2404096c2576c3b802ac03a7e",
+      "last_commit": "00ce147f35ce48f84ab482b38ecb911bc93783dd",
+      "last_modified": "2026-11-04"
+    },
+    {
+      "name": "bionemo-cuequivariance-torch",
+      "path": "skills/bionemo-cuequivariance-torch",
+      "content_digest": "sha256:dfe85a932a7b168e7dd829968e51e2c7a06ada544c51f78ff2e7e4137c0e6a95",
+      "last_commit": "00ce147f35ce48f84ab482b38ecb911bc93783dd",
+      "last_modified": "2026-11-04"
+    },
+    {
       "name": "bionemo-diffdock-nim",
       "path": "skills/bionemo-diffdock-nim",
       "content_digest": "sha256:d4825b6a0a116a4affd7feb00d9fbdf54dcee32a77b0b60e6b349075983dedcb",
@@ -214,9 +256,9 @@
     {
       "name": "bionemo-parabricks",
       "path": "skills/bionemo-parabricks",
-      "content_digest": "sha256:8477f2bddc7ebdb0a831e82b7d778a01463a768bcb76a0b5903437b542f670b9",
-      "last_commit": "ab9edfd1ef0f2932b3018aef8efeddb8624205ca",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:d51088db9c9fd4f5b87a2aea5e01b1e99174743f331ad3853f3aa498147f2421",
+      "last_commit": "b28d346437cf378402b19a730cd55cec516c77ff",
+      "last_modified": "2026-10-27"
     },
     {
       "name": "bionemo-proteinmpnn-nim",
@@ -317,6 +359,13 @@
       "last_modified": "2026-10-20"
     },
     {
+      "name": "cdf-simulation",
+      "path": "skills/cdf-simulation",
+      "content_digest": "sha256:bd066213173fea367099bd32af8e38856bb8b27d1e9371de5f1f0939ca2a876b",
+      "last_commit": "6e0f575fca0ba1ac41617a74d552bbcefa19e977",
+      "last_modified": "2026-10-21"
+    },
+    {
       "name": "cdf-video-data-augmentation",
       "path": "skills/cdf-video-data-augmentation",
       "content_digest": "sha256:79f4deea14e58dbe5e663b306c0bc3a44f320adf63d588cdeddd10bf034046ce",
@@ -345,6 +394,20 @@
       "last_modified": "2026-09-12"
     },
     {
+      "name": "cudf-query-engine-builder",
+      "path": "skills/cudf-query-engine-builder",
+      "content_digest": "sha256:e886e1e88fbe0d05b419286d9cb33e272c43ce6483425f9b3f7450f48d29bb39",
+      "last_commit": "6ada1cdb3dddf3386cfdde655e4dd7de6b1cc82e",
+      "last_modified": "2026-11-04"
+    },
+    {
+      "name": "cuml",
+      "path": "skills/cuml",
+      "content_digest": "sha256:50d4cca14b1b00bc97a8b8877401c52663ec8102bbe5369a0fefbb181d82ff4f",
+      "last_commit": "fc38e7248fff9e958ed3c17f5dc79808b3348d4f",
+      "last_modified": "2026-11-05"
+    },
+    {
       "name": "cuopt-developer",
       "path": "skills/cuopt-developer",
       "content_digest": "sha256:2146d5b9c801f3298e75179f6bd898c42a2c0ca26531fb2313b39449b99cf281",
@@ -361,9 +424,9 @@
     {
       "name": "cuopt-multi-objective-exploration",
       "path": "skills/cuopt-multi-objective-exploration",
-      "content_digest": "sha256:37663cd09b9ff7402903d38c0b20fd00fbf178f9dfa92bf0c075d89b7d341894",
-      "last_commit": "b3123b1702fe1cfa11e40338d04c1b7e927c65e4",
-      "last_modified": "2026-08-07"
+      "content_digest": "sha256:defe0e1fabf9c408825a52b2d87cee3f70e0c9b225b47e95e981fd2311a28b80",
+      "last_commit": "3aecfe9ba84e4df15fa7b224987f2803c2ba70e7",
+      "last_modified": "2026-10-25"
     },
     {
       "name": "cuopt-numerical-optimization-api",
@@ -403,9 +466,9 @@
     {
       "name": "data-designer",
       "path": "skills/data-designer",
-      "content_digest": "sha256:c8b7a8619f0d978d4d2287fa248332a834d42f39b417dea6bb5681104fb56f2a",
-      "last_commit": "e695a8397463bbb64d787b3cd88d3c58889be633",
-      "last_modified": "2026-06-02"
+      "content_digest": "sha256:99a666705cbe85a36f9338a3e6c677fb44d486f6a536be3688ec660cefa8a6cb",
+      "last_commit": "fea423859bdc70e92d95d0b1e84ac4e0c630db24",
+      "last_modified": "2026-11-03"
     },
     {
       "name": "deepstream-dev",
@@ -438,9 +501,9 @@
     {
       "name": "deepstream-run-mv3dt",
       "path": "skills/deepstream-run-mv3dt",
-      "content_digest": "sha256:4f721aa4407f710f0cd7f69dd084ca14629e99a39aabd72f234d88919ee4d742",
-      "last_commit": "a8ca7bc1ddc433e91520892b087c5a704e34fdb2",
-      "last_modified": "2026-08-12"
+      "content_digest": "sha256:5c784650477533dd814201d82af672ca70bb6f1f5847f5f82ceba61089736ae8",
+      "last_commit": "fc38e7248fff9e958ed3c17f5dc79808b3348d4f",
+      "last_modified": "2026-11-05"
     },
     {
       "name": "deepstream-sop",
@@ -448,6 +511,13 @@
       "content_digest": "sha256:a6e9de0fa22b505f349734532b020646e151790616f5922e49f4e279da5a6ea4",
       "last_commit": "6d034104a85ed75c705535c0d9dd961412fd6be3",
       "last_modified": "2026-09-04"
+    },
+    {
+      "name": "dgx-spark-skills",
+      "path": "skills/dgx-spark-skills",
+      "content_digest": "sha256:bee81d2e8e371075df6a41ba462c20f4ecff8646500ef75dde98e534462dc72b",
+      "last_commit": "f5337e8a388a87bec81ccd960d70174ec2c189bc",
+      "last_modified": "2026-10-29"
     },
     {
       "name": "dicom-metadata-extract",
@@ -501,422 +571,373 @@
     {
       "name": "doca-aes-gcm",
       "path": "skills/doca-aes-gcm",
-      "content_digest": "sha256:88cd9fab415d9b9b182d4e190229489ab5b3a744eda5be7eaffafe09f812472c",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:fb8d7bb4f25a3496ed2b061b3d0892c42e4f4674ec38f7f4cad8da8dda898c43",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-argp",
       "path": "skills/doca-argp",
-      "content_digest": "sha256:f654091cd0817098ffba209ffbe43026b28fd0a8c44323bdfbff6b40d2a24296",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:92145855f53158be9a5d00ce38f6bd35dca6ec2a9979427333fae3ec15a7aecf",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-argus",
       "path": "skills/doca-argus",
-      "content_digest": "sha256:ae00200eb7fd7049d9cb870242666d83cba8760c89d7149beffed060b6681ddd",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:64d7068f0fa69b5ec2e38b0a296c4dfdf02181d4dd56b80fab866e7f8c961ee7",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-bare-metal-deployment",
       "path": "skills/doca-bare-metal-deployment",
-      "content_digest": "sha256:2c71350f6e83234020ce5e4e4347923534ab670e363a97a3218b23fb5cafc751",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:e7e8a56c1524079ed11b37b33654a4eeb3ed8640a411a37c12fe70eb9cddd9f8",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-bench",
       "path": "skills/doca-bench",
-      "content_digest": "sha256:d051029e0195b7ad93cd7bf03f86d9a18d3e3bb190b332a10b678470cf3040c4",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-bench-extension",
-      "path": "skills/doca-bench-extension",
-      "content_digest": "sha256:96750ecfcc33374dc88e110f2d6cbe2f8ae6d81e3b2af9824de17ec37ee15633",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:1507e8e7ff70a81b8799cd3fce04b4edea89ff632292f653a43286e8901dbebf",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-bf3-deployment",
       "path": "skills/doca-bf3-deployment",
-      "content_digest": "sha256:540836dcdac01f72777ed13aaceefea46ba95a220d7b8285297579054b9cce31",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:8dd8de001bc674b835e11dc15109d4d7eddf80603e059d9e4cc40c2990ac25ce",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-bf4-deployment",
       "path": "skills/doca-bf4-deployment",
-      "content_digest": "sha256:8dfd18895372542c7321e9732d24ca9825798f8625f8413c16a7b39a63a8d109",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:3ee85eebb66aa80eb833d9b133176064aa5a5dca9aaac310107c9fc1b8b32e3c",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-caps",
       "path": "skills/doca-caps",
-      "content_digest": "sha256:a22e13957abc2c83881e0c33069e5cb93e80e5ca6f792fe05232c4665690b1d3",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-collectx-deployment",
-      "path": "skills/doca-collectx-deployment",
-      "content_digest": "sha256:7c3c8b4bc52dd425cce9430742944ef713d5cb4e8e8554fa328ca24f3b0f06c6",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:1e123a55ffdf84517ba02e792cec32322a4a6e19acdf51048cfeced7628c697c",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-comch",
       "path": "skills/doca-comch",
-      "content_digest": "sha256:68908deb101e81334d67bf6992663cf986d90a31bc6d91c1416654ac13ed0cfd",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:99e52b2a6c1f39b860d5010bc9cc68ae7e2a2fd18cb68e605bee47a46ba49942",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-comm-channel-admin",
       "path": "skills/doca-comm-channel-admin",
-      "content_digest": "sha256:ae03de42d2e2dfd3b6bbceb33121fb32787f2a0bf8c3315e302b21fcdf279d9f",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:756787c983f053e13033688ecee7c552fc2e2e609ed0adfdccd05268f5f4d4fe",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-common",
       "path": "skills/doca-common",
-      "content_digest": "sha256:42385dca2e553342b366bee2c95ab5f5974ffce13acf9283a486b96fdcfc6fbc",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:aba2eb22fa0c344071c2c8c9d99303fc8923cce644719b89d75e7096b4f8052a",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-compress",
       "path": "skills/doca-compress",
-      "content_digest": "sha256:50d98c6d49122d04bf32999b6792dd72e2c45150ba03bb1332ef670bda203d22",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:5e41df168ff8f02fe46df46326ae7300f62285fb3d9a5d0bb58d8285ae8cef7d",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-container-deployment",
       "path": "skills/doca-container-deployment",
-      "content_digest": "sha256:b10fcdff6ff64f186e23ef4ee0c78064bf03e7c1a0c90e290b4b041726cf9b06",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:d3cba3165dd1cefbab6a62c163aa13545f989dcfc452e751e574284193059957",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-debug",
       "path": "skills/doca-debug",
-      "content_digest": "sha256:92e69053329b448c6b6b2820e27a9a32f0511e71c88237f56a8b1dfd72c9a524",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:2a834fa5a990d4c641ea58290bbf80b3fdbc5b77098bf184a9af1145339f80ba",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-devemu",
       "path": "skills/doca-devemu",
-      "content_digest": "sha256:def86bda92f20b74d6a90ee130fb91983ab8fcdfa44ef8031ab03b266ebe5596",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:a0a176427a2049654d58a44ec9261f09622491d9074cbcaaec66b00ca4c91228",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-dma",
       "path": "skills/doca-dma",
-      "content_digest": "sha256:4d0b8d4c12904a563a6a1706d1a885e78109efc02cccc13f34a1ffe38bf0aa90",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:a47158719ecb69454a254e440824c503abb4dfde13b618554abb91b44cf488aa",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-dms",
       "path": "skills/doca-dms",
-      "content_digest": "sha256:b76ba9b559c35d57196275ee8f7ce1c05351d6e977e6336f547babc6bb5e5e01",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:3cf7f15ed0b60f11f3f919cd9793771570fc9245d391cc2db6aba003d0991664",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-dpa",
       "path": "skills/doca-dpa",
-      "content_digest": "sha256:407904e83fb74581f6ae0f0c207b29e5f29d49509e182c2b2a3f9ad87ecb928f",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-dpa-hl-tracer",
-      "path": "skills/doca-dpa-hl-tracer",
-      "content_digest": "sha256:734955989bda5b90d364fee0829b113d8f5d550e824cc9e87cfc75aa8bb5421d",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:f1f45b9c3d0e6643c73068be7d4408bd6737588bdc3dab25029feb3625306ed2",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-dpdk-bridge",
       "path": "skills/doca-dpdk-bridge",
-      "content_digest": "sha256:67a8f92e12ec08541cf5c0346e954d13e092b2f652d73e54264f08caf3b0c0f4",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:a2f8bb9e4ee056384285562a5a517280d12388af288637232e72618808915b2b",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "doca-dts",
+      "path": "skills/doca-dts",
+      "content_digest": "sha256:4d0efd40996e2e827616f38cd0bb4f9999052ca45785a41d614522ffc5161e87",
+      "last_commit": "b75adbcf813b606237606b681a56cc326f91cd94",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-erasure-coding",
       "path": "skills/doca-erasure-coding",
-      "content_digest": "sha256:43786b80a5776be51096ae22eed789c5c767764cabb05883a0b6a471beb430b3",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:f5d48d12cd087587fd8d5bee7483576cc870982a794b53d01d1b459eac206441",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-eth",
       "path": "skills/doca-eth",
-      "content_digest": "sha256:9c4fa3632312509dc2dac17769c8f47b91a0709a679e0522be1d157616f0d58b",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:2a2b4873316843bdcadd8299218c88b58a61a5b35a519808e76bff16000386e0",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-firefly",
       "path": "skills/doca-firefly",
-      "content_digest": "sha256:5cbe0472efcb6b1253644d6c1f0544010f93b5116c96f0cac24e6be7796a99a0",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:59a1c52b84375163e42c685feddb0c3b1e68cf24d33ddf5782b52aac7db862d5",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-flow",
       "path": "skills/doca-flow",
-      "content_digest": "sha256:d8810b331053a0171dd12f810a6b4398a7bcf99574db93ff20102e9eb5568c0c",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-flow-dpa-perf",
-      "path": "skills/doca-flow-dpa-perf",
-      "content_digest": "sha256:d3621e7a1262b29fbef398eaa7c36912c71d639b2405d69f7499d16ba5598b21",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-flow-dpa-provider",
-      "path": "skills/doca-flow-dpa-provider",
-      "content_digest": "sha256:21946e18eb78403e160c885ba02d2c57091600e8efc2f0df487dc28230debfef",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-flow-grpc-server",
-      "path": "skills/doca-flow-grpc-server",
-      "content_digest": "sha256:a02edac0c8b9eba51a20da74248ec24cb0d436e2d39b4caa7aeae10c6255a81d",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-flow-perf",
-      "path": "skills/doca-flow-perf",
-      "content_digest": "sha256:dde57b769124c92aca899187e6dc15d6fa3d2184f0476bc242bfaaf579bc6e7c",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:e7152662e1314f234be98e3ec4368270575bb9ddc4d2b0b5ec42c88e27896cad",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-flow-tune",
       "path": "skills/doca-flow-tune",
-      "content_digest": "sha256:c0fce5eb296b193a6c8406ab856b809fd9b696ef6e4da8106f89fe0d80ae977b",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-gpi",
-      "path": "skills/doca-gpi",
-      "content_digest": "sha256:a1f59b43dce771d14fa0d201f991a80759faca14f3717d9d64f31dee8f0679f8",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:a7085501b3c4d9cd7d47617011dcee990e419e66f4aac220014cf87bcbca5e15",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-gpunetio",
       "path": "skills/doca-gpunetio",
-      "content_digest": "sha256:c9aad01c3fa2768ce750e3a3e5dcb69ae2e9875246f4df5714769af567b287a6",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-gpunetio-ib-write-bw",
-      "path": "skills/doca-gpunetio-ib-write-bw",
-      "content_digest": "sha256:fa45a8f8ab1cb18719e2135faf35c596b0f777b3038d09d4907ec723f83d50af",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-gpunetio-ib-write-lat",
-      "path": "skills/doca-gpunetio-ib-write-lat",
-      "content_digest": "sha256:2df018c95c56ed9405d87342d2f8b559f0402134b3ca481869ecbb6e23505670",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:5aa94ed773c84d860646933c9a30e8c5f0b163e4abcf500c5f5830ea276fc612",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-hardware-safety",
       "path": "skills/doca-hardware-safety",
-      "content_digest": "sha256:459f100dc46193e6be97a21565ab2ecbeb9e0a8a3a0d9104fd1cb1de2164cc71",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:a807d4d33238dfb1a5f4c34ab424bf36488dae0e5c5a49a7adea59c32926033c",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-mgmt",
       "path": "skills/doca-mgmt",
-      "content_digest": "sha256:39db8eb09ac50b4b1364636055a4b3397ceb3260c06f8721875e1da822f18e11",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:b680bd1445f7469f6ca1b4360d11f71e4b5baf2dc7994fa105ef519ac6e3774c",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "doca-ngauge",
+      "path": "skills/doca-ngauge",
+      "content_digest": "sha256:81bbc5a6a962651dc0af6d289f3b908bbf9d89b8a02a2df0b23447ec9ae0a14f",
+      "last_commit": "b75adbcf813b606237606b681a56cc326f91cd94",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-pcc",
       "path": "skills/doca-pcc",
-      "content_digest": "sha256:8c5033c9c843593221f49fdfb99e316fdcc91ead70ce5522221ea5f32906af0d",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:508f1b3b3756265ae01c68becc35e7a6c5ea879ad525e4d68cbd8fd485934399",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-pcc-counters",
       "path": "skills/doca-pcc-counters",
-      "content_digest": "sha256:05c9dd5e8ddbf7c653087170f2ec54d926344f743df654f7cc445206f3458d02",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:bbdab3cc6711e548908f12556c49647509b5d47c039a48a63b74907d4e6da811",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
-      "name": "doca-pcc-ztr-rttcc-algo",
-      "path": "skills/doca-pcc-ztr-rttcc-algo",
-      "content_digest": "sha256:475bb2bbc4f63ffe081e68bdfcb61b39df9a37eec28e9e9b803734f71cda8f6c",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "name": "doca-perftest",
+      "path": "skills/doca-perftest",
+      "content_digest": "sha256:cec2c46a75b8f8b462e1abefbc23c762e1d83dce0b93922fb6a92b6bf69d3312",
+      "last_commit": "b75adbcf813b606237606b681a56cc326f91cd94",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "doca-pipeline-language-developer-tools",
+      "path": "skills/doca-pipeline-language-developer-tools",
+      "content_digest": "sha256:85784005e9f9cf7a96fc3f12f0781d20917aa29d9f155bc0e0a3952c4277559b",
+      "last_commit": "b75adbcf813b606237606b681a56cc326f91cd94",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-programming-guide",
       "path": "skills/doca-programming-guide",
-      "content_digest": "sha256:6679bc1be5149cad8a8372cb3ea1a7f4d3ecc97fbf580c3de5b66577ccebb9cf",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:1e5057668b8630c8f17a683cb46f64077c9585d2b91dbf4abb074ba41802f5d3",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-public-knowledge-map",
       "path": "skills/doca-public-knowledge-map",
-      "content_digest": "sha256:9bf0473126a7e7d650593f7f58c4f997a0a9e1aff2ae3ddb02a0c34708259b0f",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:3fb16af1765dff46f0d7a7ce5ac1af51f4bb66361fe809f143bc7d7a6724e675",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-rdma",
       "path": "skills/doca-rdma",
-      "content_digest": "sha256:db5da1f10ce1addfec365c3f447924bd5bd18b5ef479d0dd1faea097ce7d9367",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
-    },
-    {
-      "name": "doca-rdmi",
-      "path": "skills/doca-rdmi",
-      "content_digest": "sha256:bc73e8156445c86e5ff5fb64ab056b61f50ca1c2bbdf93208fb7b53fc928cc43",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:0454f17cdf1b2ae1d55e67166520734403045ee61fa8f5c26ced85ded9b285f6",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-rmax",
       "path": "skills/doca-rmax",
-      "content_digest": "sha256:bc7a06b3538ff38dd55625a4aa8adf32940c6a9447f8c831bd162bc32b8a2399",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:b868b65a13ea0c14d7aec2956de6d4ea6071dc922933c03f15edd4fab7b503b8",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-setup",
       "path": "skills/doca-setup",
-      "content_digest": "sha256:ecc280f66b42b397f77061861881fa8d62e1088d2b17d412c81ea60110709177",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:b31bc1f14b88aface5ace9749f3557b5ee75e0f2a3607d160eb22d6ecf499537",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-sha",
       "path": "skills/doca-sha",
-      "content_digest": "sha256:8006c0cefeba85c3ba4318ca012c256467f436cd8db9e1c5738deca9c5b19b10",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:67080e96c156a0fbdced0fc6769c64fe801edf5539cc3c85d43c72903b893578",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-sha-offload-engine",
       "path": "skills/doca-sha-offload-engine",
-      "content_digest": "sha256:ea678b7e403aac5b59e7fa11daca4d0ee289b8c88d739f024df8dfad58aa74ad",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:f3c6c16516d84a59c126e13d3c7bb3d16e260b8c75c19507fff2ff9dee8b1325",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-socket-relay",
       "path": "skills/doca-socket-relay",
-      "content_digest": "sha256:3e12663f3fe6e194539d34426b624936ea65585e16bce0ad7c012da89adb6744",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:d30aa14a07e73d7c2c79c29264b0dec762d510befaf9fd601c23e970f4045f45",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-spcx-cc",
       "path": "skills/doca-spcx-cc",
-      "content_digest": "sha256:40e632415f0cc414d7a77a97d7b77b1d0eb056f017b374d88146643d63a68b63",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:1087079aa95361ece5ec86b2756530f767b934aec09989318df67ef2a9511800",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-sta",
       "path": "skills/doca-sta",
-      "content_digest": "sha256:3b0c0833dacd082e3ac9b812bfaed49caebdbd946d8c294a76656766f173526b",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:5b0eccb637fec9de6416594c032fc28c76972c1049fbadcc1f60731b5d60a2fd",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-structured-tools-contract",
       "path": "skills/doca-structured-tools-contract",
-      "content_digest": "sha256:1ed487335f26b7001649859c00b2b5e9f7b84a8592111c60ea44b3c821111290",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:50f917ee4f854c641c672e96bcb97ccdd911ed8901a94f1fd26e9dea9e5c77ed",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-telemetry",
       "path": "skills/doca-telemetry",
-      "content_digest": "sha256:cf36d287b6f5ff2a06eaafb172f442ee4515a61a0aefda74dd8c43e04fcf7db4",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:721f8c7938cf70c200b76ba4f7a2127ced55170d25eed8ad8b2715790a6f5dfc",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-telemetry-exporter",
       "path": "skills/doca-telemetry-exporter",
-      "content_digest": "sha256:6fcd4c50d7696f3331ddafb01ceaa030f867f6e09021fb4f856c2637dbdaf81b",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:79a0526d84fad9880ddb07bd909469b1ea97e88df61a8c24889f8516c4a10fb2",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "doca-telemetry-traceback-application",
+      "path": "skills/doca-telemetry-traceback-application",
+      "content_digest": "sha256:6e9bd8d228329e458dd09a58fcc3cb817340cd75145fd45de9178ce25e28dedb",
+      "last_commit": "b75adbcf813b606237606b681a56cc326f91cd94",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-telemetry-utils",
       "path": "skills/doca-telemetry-utils",
-      "content_digest": "sha256:bd5c444be324e3ab60ec591e29f9809b139eb496f706afa13f132afdf1d43167",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:e1b1d1558b419a19812e1638d93ccda8366e2574d06b6f6fd38a1db43bde5a72",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-upgrade",
       "path": "skills/doca-upgrade",
-      "content_digest": "sha256:62d4f006cd8ade1bd4f2adea6a19d6772788cc03d6963bf0f1c093697971a981",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:267d465c740bc93bad7c3bf4b408f81d220891cc7e01022dabc27de83c9c33e1",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-urom",
       "path": "skills/doca-urom",
-      "content_digest": "sha256:f880b814d4edec41aae2b1b99eac35440373bd451061d59d40fbe4780b67c717",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:59cf971b9ac39bb49736f2e371553e762721f324a32450224582840d649c788e",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-urom-svc",
       "path": "skills/doca-urom-svc",
-      "content_digest": "sha256:9f63f30ba030ca3c6654c8b62d1bfa0f26496cb7e9ba545db11bbd242c226484",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:b98ba3df412682911b6214a55bd21560428432b2aa324eda45991beb8c60ea1e",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-verbs",
       "path": "skills/doca-verbs",
-      "content_digest": "sha256:e946d2fef1ac7c3b42e2007b23a1b09a30cef0785a4ed189017e37db01bf32c4",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:5fbf255fd78e4eb9609de2c32663b5fa9e62026d42c576212aceced2e2fc2f83",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "doca-version",
       "path": "skills/doca-version",
-      "content_digest": "sha256:10fba9c7ae79bd59f397187b9dfbaf0cd8998c765766c3772d574efae5d51463",
-      "last_commit": "bbb601a61a00d6d1556913e9cae2bbf2391b9246",
-      "last_modified": "2026-10-14"
+      "content_digest": "sha256:4d2bebf8ab3f4cceec102583e1d37763131fac55a2fe10ed0ca36cfa1e284178",
+      "last_commit": "3d06e7ec44f478548538a1957759437fe0e1d4c4",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "dynamo-interconnect-check",
@@ -1005,9 +1026,9 @@
     {
       "name": "ethos-orchestrate",
       "path": "skills/ethos-orchestrate",
-      "content_digest": "sha256:55a596a93fc386d307a70d2d490f4ceae0ce4d13a3874c6a504e0325ff1934c9",
-      "last_commit": "38b6f0dc04e97ad42788b96c258cb3f6e7bb040c",
-      "last_modified": "2026-10-16"
+      "content_digest": "sha256:36c67cbce609eac9204be8b4ecac41393fd072879cbbbd2f89b0f4867c6fb070",
+      "last_commit": "3aecfe9ba84e4df15fa7b224987f2803c2ba70e7",
+      "last_modified": "2026-10-25"
     },
     {
       "name": "ethos-write",
@@ -1241,11 +1262,32 @@
       "last_modified": "2026-10-01"
     },
     {
+      "name": "isaac-cable-insertion-policy-deployment",
+      "path": "skills/isaac-cable-insertion-policy-deployment",
+      "content_digest": "sha256:94edb3036c5b781ecd08e1031d68ab3e494f73fb97399070ead17feeba922660",
+      "last_commit": "7f57e8c80c0fda019092ae249fc05229dc070ed7",
+      "last_modified": "2026-11-03"
+    },
+    {
+      "name": "isaac-cable-insertion-policy-training",
+      "path": "skills/isaac-cable-insertion-policy-training",
+      "content_digest": "sha256:bd29cefc1fc753d7193a2c290e8cf076f8fc5ec339e59dadd54df9333ed06bd4",
+      "last_commit": "7f57e8c80c0fda019092ae249fc05229dc070ed7",
+      "last_modified": "2026-11-03"
+    },
+    {
+      "name": "isaac-humanoid-cloud-control",
+      "path": "skills/isaac-humanoid-cloud-control",
+      "content_digest": "sha256:33cf8bfe59183d5b6e5888c4b2884e29a468ea7286aa27229c7859dbd62f5db7",
+      "last_commit": "d8e732ccc2f2fe6b2216ef1a8978fa46d95157cc",
+      "last_modified": "2026-11-06"
+    },
+    {
       "name": "isaac-mission-control-showcase",
       "path": "skills/isaac-mission-control-showcase",
-      "content_digest": "sha256:add44a74fb5f559ace399da795a8cc5e5d73dccf671d567d90dd5af5980ebaa4",
-      "last_commit": "e37f30b0e4095ae323223ad16b180eb6c39e0bd0",
-      "last_modified": "2026-09-29"
+      "content_digest": "sha256:bf3e600d171a5535554b102cf3035b8df5a89eb0c3f33f61b76af31e77d86f59",
+      "last_commit": "f3fa40610194cc3bea47672b81684f3eb4eb1ef4",
+      "last_modified": "2026-10-26"
     },
     {
       "name": "jetson-build-source",
@@ -1600,9 +1642,9 @@
     {
       "name": "nemo-fabric-integrate",
       "path": "skills/nemo-fabric-integrate",
-      "content_digest": "sha256:02fc55cb022c11bfc361897890b0558e436cb4863798205368b06a3a8cdf23e4",
-      "last_commit": "4fc9cf6cec785070e0bf5bb4aa6c992f71b1c97e",
-      "last_modified": "2026-10-17"
+      "content_digest": "sha256:97afdf3c13d14cc0940b6f487f3ccaeb7714b0e9af4a75ba5c627b5c68ad21c6",
+      "last_commit": "c8f420e0d486ee7573db82225d8a7f75a42da60e",
+      "last_modified": "2026-11-02"
     },
     {
       "name": "nemo-mbridge-mlm-bridge-training",
@@ -1656,9 +1698,9 @@
     {
       "name": "nemo-mbridge-perf-megatron-fsdp",
       "path": "skills/nemo-mbridge-perf-megatron-fsdp",
-      "content_digest": "sha256:0bfad6cf5ca7e4acd8fdb0f835de57e08e8318617e370c4ca1fc2d011ad2ead1",
-      "last_commit": "e695a8397463bbb64d787b3cd88d3c58889be633",
-      "last_modified": "2026-06-02"
+      "content_digest": "sha256:97c14e154b5aa3c66c4a4686f6082579a8063ea94ca63e54ed1204f8bce6b0ee",
+      "last_commit": "bc0beba39212e30de490dcd0f1c7eeb8d58d03cd",
+      "last_modified": "2026-11-05"
     },
     {
       "name": "nemo-mbridge-perf-memory-tuning",
@@ -1754,16 +1796,16 @@
     {
       "name": "nemo-relay-get-started",
       "path": "skills/nemo-relay-get-started",
-      "content_digest": "sha256:6c8b75a699b43af661522be5e6ab700a233fbd4da135172cece1ed1d5b0dd314",
-      "last_commit": "871e31335a0d7fc84284574feb8426ab70338c41",
-      "last_modified": "2026-08-24"
+      "content_digest": "sha256:9931e128807ab5b9324b837f1bfce25b011af0a84349e689c9382b5303a13c2d",
+      "last_commit": "ad6987ab201ab2e26e6a974d1830532741a52c91",
+      "last_modified": "2026-10-22"
     },
     {
       "name": "nemo-relay-install",
       "path": "skills/nemo-relay-install",
-      "content_digest": "sha256:771899e09fb4a1bc9e457b00da4dafc9b64ee56a75d757886187dec853da7394",
-      "last_commit": "31bd53822c1ac5998a23bd5f7c9efb5aefe99ca2",
-      "last_modified": "2026-07-17"
+      "content_digest": "sha256:566327079cfdeb76702c1994c15fd59d614c23ef2bdbe5adb2cc657ad90e6200",
+      "last_commit": "ad6987ab201ab2e26e6a974d1830532741a52c91",
+      "last_modified": "2026-10-22"
     },
     {
       "name": "nemo-relay-instrument-calls",
@@ -1901,9 +1943,9 @@
     {
       "name": "nemotron-voice-agent-builder",
       "path": "skills/nemotron-voice-agent-builder",
-      "content_digest": "sha256:03aaa81a71ee23d58f47fcd1752d071cdac7e3d06584df30271bfbc582e87cbd",
-      "last_commit": "901efd38824e6a96a711f0dc6250e057fc717ed7",
-      "last_modified": "2026-10-19"
+      "content_digest": "sha256:3bc5d9dbb34860f7756084bab891a082f03cc158a807086f844aabab7fc235b3",
+      "last_commit": "4ec84730fd5edd8a6e3c134e751589c61c1d1257",
+      "last_modified": "2026-10-29"
     },
     {
       "name": "nv-generate-ct-rflow",
@@ -1992,9 +2034,9 @@
     {
       "name": "nvflare-convert-huggingface",
       "path": "skills/nvflare-convert-huggingface",
-      "content_digest": "sha256:8dfdd1749879e2e4260539f51cceffab7693e66deadadb35cbaf46457e47c00a",
-      "last_commit": "e34d95b71f9d672d9bdbb3e3879b56d27db14836",
-      "last_modified": "2026-09-13"
+      "content_digest": "sha256:a4c84e79bfa626c9aa0e33317cdc228c640e464e90386ca3386b0278b35ec767",
+      "last_commit": "12dd2a06e8fd05b5e832bad855381e1444652091",
+      "last_modified": "2026-11-04"
     },
     {
       "name": "nvflare-convert-lightning",
@@ -2151,25 +2193,32 @@
       "last_modified": "2026-09-01"
     },
     {
+      "name": "omniverse-content-services",
+      "path": "skills/omniverse-content-services",
+      "content_digest": "sha256:071cf2d6b70825b1eab52a64e14c900f237fdcb53ed9b1fc646307f089c9e290",
+      "last_commit": "4df760d0ab575af4722d6942f4cb18c1cb4fc54f",
+      "last_modified": "2026-10-28"
+    },
+    {
       "name": "omniverse-realtime-viewer",
       "path": "skills/omniverse-realtime-viewer",
-      "content_digest": "sha256:985cd3fe6532b1090e97120596a17899d9c1e66e37878c6f5de3c3cdc04babb1",
-      "last_commit": "964fc48cee05057c30f88e133a31c3835e461915",
-      "last_modified": "2026-08-20"
+      "content_digest": "sha256:7cd7aa9e00ced5c17d73b7173131e490f0ac5bf5a98da3fa54b1d60556ecd910",
+      "last_commit": "33fb6e24631f779dd7ef7102d3eefd1a068e3dfe",
+      "last_modified": "2026-11-06"
     },
     {
       "name": "omniverse-usd-performance-tuning",
       "path": "skills/omniverse-usd-performance-tuning",
-      "content_digest": "sha256:14507580e1707c9664401775d5d2c3b3ec8e2f8e80e3926efc6e9af440b4ed86",
-      "last_commit": "afbce3f428130e0b5753d4553a8826cba1a42d30",
-      "last_modified": "2026-08-24"
+      "content_digest": "sha256:3ce5d62ac6cb3513ab8fbfb29f8c7f326843f5f4dc469973aba70fb6481deb38",
+      "last_commit": "9a0c79f866bb55cfb22135aa4161dfb41ba88685",
+      "last_modified": "2026-11-03"
     },
     {
       "name": "ovnewton-usage",
       "path": "skills/ovnewton-usage",
-      "content_digest": "sha256:c036fb730e28e9b03417dadc4e7c8df940050150314b227916f79704e875a1bf",
-      "last_commit": "b3b762b49510c26635c7ec48c1a3724bfcad54b5",
-      "last_modified": "2026-10-15"
+      "content_digest": "sha256:237a53d11c4b30319970a504363aba385461d5e6c2cbea29867ac675275c6e93",
+      "last_commit": "a4cf47e064e3a8ef15e11687342d592cd268e62f",
+      "last_modified": "2026-10-22"
     },
     {
       "name": "paidf-cosmos-predict",
@@ -2189,15 +2238,15 @@
       "name": "physical-ai-infrastructure-setup-and-resilient-scaling",
       "path": "skills/physical-ai-infrastructure-setup-and-resilient-scaling",
       "content_digest": "sha256:cffb0f4e223df78d64823f6f31bee1b78e312c61feec804bb69c51ccb44b88d8",
-      "last_commit": "6c6fc092703624a6ce66af814d9ec91d20930885",
-      "last_modified": "2026-05-29"
+      "last_commit": "1d91e024242c03a167c1f8bd07905676c1d1175f",
+      "last_modified": "2026-11-03"
     },
     {
       "name": "physical-ai-neural-reconstruction",
       "path": "skills/physical-ai-neural-reconstruction",
-      "content_digest": "sha256:be55a248effc47dcea5beb5ed36d09467463f6fccadc8d35947c68799882d3d8",
-      "last_commit": "fa2ad210b810c36675136798ac9b23625da4b92f",
-      "last_modified": "2026-09-15"
+      "content_digest": "sha256:e45be9cbfa48e262a144b14d3587f33987501ca86bdf4ae15b9fceefcb6a48c9",
+      "last_commit": "93b7638e14ac071337d17aa262251427bcf274ee",
+      "last_modified": "2026-11-03"
     },
     {
       "name": "physical-ai-physics-selection",
@@ -2233,6 +2282,48 @@
       "content_digest": "sha256:317052325fa8809753ac9c6f4b015f21d639fcf13c19b996f52793ba8aca1601",
       "last_commit": "2cd3507404ddb4c833e26fde979f1b0c20c4980d",
       "last_modified": "2026-09-15"
+    },
+    {
+      "name": "pva-build-test",
+      "path": "skills/pva-build-test",
+      "content_digest": "sha256:14b93b3529b9c121a6b0845a81fc5888249f4ffe92405039e2bca0564cacf603",
+      "last_commit": "c32b748376837dc67b7d16452379bf86982bbfdc",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "pva-debug",
+      "path": "skills/pva-debug",
+      "content_digest": "sha256:f7a77d135c96b076cb5f9752e9eb06195145686fb61ced9ac9dbfeadfd36b57e",
+      "last_commit": "c32b748376837dc67b7d16452379bf86982bbfdc",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "pva-doctor",
+      "path": "skills/pva-doctor",
+      "content_digest": "sha256:2b65d1f6d8d98d34020499d99186c43a4cebc590dd5d25dbb6ef8289ae32cfa1",
+      "last_commit": "c32b748376837dc67b7d16452379bf86982bbfdc",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "pva-opgen",
+      "path": "skills/pva-opgen",
+      "content_digest": "sha256:c0d53cc7ca8425f9b761a3598af128181332f42da5da3f833f74f97b26d887bc",
+      "last_commit": "c32b748376837dc67b7d16452379bf86982bbfdc",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "pva-setup",
+      "path": "skills/pva-setup",
+      "content_digest": "sha256:6ad9b632b08b1c50258f2afef5cfa485147d13a4ce9460090313bf33e63a5d53",
+      "last_commit": "c32b748376837dc67b7d16452379bf86982bbfdc",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "pva-spec",
+      "path": "skills/pva-spec",
+      "content_digest": "sha256:b99dfa005a3972593c22c918e113e01096dc499ac31dc8be5fdf6bf12879c76a",
+      "last_commit": "c32b748376837dc67b7d16452379bf86982bbfdc",
+      "last_modified": "2026-10-28"
     },
     {
       "name": "rag-blueprint",
@@ -2282,6 +2373,41 @@
       "content_digest": "sha256:0161260ae66af91a1ddc4bb151c9a722663308df7316560bf14ae6e2aba85e1d",
       "last_commit": "a634c0cc41f12b09519f724545479dd0278d8016",
       "last_modified": "2026-10-20"
+    },
+    {
+      "name": "runai-audit-assigned-quota",
+      "path": "skills/runai-audit-assigned-quota",
+      "content_digest": "sha256:d3d8f5edd73a91e6bd9e76b6a253a16a04898c03fc9ef17552affe42d06f9631",
+      "last_commit": "762739911707261915d3912a03e6ec7ab215022a",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "runai-diagnose-failed-workload",
+      "path": "skills/runai-diagnose-failed-workload",
+      "content_digest": "sha256:8bd61ba11bc8166ad6a664a081da91ba74bb01315aa823d57a3bfb7bf892c0cf",
+      "last_commit": "e08e4f7ad64671568509144cce7ecff67fcafe3d",
+      "last_modified": "2026-10-25"
+    },
+    {
+      "name": "runai-get-cluster-health-summary",
+      "path": "skills/runai-get-cluster-health-summary",
+      "content_digest": "sha256:8fdff9b8714bfd4076c798099f5994544cf9948eba45c273ed9f1371f3fc2893",
+      "last_commit": "762739911707261915d3912a03e6ec7ab215022a",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "runai-get-utilization-overview",
+      "path": "skills/runai-get-utilization-overview",
+      "content_digest": "sha256:c8244d4fc4f2dc308d9789b6a3a5bc3235f2293e5de9f01b1c82c8261bd7f764",
+      "last_commit": "762739911707261915d3912a03e6ec7ab215022a",
+      "last_modified": "2026-10-28"
+    },
+    {
+      "name": "runai-get-workload-health-summary",
+      "path": "skills/runai-get-workload-health-summary",
+      "content_digest": "sha256:9dddc704d5cecd15e8b5cf2c842aa32558126d0766e7da65e062c94224d989cb",
+      "last_commit": "38a55d42e94036b7881df2182e89396d8f342376",
+      "last_modified": "2026-10-26"
     },
     {
       "name": "skill-card-generator",
@@ -2867,9 +2993,9 @@
     {
       "name": "tilegym-converting-cutile-to-julia",
       "path": "skills/tilegym-converting-cutile-to-julia",
-      "content_digest": "sha256:d76955ac871225f2f61463fdaaab7d4ba5eb6a5c3baba1330d9933f3cf73ce63",
-      "last_commit": "276eb868b92c336de92be49622e6627135eb95cc",
-      "last_modified": "2026-06-11"
+      "content_digest": "sha256:c8d97b1b51e14bd0041988a805c7ed6c2928e19b5632c14123f9a8c97ebe95e7",
+      "last_commit": "4ec84730fd5edd8a6e3c134e751589c61c1d1257",
+      "last_modified": "2026-10-29"
     },
     {
       "name": "tilegym-converting-cutile-to-triton",
@@ -2909,9 +3035,9 @@
     {
       "name": "vss-build-vision-ai",
       "path": "skills/vss-build-vision-ai",
-      "content_digest": "sha256:5c128c2009301a1f09c229bb44a3e51113a07baca5a1e7a3525071a553369917",
-      "last_commit": "f36169d98aa321a7c7afa0acc404ff20f088a8a7",
-      "last_modified": "2026-10-20"
+      "content_digest": "sha256:089f30ab7fa60ad29106902f0f7545435831ab758656f4dd772142d7db576492",
+      "last_commit": "b091c3d109fc977bb96653f34481efe42e23f602",
+      "last_modified": "2026-10-21"
     },
     {
       "name": "warp-compile-time-optimizer",
