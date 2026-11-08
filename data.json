@@ -326,12 +326,507 @@
    "dup_of": null
   },
   {
+   "date": "2026-10-05",
+   "merchant": "CIBC MC L6L3A8",
+   "items": "자동등록(TD)",
+   "amount": 60.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-05",
+   "merchant": "PC MASTRCRD L6Q3Z2",
+   "items": "자동등록(TD)",
+   "amount": 180.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
    "date": "2026-10-06",
    "merchant": "효미 TD Visa",
    "items": "카드 결제",
    "amount": 60.0,
    "pay": "효미 TD Visa",
    "source": "import",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-06",
+   "merchant": "INTEREST CHARGE -PURCHASE",
+   "items": "자동등록(TD)",
+   "amount": 30.59,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-06",
+   "merchant": "INTEREST CHARGE - CASH",
+   "items": "자동등록(TD)",
+   "amount": 0.08,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-06",
+   "merchant": "Affirm",
+   "items": "자동등록(TD)",
+   "amount": 24.59,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-06",
+   "merchant": "Bell Mobility Bpy",
+   "items": "고정지출",
+   "amount": 80.78,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-07",
+   "merchant": "SSV TO: 28556198055",
+   "items": "자동등록(TD)",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-07",
+   "merchant": "Belair",
+   "items": "자동등록(TD)",
+   "amount": 35.5,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-07",
+   "merchant": "Belair",
+   "items": "자동등록(TD)",
+   "amount": 219.33,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-08",
+   "merchant": "Affirm",
+   "items": "자동등록(TD)",
+   "amount": 11.79,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-08",
+   "merchant": "CAPTL ONE MC Q9L7X5",
+   "items": "자동등록(TD)",
+   "amount": 180.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-08",
+   "merchant": "Walmart",
+   "items": "자동등록(TD)",
+   "amount": 40.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-08",
+   "merchant": "Canada Tire Company",
+   "items": "자동등록(TD)",
+   "amount": 60.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-09",
+   "merchant": "PODP FEE OCT/07/2026",
+   "items": "자동등록(TD)",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-09",
+   "merchant": "PTS TO: 28556198055",
+   "items": "자동등록(TD)",
+   "amount": 10.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-09",
+   "merchant": "SSV TO: 28556198055",
+   "items": "자동등록(TD)",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-09",
+   "merchant": "SPL LOAN",
+   "items": "자동등록(TD)",
+   "amount": 349.17,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-09",
+   "merchant": "AMEX BILL PYMT MSP",
+   "items": "자동등록(TD)",
+   "amount": 30.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-13",
+   "merchant": "Canada Tire Company",
+   "items": "자동등록(TD)",
+   "amount": 100.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-13",
+   "merchant": "CAPTL ONE MC U2H4A2",
+   "items": "자동등록(TD)",
+   "amount": 140.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-13",
+   "merchant": "SEND E-TFR ***CuV",
+   "items": "자동등록(TD)",
+   "amount": 27.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-13",
+   "merchant": "Canada",
+   "items": "자동등록(TD)",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-13",
+   "merchant": "Bell Mobility Bpy",
+   "items": "고정지출",
+   "amount": 111.41,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-13",
+   "merchant": "AMEX BILL PYMT MSP",
+   "items": "자동등록(TD)",
+   "amount": 180.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-13",
+   "merchant": "A&W Restaurants",
+   "items": "외식·커피",
+   "amount": 7.96,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-14",
+   "merchant": "Affirm",
+   "items": "자동등록(TD)",
+   "amount": 32.06,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-15",
+   "merchant": "PODP FEE OCT/13/2026",
+   "items": "자동등록(TD)",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-15",
+   "merchant": "SSV TO: 28556198055",
+   "items": "자동등록(TD)",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-16",
+   "merchant": "PODP FEE OCT/14/2026",
+   "items": "자동등록(TD)",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-16",
+   "merchant": "David Health Intl",
+   "items": "자동등록(TD)",
+   "amount": 101.74,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-19",
+   "merchant": "Buta Japanese Ramen",
+   "items": "외식·커피",
+   "amount": 20.52,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-19",
+   "merchant": "Dessert",
+   "items": "외식·커피",
+   "amount": 8.39,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-19",
+   "merchant": "CHARLES P. _M",
+   "items": "자동등록(TD)",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "Little Caesars'pizza",
+   "items": "외식·커피",
+   "amount": 27.34,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "Anthropic",
+   "items": "자동등록(TD)",
+   "amount": 8.26,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "CIBC MC X3H3Z6",
+   "items": "자동등록(TD)",
+   "amount": 60.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "Canada Tire Company",
+   "items": "자동등록(TD)",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "Canada Tire Company",
+   "items": "자동등록(TD)",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "AMEX BILL PYMT MSP",
+   "items": "자동등록(TD)",
+   "amount": 140.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "Staples",
+   "items": "자동등록(TD)",
+   "amount": 75.4,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "N.s. Power",
+   "items": "고정지출",
+   "amount": 57.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "Walmart",
+   "items": "자동등록(TD)",
+   "amount": 80.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "Anthropic",
+   "items": "자동등록(TD)",
+   "amount": 8.26,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "Little Caesars'pizza",
+   "items": "외식·커피",
+   "amount": 27.34,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-22",
+   "merchant": "Affirm",
+   "items": "자동등록(TD)",
+   "amount": 95.59,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-22",
+   "merchant": "Staples",
+   "items": "자동등록(TD)",
+   "amount": 75.4,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "PTS TO: 28556198055",
+   "items": "자동등록(TD)",
+   "amount": 10.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "SSV TO: 28556198055",
+   "items": "자동등록(TD)",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "SEND E-TFR ***ecz",
+   "items": "자동등록(TD)",
+   "amount": 50.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "SPL LOAN",
+   "items": "자동등록(TD)",
+   "amount": 349.17,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-26",
+   "merchant": "Dollarama",
+   "items": "자동등록(TD)",
+   "amount": 1.43,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-26",
+   "merchant": "Walmart",
+   "items": "자동등록(TD)",
+   "amount": 37.63,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-27",
+   "merchant": "Canada",
+   "items": "자동등록(TD)",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-27",
+   "merchant": "METAPAY",
+   "items": "자동등록(TD)",
+   "amount": 22.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-29",
+   "merchant": "Sushi Kawa",
+   "items": "외식·커피",
+   "amount": 13.17,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   },
   {
