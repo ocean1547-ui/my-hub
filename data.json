@@ -436,7 +436,7 @@
   {
    "date": "2026-10-08",
    "merchant": "Walmart",
-   "items": "자동등록(TD)",
+   "items": "장보기(식료품)",
    "amount": 40.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -688,7 +688,7 @@
   {
    "date": "2026-10-21",
    "merchant": "Staples",
-   "items": "자동등록(TD)",
+   "items": "쇼핑",
    "amount": 75.4,
    "pay": "TD 은행",
    "source": "plaid",
@@ -706,7 +706,7 @@
   {
    "date": "2026-10-21",
    "merchant": "Walmart",
-   "items": "자동등록(TD)",
+   "items": "장보기(식료품)",
    "amount": 80.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -742,7 +742,7 @@
   {
    "date": "2026-10-22",
    "merchant": "Staples",
-   "items": "자동등록(TD)",
+   "items": "쇼핑",
    "amount": 75.4,
    "pay": "TD 은행",
    "source": "plaid",
@@ -787,7 +787,7 @@
   {
    "date": "2026-10-26",
    "merchant": "Dollarama",
-   "items": "자동등록(TD)",
+   "items": "쇼핑",
    "amount": 1.43,
    "pay": "TD 은행",
    "source": "plaid",
@@ -796,7 +796,7 @@
   {
    "date": "2026-10-26",
    "merchant": "Walmart",
-   "items": "자동등록(TD)",
+   "items": "장보기(식료품)",
    "amount": 37.63,
    "pay": "TD 은행",
    "source": "plaid",
