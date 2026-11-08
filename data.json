@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-07"
+  "updated": "2026-11-08"
  },
  "receipts": [
   {
@@ -531,6 +531,33 @@
    "pay": "승재 비자 카드",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-08",
+   "merchant": "차량보험",
+   "items": "보험",
+   "amount": 219.33,
+   "pay": "승재 계좌",
+   "source": "fixed",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-08",
+   "merchant": "집보험",
+   "items": "보험",
+   "amount": 35.5,
+   "pay": "승재 계좌",
+   "source": "fixed",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-08",
+   "merchant": "승재 Capital One Mastercard 카드이자",
+   "items": "카드이자",
+   "amount": 85.0,
+   "pay": "승재 Capital One Mastercard",
+   "source": "fixed",
+   "dup_of": null
   }
  ],
  "income": [
@@ -611,7 +638,7 @@
    "holder": "승재",
    "name": "Capital One Mastercard",
    "limit": 4250.0,
-   "used": 4229.79,
+   "used": 4314.79,
    "payment": 160.0,
    "note": "20.21"
   },
