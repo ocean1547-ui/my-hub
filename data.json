@@ -1062,6 +1062,15 @@
    "pay": "승재 Costco Mastercard",
    "source": "cardalert",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "승재 폰",
+   "items": "통신",
+   "amount": 111.24,
+   "pay": "승재 계좌",
+   "source": "fixed",
+   "dup_of": null
   }
  ],
  "income": [
