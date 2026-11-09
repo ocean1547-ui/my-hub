@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-08"
+  "updated": "2026-11-09"
  },
  "receipts": [
   {
@@ -1053,6 +1053,15 @@
    "pay": "승재 Capital One Mastercard",
    "source": "fixed",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "HALIFAX INTL AIRPORT A",
+   "items": "장보기(식료품)",
+   "amount": 4.0,
+   "pay": "승재 Costco Mastercard",
+   "source": "cardalert",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1101,7 +1110,7 @@
    "holder": "승재",
    "name": "Costco Mastercard",
    "limit": 1500.0,
-   "used": 1394.1,
+   "used": 1398.1,
    "payment": 60.0,
    "note": "42.65"
   },
