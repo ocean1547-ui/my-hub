@@ -1071,6 +1071,24 @@
    "pay": "승재 계좌",
    "source": "fixed",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "VOIP.MS",
+   "items": "통신",
+   "amount": 24.78,
+   "pay": "승재 TD Visa",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "ZOHO-ZOHO CORP",
+   "items": "통신",
+   "amount": 5.7,
+   "pay": "승재 TD Visa",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1127,9 +1145,9 @@
    "holder": "승재",
    "name": "TD Visa",
    "limit": 1500.0,
-   "used": 1339.41,
+   "used": 1369.89,
    "payment": 100.0,
-   "note": "137"
+   "note": "37"
   },
   {
    "holder": "승재",
