@@ -903,15 +903,6 @@
   },
   {
    "date": "2026-11-06",
-   "merchant": "승재 TD Visa 카드이자",
-   "items": "카드이자",
-   "amount": 17.0,
-   "pay": "승재 TD Visa",
-   "source": "fixed",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-06",
    "merchant": "차량 할부",
    "items": "할부",
    "amount": 349.17,
@@ -1170,7 +1161,7 @@
    "holder": "승재",
    "name": "TD Visa",
    "limit": 1500.0,
-   "used": 1369.89,
+   "used": 1352.89,
    "payment": 100.0,
    "note": "37"
   },
