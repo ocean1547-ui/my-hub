@@ -1112,7 +1112,7 @@
    "date": "2026-11-10",
    "merchant": "팀",
    "items": "외식·커피",
-   "amount": 2.05,
+   "amount": 4.3,
    "pay": "승재 Canadian Tire Mastercard",
    "source": "manual",
    "dup_of": null
@@ -1155,9 +1155,9 @@
    "holder": "승재",
    "name": "Canadian Tire Mastercard",
    "limit": 1000.0,
-   "used": 957.61,
+   "used": 905.49,
    "payment": 60.0,
-   "note": "100"
+   "note": "88.21"
   },
   {
    "holder": "효미",
