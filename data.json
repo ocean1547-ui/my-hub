@@ -1107,6 +1107,15 @@
    "pay": "승재 Amex Points",
    "source": "fixed",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-10",
+   "merchant": "팀",
+   "items": "외식·커피",
+   "amount": 2.05,
+   "pay": "승재 Canadian Tire Mastercard",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1146,7 +1155,7 @@
    "holder": "승재",
    "name": "Canadian Tire Mastercard",
    "limit": 1000.0,
-   "used": 955.56,
+   "used": 957.61,
    "payment": 60.0,
    "note": "100"
   },
