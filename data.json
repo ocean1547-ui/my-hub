@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-09"
+  "updated": "2026-11-10"
  },
  "receipts": [
   {
@@ -1098,6 +1098,15 @@
    "pay": "승재 Capital One Mastercard",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-10",
+   "merchant": "승재 Amex Points 카드이자",
+   "items": "카드이자",
+   "amount": 175.0,
+   "pay": "승재 Amex Points",
+   "source": "fixed",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1169,7 +1178,7 @@
    "holder": "승재",
    "name": "Amex Points",
    "limit": 8800.0,
-   "used": 8758.78,
+   "used": 8933.78,
    "payment": 200.0,
    "note": "41"
   },
