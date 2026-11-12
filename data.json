@@ -1101,15 +1101,6 @@
   },
   {
    "date": "2026-11-10",
-   "merchant": "승재 Amex Points 카드이자",
-   "items": "카드이자",
-   "amount": 175.0,
-   "pay": "승재 Amex Points",
-   "source": "fixed",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-10",
    "merchant": "팀",
    "items": "외식·커피",
    "amount": 4.3,
@@ -1150,6 +1141,15 @@
    "items": "카드 결제",
    "amount": 180.0,
    "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-12",
+   "merchant": "숭재 아멕스포인트",
+   "items": "카드 이자",
+   "amount": 180.0,
+   "pay": "승재 Amex Points",
    "source": "manual",
    "dup_of": null
   }
@@ -1223,7 +1223,7 @@
    "holder": "승재",
    "name": "Amex Points",
    "limit": 8800.0,
-   "used": 8933.78,
+   "used": 8938.78,
    "payment": 200.0,
    "note": "41"
   },
