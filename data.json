@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-10"
+  "updated": "2026-11-12"
  },
  "receipts": [
   {
@@ -1116,6 +1116,33 @@
    "pay": "승재 Canadian Tire Mastercard",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-11",
+   "merchant": "인터넷",
+   "items": "인터넷",
+   "amount": 67.26,
+   "pay": "효미 TD Visa",
+   "source": "fixed",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-12",
+   "merchant": "효미 TD Visa 카드이자",
+   "items": "카드이자",
+   "amount": 160.0,
+   "pay": "효미 TD Visa",
+   "source": "fixed",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-12",
+   "merchant": "효미 비자카드",
+   "items": "카드 결제",
+   "amount": 20.0,
+   "pay": "효미 TD Visa",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1227,7 +1254,7 @@
    "holder": "효미",
    "name": "TD Visa",
    "limit": 9000.0,
-   "used": 8939.0,
+   "used": 9146.26,
    "payment": 300.0,
    "note": "1"
   }
