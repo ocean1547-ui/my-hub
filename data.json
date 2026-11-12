@@ -1143,6 +1143,15 @@
    "pay": "효미 TD Visa",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-12",
+   "merchant": "아멕스 포인트 카드",
+   "items": "카드 결제",
+   "amount": 180.0,
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
