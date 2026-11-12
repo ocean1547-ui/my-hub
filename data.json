@@ -1152,6 +1152,33 @@
    "pay": "승재 Amex Points",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-12",
+   "merchant": "도미노",
+   "items": "외식·커피",
+   "amount": 24.61,
+   "pay": "승재 Amex Points",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-12",
+   "merchant": "Sobey",
+   "items": "장보기",
+   "amount": 23.47,
+   "pay": "승재 Capital One Mastercard",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-12",
+   "merchant": "달라마",
+   "items": "장보기",
+   "amount": 5.73,
+   "pay": "승재 Capital One Mastercard",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1223,7 +1250,7 @@
    "holder": "승재",
    "name": "Amex Points",
    "limit": 8800.0,
-   "used": 8938.78,
+   "used": 8963.39,
    "payment": 200.0,
    "note": "41"
   },
@@ -1239,7 +1266,7 @@
    "holder": "승재",
    "name": "Capital One Mastercard",
    "limit": 4250.0,
-   "used": 4175.97,
+   "used": 4205.17,
    "payment": 160.0,
    "note": "20.21"
   },
