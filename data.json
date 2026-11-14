@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-13"
+  "updated": "2026-11-14"
  },
  "receipts": [
   {
@@ -1187,6 +1187,15 @@
    "amount": 200.0,
    "pay": "승재 계좌",
    "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-14",
+   "merchant": "Affirm 청소기",
+   "items": "할부",
+   "amount": 32.06,
+   "pay": "Affirm",
+   "source": "fixed",
    "dup_of": null
   }
  ],
