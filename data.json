@@ -241,7 +241,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-14"
+  "updated": "2026-11-15"
  },
  "receipts": [
   {
@@ -1197,6 +1197,42 @@
    "pay": "Affirm",
    "source": "fixed",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-15",
+   "merchant": "효미 캐네디어타이어 카드",
+   "items": "카드 이자",
+   "amount": 53.43,
+   "pay": "효미 Canadian Tire Mastercard",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-15",
+   "merchant": "효미 캐네디어타이어 카드",
+   "items": "카드 결제",
+   "amount": 120.0,
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-15",
+   "merchant": "팀_커피",
+   "items": "외식·커피",
+   "amount": 1.8,
+   "pay": "승재 Canadian Tire Mastercard",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-15",
+   "merchant": "메타",
+   "items": "통신",
+   "amount": 11.0,
+   "pay": "승재 TD Visa",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1228,7 +1264,7 @@
    "holder": "효미",
    "name": "Canadian Tire Mastercard",
    "limit": 3000.0,
-   "used": 2931.52,
+   "used": 2984.95,
    "payment": 60.0,
    "note": "68.48"
   },
@@ -1236,7 +1272,7 @@
    "holder": "승재",
    "name": "Canadian Tire Mastercard",
    "limit": 1000.0,
-   "used": 905.49,
+   "used": 907.29,
    "payment": 60.0,
    "note": "88.21"
   },
@@ -1260,7 +1296,7 @@
    "holder": "승재",
    "name": "TD Visa",
    "limit": 1500.0,
-   "used": 1352.89,
+   "used": 1363.89,
    "payment": 100.0,
    "note": "37"
   },
