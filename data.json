@@ -247,7 +247,7 @@
   {
    "date": "2026-10-01",
    "merchant": "Costco Halifax",
-   "items": "계란 특대 3팩·바나나·로프케이크",
+   "items": "장보기",
    "amount": 31.65,
    "pay": "효미 Canadian Tire Mastercard",
    "source": "import",
@@ -256,7 +256,7 @@
   {
    "date": "2026-10-01",
    "merchant": "팀홀튼",
-   "items": "아이스 모카 라떼 라지",
+   "items": "외식·커피",
    "amount": 3.5,
    "pay": "승재 Canadian Tire Mastercard",
    "source": "import",
@@ -301,7 +301,7 @@
   {
    "date": "2026-10-05",
    "merchant": "미디어",
-   "items": "인터넷·스트리밍",
+   "items": "공과금·구독",
    "amount": 10.0,
    "pay": "승재 Amex Cashback",
    "source": "import",
@@ -319,7 +319,7 @@
   {
    "date": "2026-10-05",
    "merchant": "Sobeys",
-   "items": "장보기(식료품)",
+   "items": "장보기",
    "amount": 7.09,
    "pay": "승재 Costco Mastercard",
    "source": "import",
@@ -328,7 +328,7 @@
   {
    "date": "2026-10-05",
    "merchant": "CIBC MC L6L3A8",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 60.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -337,7 +337,7 @@
   {
    "date": "2026-10-05",
    "merchant": "PC MASTRCRD L6Q3Z2",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 180.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -355,7 +355,7 @@
   {
    "date": "2026-10-06",
    "merchant": "INTEREST CHARGE -PURCHASE",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 30.59,
    "pay": "TD 은행",
    "source": "plaid",
@@ -364,7 +364,7 @@
   {
    "date": "2026-10-06",
    "merchant": "INTEREST CHARGE - CASH",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 0.08,
    "pay": "TD 은행",
    "source": "plaid",
@@ -373,7 +373,7 @@
   {
    "date": "2026-10-06",
    "merchant": "Affirm",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 24.59,
    "pay": "TD 은행",
    "source": "plaid",
@@ -391,7 +391,7 @@
   {
    "date": "2026-10-07",
    "merchant": "SSV TO: 28556198055",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 1.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -400,7 +400,7 @@
   {
    "date": "2026-10-07",
    "merchant": "Belair",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 35.5,
    "pay": "TD 은행",
    "source": "plaid",
@@ -409,7 +409,7 @@
   {
    "date": "2026-10-07",
    "merchant": "Belair",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 219.33,
    "pay": "TD 은행",
    "source": "plaid",
@@ -418,7 +418,7 @@
   {
    "date": "2026-10-08",
    "merchant": "Affirm",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 11.79,
    "pay": "TD 은행",
    "source": "plaid",
@@ -427,7 +427,7 @@
   {
    "date": "2026-10-08",
    "merchant": "CAPTL ONE MC Q9L7X5",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 180.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -436,7 +436,7 @@
   {
    "date": "2026-10-08",
    "merchant": "Walmart",
-   "items": "장보기(식료품)",
+   "items": "장보기",
    "amount": 40.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -445,7 +445,7 @@
   {
    "date": "2026-10-08",
    "merchant": "Canada Tire Company",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 60.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -454,7 +454,7 @@
   {
    "date": "2026-10-09",
    "merchant": "PODP FEE OCT/07/2026",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 5.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -463,7 +463,7 @@
   {
    "date": "2026-10-09",
    "merchant": "PTS TO: 28556198055",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 10.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -472,7 +472,7 @@
   {
    "date": "2026-10-09",
    "merchant": "SSV TO: 28556198055",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 1.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -481,7 +481,7 @@
   {
    "date": "2026-10-09",
    "merchant": "SPL LOAN",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 349.17,
    "pay": "TD 은행",
    "source": "plaid",
@@ -490,7 +490,7 @@
   {
    "date": "2026-10-09",
    "merchant": "AMEX BILL PYMT MSP",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 30.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -499,7 +499,7 @@
   {
    "date": "2026-10-13",
    "merchant": "Canada Tire Company",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 100.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -508,7 +508,7 @@
   {
    "date": "2026-10-13",
    "merchant": "CAPTL ONE MC U2H4A2",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 140.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -517,7 +517,7 @@
   {
    "date": "2026-10-13",
    "merchant": "이메일 송금",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 27.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -526,7 +526,7 @@
   {
    "date": "2026-10-13",
    "merchant": "Canada",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 20.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -544,7 +544,7 @@
   {
    "date": "2026-10-13",
    "merchant": "AMEX BILL PYMT MSP",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 180.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -562,7 +562,7 @@
   {
    "date": "2026-10-14",
    "merchant": "Affirm",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 32.06,
    "pay": "TD 은행",
    "source": "plaid",
@@ -571,7 +571,7 @@
   {
    "date": "2026-10-15",
    "merchant": "PODP FEE OCT/13/2026",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 5.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -580,7 +580,7 @@
   {
    "date": "2026-10-15",
    "merchant": "SSV TO: 28556198055",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 1.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -589,7 +589,7 @@
   {
    "date": "2026-10-16",
    "merchant": "PODP FEE OCT/14/2026",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 5.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -598,7 +598,7 @@
   {
    "date": "2026-10-16",
    "merchant": "David Health Intl",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 101.74,
    "pay": "TD 은행",
    "source": "plaid",
@@ -625,7 +625,7 @@
   {
    "date": "2026-10-19",
    "merchant": "CHARLES P. _M",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 5.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -643,7 +643,7 @@
   {
    "date": "2026-10-20",
    "merchant": "Anthropic",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 8.26,
    "pay": "TD 은행",
    "source": "plaid",
@@ -652,7 +652,7 @@
   {
    "date": "2026-10-20",
    "merchant": "CIBC MC X3H3Z6",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 60.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -661,7 +661,7 @@
   {
    "date": "2026-10-20",
    "merchant": "Canada Tire Company",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 20.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -670,7 +670,7 @@
   {
    "date": "2026-10-20",
    "merchant": "Canada Tire Company",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 20.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -679,7 +679,7 @@
   {
    "date": "2026-10-20",
    "merchant": "AMEX BILL PYMT MSP",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 140.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -706,7 +706,7 @@
   {
    "date": "2026-10-21",
    "merchant": "Walmart",
-   "items": "장보기(식료품)",
+   "items": "장보기",
    "amount": 80.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -715,7 +715,7 @@
   {
    "date": "2026-10-21",
    "merchant": "Anthropic",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 8.26,
    "pay": "TD 은행",
    "source": "plaid",
@@ -733,7 +733,7 @@
   {
    "date": "2026-10-22",
    "merchant": "Affirm",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 95.59,
    "pay": "TD 은행",
    "source": "plaid",
@@ -751,7 +751,7 @@
   {
    "date": "2026-10-23",
    "merchant": "PTS TO: 28556198055",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 10.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -760,7 +760,7 @@
   {
    "date": "2026-10-23",
    "merchant": "SSV TO: 28556198055",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 1.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -769,7 +769,7 @@
   {
    "date": "2026-10-23",
    "merchant": "이메일 송금",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 50.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -778,7 +778,7 @@
   {
    "date": "2026-10-23",
    "merchant": "SPL LOAN",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 349.17,
    "pay": "TD 은행",
    "source": "plaid",
@@ -796,7 +796,7 @@
   {
    "date": "2026-10-26",
    "merchant": "Walmart",
-   "items": "장보기(식료품)",
+   "items": "장보기",
    "amount": 37.63,
    "pay": "TD 은행",
    "source": "plaid",
@@ -805,7 +805,7 @@
   {
    "date": "2026-10-27",
    "merchant": "Canada",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 20.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -814,7 +814,7 @@
   {
    "date": "2026-10-27",
    "merchant": "METAPAY",
-   "items": "자동등록(TD)",
+   "items": "기타",
    "amount": 22.0,
    "pay": "TD 은행",
    "source": "plaid",
@@ -832,7 +832,7 @@
   {
    "date": "2026-11-04",
    "merchant": "NSCC - 팀",
-   "items": "커피",
+   "items": "외식·커피",
    "amount": 2.05,
    "pay": "승재 Costco Mastercard",
    "source": "import",
@@ -841,7 +841,7 @@
   {
    "date": "2026-11-04",
    "merchant": "지윤이 용돈",
-   "items": "용돈",
+   "items": "이체·용돈",
    "amount": 10.0,
    "pay": "승재 계좌",
    "source": "manual",
@@ -877,7 +877,7 @@
   {
    "date": "2026-11-05",
    "merchant": "ON THE WEDGE",
-   "items": "장보기(식료품)",
+   "items": "장보기",
    "amount": 6.5,
    "pay": "승재 Costco Mastercard",
    "source": "cardalert",
@@ -922,7 +922,7 @@
   {
    "date": "2026-11-06",
    "merchant": "승재 비자 카드",
-   "items": "카드결제",
+   "items": "카드 결제",
    "amount": 40.0,
    "pay": "승재 계좌",
    "source": "manual",
@@ -958,7 +958,7 @@
   {
    "date": "2026-11-07",
    "merchant": "HALIFAX INTL AIRPORT A",
-   "items": "장보기(식료품)",
+   "items": "장보기",
    "amount": 4.0,
    "pay": "승재 Costco Mastercard",
    "source": "cardalert",
@@ -967,7 +967,7 @@
   {
    "date": "2026-11-07",
    "merchant": "지윤이 용돈",
-   "items": "용돈",
+   "items": "이체·용돈",
    "amount": 30.0,
    "pay": "승재 계좌",
    "source": "manual",
@@ -976,7 +976,7 @@
   {
    "date": "2026-11-07",
    "merchant": "승재 케네디어 타이어 마스터 카드",
-   "items": "카드결제",
+   "items": "카드 결제",
    "amount": 60.0,
    "pay": "승재 계좌",
    "source": "manual",
@@ -1012,7 +1012,7 @@
   {
    "date": "2026-11-07",
    "merchant": "승재 비자 카드",
-   "items": "토큰 _ sam",
+   "items": "토큰 구매",
    "amount": 7.05,
    "pay": "승재 비자 카드",
    "source": "manual",
@@ -1039,7 +1039,7 @@
   {
    "date": "2026-11-08",
    "merchant": "승재 Capital One Mastercard 카드이자",
-   "items": "카드이자",
+   "items": "카드 이자",
    "amount": 86.18,
    "pay": "승재 Capital One Mastercard",
    "source": "fixed",
@@ -1048,7 +1048,7 @@
   {
    "date": "2026-11-09",
    "merchant": "HALIFAX INTL AIRPORT A",
-   "items": "장보기(식료품)",
+   "items": "장보기",
    "amount": 4.0,
    "pay": "승재 Costco Mastercard",
    "source": "cardalert",
