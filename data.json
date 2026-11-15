@@ -632,6 +632,33 @@
    "dup_of": null
   },
   {
+   "date": "2026-10-19",
+   "merchant": "Buta Japanese Ramen",
+   "items": "외식·커피",
+   "amount": 20.52,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-19",
+   "merchant": "Dessert",
+   "items": "외식·커피",
+   "amount": 8.39,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-19",
+   "merchant": "CHARLES P. _M",
+   "items": "기타",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
    "date": "2026-10-20",
    "merchant": "Little Caesars'pizza",
    "items": "외식·커피",
@@ -645,6 +672,42 @@
    "merchant": "Anthropic",
    "items": "기타",
    "amount": 8.26,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "CIBC MC X3H3Z6",
+   "items": "기타",
+   "amount": 60.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "Canada Tire Company",
+   "items": "기타",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "Canada Tire Company",
+   "items": "기타",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-20",
+   "merchant": "AMEX BILL PYMT MSP",
+   "items": "기타",
+   "amount": 140.0,
    "pay": "TD 은행",
    "source": "plaid",
    "dup_of": null
@@ -731,6 +794,42 @@
    "dup_of": null
   },
   {
+   "date": "2026-10-21",
+   "merchant": "N.s. Power",
+   "items": "고정지출",
+   "amount": 57.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "Walmart",
+   "items": "장보기",
+   "amount": 80.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "Anthropic",
+   "items": "기타",
+   "amount": 8.26,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-21",
+   "merchant": "Little Caesars'pizza",
+   "items": "외식·커피",
+   "amount": 27.34,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
    "date": "2026-10-22",
    "merchant": "Affirm",
    "items": "기타",
@@ -744,6 +843,60 @@
    "merchant": "Staples",
    "items": "쇼핑",
    "amount": 75.4,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-22",
+   "merchant": "Affirm",
+   "items": "기타",
+   "amount": 95.59,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-22",
+   "merchant": "Staples",
+   "items": "쇼핑",
+   "amount": 75.4,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "PTS TO: 28556198055",
+   "items": "기타",
+   "amount": 10.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "SSV TO: 28556198055",
+   "items": "기타",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "이메일 송금",
+   "items": "기타",
+   "amount": 50.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-23",
+   "merchant": "SPL LOAN",
+   "items": "기타",
+   "amount": 349.17,
    "pay": "TD 은행",
    "source": "plaid",
    "dup_of": null
@@ -803,6 +956,42 @@
    "dup_of": null
   },
   {
+   "date": "2026-10-26",
+   "merchant": "Dollarama",
+   "items": "쇼핑",
+   "amount": 1.43,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-26",
+   "merchant": "Walmart",
+   "items": "장보기",
+   "amount": 37.63,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-27",
+   "merchant": "Canada",
+   "items": "기타",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-27",
+   "merchant": "METAPAY",
+   "items": "기타",
+   "amount": 22.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
    "date": "2026-10-27",
    "merchant": "Canada",
    "items": "기타",
@@ -830,6 +1019,123 @@
    "dup_of": null
   },
   {
+   "date": "2026-10-29",
+   "merchant": "Sushi Kawa",
+   "items": "외식·커피",
+   "amount": 13.17,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-30",
+   "merchant": "Affirm",
+   "items": "기타",
+   "amount": 13.65,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-30",
+   "merchant": "OVERDRAFT INTEREST",
+   "items": "기타",
+   "amount": 0.19,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-30",
+   "merchant": "MONTHLY ACCOUNT FEE",
+   "items": "기타",
+   "amount": 17.95,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-30",
+   "merchant": "Tim Hortons",
+   "items": "외식·커피",
+   "amount": 3.75,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-30",
+   "merchant": "OVERDRAFT INTEREST",
+   "items": "기타",
+   "amount": 0.98,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-10-30",
+   "merchant": "MONTHLY ACCOUNT FEE",
+   "items": "기타",
+   "amount": 3.95,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-02",
+   "merchant": "SSV TO: 28556198055",
+   "items": "기타",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-02",
+   "merchant": "이메일 송금",
+   "items": "기타",
+   "amount": 50.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-02",
+   "merchant": "Living Skylines",
+   "items": "고정지출",
+   "amount": 2120.92,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-02",
+   "merchant": "Sushi Island",
+   "items": "외식·커피",
+   "amount": 11.79,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-02",
+   "merchant": "Sh Vending",
+   "items": "외식·커피",
+   "amount": 1.9,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-02",
+   "merchant": "PTS TO: 28556192952",
+   "items": "기타",
+   "amount": 10.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
    "date": "2026-11-04",
    "merchant": "NSCC - 팀",
    "items": "외식·커피",
@@ -845,6 +1151,15 @@
    "amount": 10.0,
    "pay": "승재 계좌",
    "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-04",
+   "merchant": "Apple",
+   "items": "기타",
+   "amount": 0.46,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   },
   {
@@ -890,6 +1205,51 @@
    "amount": 100.0,
    "pay": "승재 TD Visa",
    "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-05",
+   "merchant": "CAPTL ONE MC J3U6H2",
+   "items": "기타",
+   "amount": 160.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-05",
+   "merchant": "PC MASTRCRD J3U6H4",
+   "items": "기타",
+   "amount": 140.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-05",
+   "merchant": "Bell Mobility Bpy",
+   "items": "고정지출",
+   "amount": 82.38,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-05",
+   "merchant": "A&W Restaurants",
+   "items": "외식·커피",
+   "amount": 13.2,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-05",
+   "merchant": "Winner Studio",
+   "items": "기타",
+   "amount": 20.5,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   },
   {
@@ -953,6 +1313,42 @@
    "amount": 15.0,
    "pay": "승재 비자 카드",
    "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-06",
+   "merchant": "PTS TO: 28556198055",
+   "items": "기타",
+   "amount": 10.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-06",
+   "merchant": "SPL LOAN",
+   "items": "기타",
+   "amount": 349.17,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-06",
+   "merchant": "INTEREST CHARGE -PURCHASE",
+   "items": "기타",
+   "amount": 24.01,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-06",
+   "merchant": "INTEREST CHARGE - CASH",
+   "items": "기타",
+   "amount": 0.08,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   },
   {
@@ -1100,12 +1496,147 @@
    "dup_of": null
   },
   {
+   "date": "2026-11-09",
+   "merchant": "Canada Tire Company",
+   "items": "기타",
+   "amount": 60.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "이메일 송금",
+   "items": "기타",
+   "amount": 25.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "Affirm",
+   "items": "기타",
+   "amount": 11.79,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "SSV TO: 28556198055",
+   "items": "기타",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "Belair",
+   "items": "기타",
+   "amount": 35.5,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "Belair",
+   "items": "기타",
+   "amount": 219.33,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "Bell Mobility Bpy",
+   "items": "고정지출",
+   "amount": 112.04,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "The Boardroom",
+   "items": "외식·커피",
+   "amount": 8.55,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "Happy Veal Hot",
+   "items": "외식·커피",
+   "amount": 23.68,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "SambaNova Systems Inc",
+   "items": "외식·커피",
+   "amount": 7.25,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "David Health Intl",
+   "items": "기타",
+   "amount": 98.5,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-09",
+   "merchant": "Walmart",
+   "items": "장보기",
+   "amount": 20.46,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
    "date": "2026-11-10",
    "merchant": "팀",
    "items": "외식·커피",
    "amount": 4.3,
    "pay": "승재 Canadian Tire Mastercard",
    "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-10",
+   "merchant": "SSV TO: 28556198055",
+   "items": "기타",
+   "amount": 1.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-10",
+   "merchant": "Canada",
+   "items": "기타",
+   "amount": 20.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-10",
+   "merchant": "PODP FEE NOV/06/2026",
+   "items": "기타",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   },
   {
@@ -1190,12 +1721,30 @@
    "dup_of": null
   },
   {
+   "date": "2026-11-13",
+   "merchant": "AMEX BILL PYMT MSP",
+   "items": "기타",
+   "amount": 180.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
    "date": "2026-11-14",
    "merchant": "Affirm 청소기",
    "items": "할부",
    "amount": 32.06,
    "pay": "Affirm",
    "source": "fixed",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-14",
+   "merchant": "METAPAY",
+   "items": "기타",
+   "amount": 11.0,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   },
   {
