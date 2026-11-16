@@ -1767,6 +1767,15 @@
    "pay": "승재 Amex Cashback",
    "source": "fixed",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-16",
+   "merchant": "월마트",
+   "items": "장보기",
+   "amount": 34.44,
+   "pay": "승재 Capital One Mastercard",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1854,7 +1863,7 @@
    "holder": "승재",
    "name": "Capital One Mastercard",
    "limit": 4250.0,
-   "used": 4205.17,
+   "used": 4239.61,
    "payment": 160.0,
    "note": "20.21"
   },
