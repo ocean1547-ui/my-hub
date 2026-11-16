@@ -1776,6 +1776,15 @@
    "pay": "승재 Capital One Mastercard",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-16",
+   "merchant": "한인 마트",
+   "items": "장보기",
+   "amount": 32.46,
+   "pay": "승재 Canadian Tire Mastercard",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1815,7 +1824,7 @@
    "holder": "승재",
    "name": "Canadian Tire Mastercard",
    "limit": 1000.0,
-   "used": 907.29,
+   "used": 939.75,
    "payment": 60.0,
    "note": "88.21"
   },
