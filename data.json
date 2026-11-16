@@ -1785,6 +1785,15 @@
    "pay": "승재 Canadian Tire Mastercard",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-16",
+   "merchant": "KLARNA*GODADDY.COM C",
+   "items": "장보기",
+   "amount": 5.21,
+   "pay": "승재 Costco Mastercard",
+   "source": "cardalert",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1840,7 +1849,7 @@
    "holder": "승재",
    "name": "Costco Mastercard",
    "limit": 1500.0,
-   "used": 1398.1,
+   "used": 1403.31,
    "payment": 60.0,
    "note": "42.65"
   },
