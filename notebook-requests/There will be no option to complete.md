@@ -28,3 +28,5 @@ using MatplotLib to chart the resulting data
 
 using ipyleaflet to map the results
 
+---
+Status: ✅ Generated → ../notebooks/mongodb_atlas_practice.ipynb (2026-11-16) — 뼈대만 생성, 연습 부분 빈칸
