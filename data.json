@@ -163,12 +163,6 @@
    "label": "전기료"
   },
   {
-   "amount": 9.1,
-   "day": 20,
-   "from": "Affirm",
-   "label": "Affirm 잡화"
-  },
-  {
    "amount": 95.09,
    "day": 22,
    "from": "Affirm",
@@ -1721,30 +1715,12 @@
    "dup_of": null
   },
   {
-   "date": "2026-11-13",
-   "merchant": "AMEX BILL PYMT MSP",
-   "items": "기타",
-   "amount": 180.0,
-   "pay": "TD 은행",
-   "source": "plaid",
-   "dup_of": null
-  },
-  {
    "date": "2026-11-14",
    "merchant": "Affirm 청소기",
    "items": "할부",
    "amount": 32.06,
    "pay": "Affirm",
    "source": "fixed",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-14",
-   "merchant": "METAPAY",
-   "items": "기타",
-   "amount": 11.0,
-   "pay": "TD 은행",
-   "source": "plaid",
    "dup_of": null
   },
   {
