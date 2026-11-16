@@ -1311,15 +1311,6 @@
   },
   {
    "date": "2026-11-06",
-   "merchant": "PTS TO: 28556198055",
-   "items": "기타",
-   "amount": 10.0,
-   "pay": "TD 은행",
-   "source": "plaid",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-06",
    "merchant": "SPL LOAN",
    "items": "기타",
    "amount": 349.17,
@@ -1611,15 +1602,6 @@
    "merchant": "SSV TO: 28556198055",
    "items": "기타",
    "amount": 1.0,
-   "pay": "TD 은행",
-   "source": "plaid",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-10",
-   "merchant": "Canada",
-   "items": "기타",
-   "amount": 20.0,
    "pay": "TD 은행",
    "source": "plaid",
    "dup_of": null
