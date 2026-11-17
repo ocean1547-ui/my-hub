@@ -1803,6 +1803,15 @@
    "pay": "TD 은행",
    "source": "plaid",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-17",
+   "merchant": "Shell 주유_57648km",
+   "items": "교통",
+   "amount": 31.36,
+   "pay": "효미 TD Visa",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1914,7 +1923,7 @@
    "holder": "효미",
    "name": "TD Visa",
    "limit": 9000.0,
-   "used": 9173.26,
+   "used": 9204.62,
    "payment": 300.0,
    "note": "1"
   }
