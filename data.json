@@ -1743,15 +1743,6 @@
   },
   {
    "date": "2026-11-16",
-   "merchant": "승재 Amex Cashback 카드이자",
-   "items": "카드 이자",
-   "amount": 75.0,
-   "pay": "승재 Amex Cashback",
-   "source": "fixed",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-16",
    "merchant": "월마트",
    "items": "장보기",
    "amount": 34.44,
@@ -1773,15 +1764,6 @@
    "merchant": "KLARNA*GODADDY.COM C",
    "items": "장보기",
    "amount": 5.21,
-   "pay": "승재 Costco Mastercard",
-   "source": "cardalert",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-16",
-   "merchant": "KLARNA* GODADDY.COM C",
-   "items": "장보기",
-   "amount": 4.56,
    "pay": "승재 Costco Mastercard",
    "source": "cardalert",
    "dup_of": null
@@ -1815,36 +1797,9 @@
   },
   {
    "date": "2026-11-16",
-   "merchant": "Canada Tire Company",
-   "items": "기타",
-   "amount": 120.0,
-   "pay": "TD 은행",
-   "source": "plaid",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-16",
-   "merchant": "Canada Tire Company",
-   "items": "기타",
-   "amount": 300.0,
-   "pay": "TD 은행",
-   "source": "plaid",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-16",
    "merchant": "Microsoft",
    "items": "기타",
    "amount": 1.0,
-   "pay": "TD 은행",
-   "source": "plaid",
-   "dup_of": null
-  },
-  {
-   "date": "2026-11-16",
-   "merchant": "METAPAY",
-   "items": "기타",
-   "amount": 11.0,
    "pay": "TD 은행",
    "source": "plaid",
    "dup_of": null
@@ -1903,7 +1858,7 @@
    "holder": "승재",
    "name": "Costco Mastercard",
    "limit": 1500.0,
-   "used": 1407.87,
+   "used": 1403.31,
    "payment": 60.0,
    "note": "42.65"
   },
@@ -1927,7 +1882,7 @@
    "holder": "승재",
    "name": "Amex Cashback",
    "limit": 3400.0,
-   "used": 3374.18,
+   "used": 3299.18,
    "payment": 160.0,
    "note": "23"
   },
