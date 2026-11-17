@@ -1937,7 +1937,7 @@
  "loans": [
   {
    "label": "Mitsubishi Outlander 차량 할부",
-   "balance": 42881.0,
+   "balance": 42374.63,
    "payment": 349.17,
    "freq": "biweekly",
    "start": "2025-06-20",
@@ -1947,7 +1947,7 @@
    "principal": 48193.85,
    "rate_pct": 10.98,
    "payments_total": 208,
-   "payments_made": 34,
+   "payments_made": 37,
    "end": "2033-05-27",
    "balance_note": "2026-10-02 계산값 (34회 납부 후). James 확인 2026-10-01 기준 $43,398"
   }
