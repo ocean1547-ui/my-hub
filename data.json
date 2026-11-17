@@ -1785,6 +1785,33 @@
    "pay": "승재 Costco Mastercard",
    "source": "cardalert",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-16",
+   "merchant": "스시",
+   "items": "외식·커피",
+   "amount": 44.44,
+   "pay": "승재 Canadian Tire Mastercard",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-16",
+   "merchant": "효미 캐네디어타이어 카드",
+   "items": "카드 결제",
+   "amount": 300.0,
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-16",
+   "merchant": "효미 비자카드",
+   "items": "카드 결제",
+   "amount": 100.0,
+   "pay": "승재 계좌",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
@@ -1824,7 +1851,7 @@
    "holder": "승재",
    "name": "Canadian Tire Mastercard",
    "limit": 1000.0,
-   "used": 939.75,
+   "used": 984.19,
    "payment": 60.0,
    "note": "88.21"
   },
