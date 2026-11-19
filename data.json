@@ -235,7 +235,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-17"
+  "updated": "2026-11-19"
  },
  "receipts": [
   {
@@ -1811,6 +1811,24 @@
    "amount": 31.36,
    "pay": "효미 TD Visa",
    "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-18",
+   "merchant": "PODP FEE NOV/16/2026",
+   "items": "기타",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-18",
+   "merchant": "Nosh Vending",
+   "items": "외식·커피",
+   "amount": 1.9,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   }
  ],
