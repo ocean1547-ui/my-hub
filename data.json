@@ -1839,6 +1839,51 @@
    "pay": "승재 Amex Points",
    "source": "manual",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-19",
+   "merchant": "PODP FEE NOV/17/2026",
+   "items": "기타",
+   "amount": 5.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-19",
+   "merchant": "Sushi Kawa",
+   "items": "외식·커피",
+   "amount": 9.12,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-19",
+   "merchant": "A&W Restaurants",
+   "items": "외식·커피",
+   "amount": 6.59,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-19",
+   "merchant": "Tim Hortons",
+   "items": "외식·커피",
+   "amount": 2.1,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-19",
+   "merchant": "Walmart",
+   "items": "장보기",
+   "amount": 25.21,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
   }
  ],
  "income": [
