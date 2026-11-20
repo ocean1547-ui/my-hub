@@ -235,7 +235,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-19"
+  "updated": "2026-11-20"
  },
  "receipts": [
   {
@@ -1964,7 +1964,7 @@
  "loans": [
   {
    "label": "Mitsubishi Outlander 차량 할부",
-   "balance": 42374.63,
+   "balance": 42204.41,
    "payment": 349.17,
    "freq": "biweekly",
    "start": "2025-06-20",
@@ -1974,7 +1974,7 @@
    "principal": 48193.85,
    "rate_pct": 10.98,
    "payments_total": 208,
-   "payments_made": 37,
+   "payments_made": 38,
    "end": "2033-05-27",
    "balance_note": "2026-10-02 계산값 (34회 납부 후). James 확인 2026-10-01 기준 $43,398"
   }
