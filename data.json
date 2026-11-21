@@ -235,7 +235,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-20"
+  "updated": "2026-11-21"
  },
  "receipts": [
   {
@@ -1892,6 +1892,51 @@
    "amount": 0.0,
    "pay": "효미 TD Visa",
    "source": "manual",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-20",
+   "merchant": "PTS TO: 28556198055",
+   "items": "기타",
+   "amount": 10.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-20",
+   "merchant": "SPL LOAN",
+   "items": "기타",
+   "amount": 349.17,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-20",
+   "merchant": "AMEX BILL PYMT MSP",
+   "items": "기타",
+   "amount": 100.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-20",
+   "merchant": "Awl Real Canadian Wholesale",
+   "items": "기타",
+   "amount": 39.99,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-21",
+   "merchant": "METAPAY",
+   "items": "기타",
+   "amount": 28.0,
+   "pay": "TD 은행",
+   "source": "plaid",
    "dup_of": null
   }
  ],
