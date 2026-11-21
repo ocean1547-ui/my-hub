@@ -1884,6 +1884,15 @@
    "pay": "TD 은행",
    "source": "plaid",
    "dup_of": null
+  },
+  {
+   "date": "2026-11-20",
+   "merchant": "Shell_57739km",
+   "items": "교통",
+   "amount": 0.0,
+   "pay": "효미 TD Visa",
+   "source": "manual",
+   "dup_of": null
   }
  ],
  "income": [
