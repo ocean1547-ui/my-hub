@@ -235,7 +235,7 @@
  "meta": {
   "currency": "CAD",
   "title": "우리집 가계부",
-  "updated": "2026-11-21"
+  "updated": "2026-11-22"
  },
  "receipts": [
   {
@@ -1935,6 +1935,15 @@
    "merchant": "METAPAY",
    "items": "기타",
    "amount": 28.0,
+   "pay": "TD 은행",
+   "source": "plaid",
+   "dup_of": null
+  },
+  {
+   "date": "2026-11-21",
+   "merchant": "Topper*Phantom-Walle",
+   "items": "기타",
+   "amount": 14.35,
    "pay": "TD 은행",
    "source": "plaid",
    "dup_of": null
